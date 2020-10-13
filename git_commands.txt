@@ -8,9 +8,9 @@ git checkout -b (branch name) //go to you own branch
 git status                    //check what's modified
 git add/rm                    //add or remove what's modified
 git commit -m "message"       //commit the change to the branch
-git push -u (branch name)     //push the commit to the branch
 git checkout master           //return to master branch
 git merge (branch name)       //merge the updated branch to master
+git push -u origin master     //push the change up to remote repo
 
 Git commands
 :
