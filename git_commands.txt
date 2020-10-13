@@ -1,0 +1,36 @@
+Here are the git commands that will be useful:
+
+Standard Procedures for doing the labs: (just in case I forgot how to do it)
+:
+                              (start and end at master)
+git checkout -b (branch name) //go to you own branch
+                              (do usual coding)
+git status                    //check what's modified
+git add/rm                    //add or remove what's modified
+git commit -m "message"       //commit the change to the branch
+git push -u (branch name)     //push the commit to the branch
+git checkout master           //return to master branch
+git merge (branch name)       //merge the updated branch to master
+
+Git commands
+:
+
+Creating a repo
+1. create a new repo on github website
+2. copy the https and type "git clone https://..." in git bash
+3. "cd" to change the working directory to the folder cloned
+(adding to an existing repo: 2~3)
+
+Modifying the repo
+1. git add/git rm              //add/remove files in the repo
+2. git commit -m "message"     //commit the change
+3. git push -u (branch name)   //push the commit to remote
+
+Branching
+git branch                     //check the current branches
+git branch (branch name)       //create a new branch
+git branch -d (branch name)    //delete an existing branch
+git checkout -b (branch name)  //create a branch and jump into it
+git checkout (branch name)     //go into a specified branch
+git merge (branch name)        //merge the new changes
+
