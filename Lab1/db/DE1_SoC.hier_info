@@ -1,0 +1,40 @@
+|decoder
+regWrite => ShiftLeft0.IN32
+writeRegister[0] => ShiftLeft0.IN37
+writeRegister[1] => ShiftLeft0.IN36
+writeRegister[2] => ShiftLeft0.IN35
+writeRegister[3] => ShiftLeft0.IN34
+writeRegister[4] => ShiftLeft0.IN33
+regEnable[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[4] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[5] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[8] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[9] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[10] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[11] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[12] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[13] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[14] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[15] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[16] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[17] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[18] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[19] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[20] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[21] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[22] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[23] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[24] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[25] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[26] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[27] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[28] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[29] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+regEnable[30] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+
+

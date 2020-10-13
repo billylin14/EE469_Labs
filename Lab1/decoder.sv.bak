@@ -1,0 +1,31 @@
+module decoder #(parameter WIDTH=64, HEIGHT=31) (regWrite, writeRegister, regEnable);
+	input logic regWrite;
+	input logic [4:0] writeRegister;
+	output logic [HEIGHT-1:0] regEnable; //30 enable wires
+	
+	assign regEnable = (1 & regWrite)<< writeRegister; //is this allowed?
+	
+`timescale 1 ps / 1 ps
+module decoder_testbench();
+	
+	logic regWrite;
+	logic [4:0] writeRegister;
+	logic [HEIGHT-1:0] regEnable; //30 enable wires
+	
+	register dut (.*);
+	
+	initial begin
+		clk <= 0;
+		forever #50 clk <= ~clk;
+	end
+
+	initial begin 
+		regWrite <= 0; @(posedge clk);
+		regWrite <= 1; writeRegister <= 5; @(posedge clk); 
+		regWrite <= 1; writeRegister <= 6; @(posedge clk); 
+		regWrite <= 1; writeRegister <= 7; @(posedge clk); 
+		regWrite <= 1; writeRegister <= 8; @(posedge clk); 
+		regWrite <= 0; @(posedge clk);
+		$stop;
+	end
+	
