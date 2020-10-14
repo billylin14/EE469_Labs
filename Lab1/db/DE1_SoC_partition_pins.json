@@ -128,11 +128,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "regEnable[31]",
+					"strict" : false
+				},
+				{
 					"name" : "writeRegister[1]",
 					"strict" : false
 				},
 				{
-					"name" : "regWrite",
+					"name" : "writeRegister[2]",
 					"strict" : false
 				},
 				{
@@ -144,7 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "writeRegister[2]",
+					"name" : "regWrite",
 					"strict" : false
 				},
 				{

@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/wutzk/Desktop/EE 469/Lab1
+vdecoder
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1602640834
+!i10b 1
+!s100 JJMD41KYYbnC4ZBCYCHMT1
+I>?mKE`4MW?m0o8f4NPn?z1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 decoder_sv_unit
+S1
+R0
+Z5 w1602640828
+Z6 8./decoder.sv
+Z7 F./decoder.sv
+L0 9
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1602640834.000000
+Z10 !s107 ./decoder.sv|
+Z11 !s90 -reportprogress|300|./decoder.sv|
+!i113 1
+Z12 tCvgOpt 0
+vdecoder_2_to_4
+R1
+R2
+!i10b 1
+!s100 QcTXG>aCTjX5`74XK^bOR2
+I^>z]ZGKZl1[C@OPLY3T?f0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 42
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vdecoder_3_to_8
+R1
+R2
+!i10b 1
+!s100 Sk]cMKHiD63HkgAkaSXS]3
+IS>HzBk0C>a4XB`0jaWYn>1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 26
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vdecoder_testbench
+R1
+R2
+!i10b 1
+!s100 ?izOof:gIBaIG7bliRJ:Q2
+Ii7XK9E?]^=S:J<]MbJ2;M3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 55
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12

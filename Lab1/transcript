@@ -1,26 +1,56 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 do runDecoder.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:58:22 on Oct 13,2020
+# Start time: 18:58:40 on Oct 13,2020
 # vlog -reportprogress 300 ./decoder.sv 
 # -- Compiling module decoder
+# -- Compiling module decoder_3_to_8
+# -- Compiling module decoder_2_to_4
 # -- Compiling module decoder_testbench
 # 
 # Top level modules:
 # 	decoder_testbench
-# End time: 11:58:22 on Oct 13,2020, Elapsed time: 0:00:00
+# End time: 18:58:40 on Oct 13,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work decoder_testbench 
-# Start time: 11:58:22 on Oct 13,2020
+# Start time: 18:58:43 on Oct 13,2020
 # Loading sv_std.std
 # Loading work.decoder_testbench
 # Loading work.decoder
+# Loading work.decoder_2_to_4
+# Loading work.decoder_3_to_8
+# ** Error: (vsim-8378) ./decoder.sv(61): Port size (32) does not match connection size (31) for implicit .name connection port 'regEnable'. The port definition is at: ./decoder.sv(9).
+#    Time: 0 ps  Iteration: 0  Instance: /decoder_testbench/dut File: ./decoder.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runDecoder.do PAUSED at line 12
+do runDecoder.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:00:34 on Oct 13,2020
+# vlog -reportprogress 300 ./decoder.sv 
+# -- Compiling module decoder
+# -- Compiling module decoder_3_to_8
+# -- Compiling module decoder_2_to_4
+# -- Compiling module decoder_testbench
+# 
+# Top level modules:
+# 	decoder_testbench
+# End time: 19:00:34 on Oct 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work decoder_testbench 
+# Start time: 18:58:43 on Oct 13,2020
+# Loading sv_std.std
+# Loading work.decoder_testbench
+# Loading work.decoder
+# Loading work.decoder_2_to_4
+# Loading work.decoder_3_to_8
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./decoder.sv(30)
+# ** Note: $stop    : ./decoder.sv(75)
 #    Time: 550 ps  Iteration: 1  Instance: /decoder_testbench
-# Break in Module decoder_testbench at ./decoder.sv line 30
-# End time: 11:58:57 on Oct 13,2020, Elapsed time: 0:00:35
-# Errors: 0, Warnings: 0
+# Break in Module decoder_testbench at ./decoder.sv line 75
+# End time: 19:34:23 on Oct 13,2020, Elapsed time: 0:35:40
+# Errors: 1, Warnings: 0

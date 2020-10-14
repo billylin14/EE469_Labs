@@ -1,0 +1,11 @@
+//1:2 decoder with enable
+module decoder_1_to_2 (enable, in, out);
+	input logic enable, in;
+	output logic [1:0] out;
+	logic inNot
+	
+	not n0 (inNot, in);
+	and a0 (out[1], in, enable);
+	and a1 (out[0], inNot, enable);
+	
+endmodule
