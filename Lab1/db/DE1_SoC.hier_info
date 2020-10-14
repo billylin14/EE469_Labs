@@ -1,200 +1,71 @@
-|decoder
-regWrite => regWrite.IN1
-writeRegister[0] => writeRegister[0].IN4
-writeRegister[1] => writeRegister[1].IN4
-writeRegister[2] => writeRegister[2].IN4
-writeRegister[3] => writeRegister[3].IN1
-writeRegister[4] => writeRegister[4].IN1
-regEnable[0] <= decoder_3_to_8:decoder0.out
-regEnable[1] <= decoder_3_to_8:decoder0.out
-regEnable[2] <= decoder_3_to_8:decoder0.out
-regEnable[3] <= decoder_3_to_8:decoder0.out
-regEnable[4] <= decoder_3_to_8:decoder0.out
-regEnable[5] <= decoder_3_to_8:decoder0.out
-regEnable[6] <= decoder_3_to_8:decoder0.out
-regEnable[7] <= decoder_3_to_8:decoder0.out
-regEnable[8] <= decoder_3_to_8:decoder1.out
-regEnable[9] <= decoder_3_to_8:decoder1.out
-regEnable[10] <= decoder_3_to_8:decoder1.out
-regEnable[11] <= decoder_3_to_8:decoder1.out
-regEnable[12] <= decoder_3_to_8:decoder1.out
-regEnable[13] <= decoder_3_to_8:decoder1.out
-regEnable[14] <= decoder_3_to_8:decoder1.out
-regEnable[15] <= decoder_3_to_8:decoder1.out
-regEnable[16] <= decoder_3_to_8:decoder2.out
-regEnable[17] <= decoder_3_to_8:decoder2.out
-regEnable[18] <= decoder_3_to_8:decoder2.out
-regEnable[19] <= decoder_3_to_8:decoder2.out
-regEnable[20] <= decoder_3_to_8:decoder2.out
-regEnable[21] <= decoder_3_to_8:decoder2.out
-regEnable[22] <= decoder_3_to_8:decoder2.out
-regEnable[23] <= decoder_3_to_8:decoder2.out
-regEnable[24] <= decoder_3_to_8:decoder3.out
-regEnable[25] <= decoder_3_to_8:decoder3.out
-regEnable[26] <= decoder_3_to_8:decoder3.out
-regEnable[27] <= decoder_3_to_8:decoder3.out
-regEnable[28] <= decoder_3_to_8:decoder3.out
-regEnable[29] <= decoder_3_to_8:decoder3.out
-regEnable[30] <= decoder_3_to_8:decoder3.out
-regEnable[31] <= decoder_3_to_8:decoder3.out
+|mux8x1
+selector[0] => selector[0].IN4
+selector[1] => selector[1].IN2
+selector[2] => selector[2].IN1
+in[0] => in[0].IN1
+in[1] => in[1].IN1
+in[2] => in[2].IN1
+in[3] => in[3].IN1
+in[4] => in[4].IN1
+in[5] => in[5].IN1
+in[6] => in[6].IN1
+in[7] => in[7].IN1
+out <= mux2x1:mux7.out
 
 
-|decoder|decoder_2_to_4:selector
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-in[0] => out.IN0
-in[0] => out.IN0
-in[0] => out.IN0
-in[0] => out.IN0
-in[1] => out.IN1
-in[1] => out.IN1
-in[1] => out.IN1
-in[1] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+|mux8x1|mux2x1:mux1
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|decoder|decoder_3_to_8:decoder0
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+|mux8x1|mux2x1:mux2
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|decoder|decoder_3_to_8:decoder1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+|mux8x1|mux2x1:mux3
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|decoder|decoder_3_to_8:decoder2
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+|mux8x1|mux2x1:mux4
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|decoder|decoder_3_to_8:decoder3
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-enable => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[0] => out.IN1
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[1] => out.IN0
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-in[2] => out.IN1
-out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+|mux8x1|mux2x1:mux5
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux8x1|mux2x1:mux6
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux8x1|mux2x1:mux7
+selector => b.IN0
+selector => a.IN0
+in[0] => a.IN1
+in[1] => b.IN1
+out <= outOr.DB_MAX_OUTPUT_PORT_TYPE
 
 

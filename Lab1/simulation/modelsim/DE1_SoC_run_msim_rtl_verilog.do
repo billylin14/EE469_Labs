@@ -5,5 +5,6 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/USER/Desktop/UW/courses/20\ AU/EE\ 469/Labs/Lab\ 1 {C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/Labs/Lab 1/decoder.sv}
+vlog -sv -work work +incdir+C:/Users/USER/Desktop/UW/courses/20\ AU/EE\ 469/EE469_Labs/Lab1 {C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv}
+vlog -sv -work work +incdir+C:/Users/USER/Desktop/UW/courses/20\ AU/EE\ 469/EE469_Labs/Lab1 {C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv}
 

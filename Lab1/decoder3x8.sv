@@ -1,17 +1,41 @@
 //3:8 decoder with enable built using logic gates
-module decoder_3_to_8 (enable, in, out);
+module decoder3x8 (enable, in, out);
 	input logic enable;
 	input logic [2:0] in;
 	output logic [7:0] out;
-	logic inInverted[2:0];
 	
-	nor nornor (out[0], enabl
-	assign out[0] = enable & (~in[2] & ~in[1] & ~in[0]); 	//in: 000
-	assign out[1] = enable & (~in[2] & ~in[1] & in[0]);	//in: 001
-	assign out[2] = enable & (~in[2] & in[1] & ~in[0]);	//in: 010
-	assign out[3] = enable & (~in[2] & in[1] & in[0]);		//in: 011
-	assign out[4] = enable & (in[2] & ~in[1] & ~in[0]);	//in: 100
-	assign out[5] = enable & (in[2] & ~in[1] & in[0]);		//in: 101
-	assign out[6] = enable & (in[2] & in[1] & ~in[0]);		//in: 110
-	assign out[7] = enable & (in[2] & in[1] & in[0]);		//in: 111
+	logic [1:0] sel;
+	
+	decoder1x2 selector (.enable(enable), .in(in[2]), .out(sel));
+	
+	decoder2x4 dec1 (.enable(sel[0]), .in(in[1:0]), .out(out[3:0]));
+	decoder2x4 dec2 (.enable(sel[1]), .in(in[1:0]), .out(out[7:4]));
+	
+endmodule
+
+// Simulates the decoder I/O
+`timescale 1 ps / 1 ps
+module decoder_3x8_testbench();
+	
+	logic enable, clk;
+	logic [2:0] in;
+	logic [7:0] out;
+	
+	decoder3x8 dut (.*);
+	
+	initial begin
+		clk <= 0;
+		forever #50 clk <= ~clk;
+	end
+
+	initial begin 
+		enable <= 0; @(posedge clk); 
+		enable <= 1; in <= 3'b111; @(posedge clk); 
+		enable <= 1; in <= 3'b110; @(posedge clk); 
+		enable <= 1; in <= 3'b101; @(posedge clk); 
+		enable <= 1; in <= 3'b100; @(posedge clk); 
+		enable <= 0; in <= 3'b111; @(posedge clk); 
+	
+		$stop;
+	end
 endmodule

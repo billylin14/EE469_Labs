@@ -4,155 +4,51 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "regEnable[0]",
+					"name" : "out",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[1]",
+					"name" : "in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[2]",
+					"name" : "in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[3]",
+					"name" : "in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[4]",
+					"name" : "selector[2]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[5]",
+					"name" : "selector[1]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[6]",
+					"name" : "in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[7]",
+					"name" : "in[7]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[8]",
+					"name" : "in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[9]",
+					"name" : "in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[10]",
+					"name" : "selector[0]",
 					"strict" : false
 				},
 				{
-					"name" : "regEnable[11]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[12]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[13]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[14]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[15]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[16]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[17]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[18]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[19]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[20]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[21]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[22]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[23]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[24]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[25]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[26]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[27]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[28]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[29]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[30]",
-					"strict" : false
-				},
-				{
-					"name" : "regEnable[31]",
-					"strict" : false
-				},
-				{
-					"name" : "writeRegister[1]",
-					"strict" : false
-				},
-				{
-					"name" : "writeRegister[2]",
-					"strict" : false
-				},
-				{
-					"name" : "writeRegister[0]",
-					"strict" : false
-				},
-				{
-					"name" : "writeRegister[4]",
-					"strict" : false
-				},
-				{
-					"name" : "regWrite",
-					"strict" : false
-				},
-				{
-					"name" : "writeRegister[3]",
+					"name" : "in[4]",
 					"strict" : false
 				}
 			]

@@ -1,12 +1,12 @@
 //1:2 decoder with enable
-module decoder_1_to_2 (enable, in, out);
+module decoder1x2 (enable, in, out);
 	input logic enable, in;
 	output logic [1:0] out;
 	logic inNot;
 	
-	not n0 (inNot, in);
-	and a0 (out[1], in, enable);
-	and a1 (out[0], inNot, enable);
+	not #50 n0 (inNot, in);
+	and #50 a0 (out[1], in, enable);
+	and #50 a1 (out[0], inNot, enable);
 	
 endmodule
 
@@ -14,10 +14,10 @@ endmodule
 `timescale 1 ps / 1 ps
 module decoder_1x2_testbench();
 	
-	logic enable, in;
+	logic enable, in, clk;
 	logic [1:0] out;
 	
-	decoder dut (.*);
+	decoder1x2 dut (.*);
 	
 	initial begin
 		clk <= 0;
