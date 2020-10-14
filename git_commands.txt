@@ -3,6 +3,7 @@ Here are the git commands that will be useful:
 Standard Procedures for doing the labs: (just in case I forgot how to do it)
 :
                               (start and end at master)
+git pull
 git checkout -b (branch name) //go to you own branch
                               (do usual coding)
 git status                    //check what's modified
