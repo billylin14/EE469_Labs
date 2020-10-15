@@ -1,4 +1,5 @@
 //2x1 mux
+`timescale 1ns/10ps
 module mux2x1 (selector, in, out);
 	input logic  selector;
 	input logic  [1: 0]in;
