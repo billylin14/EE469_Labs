@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Wed Oct 14 12:49:08 2020
+Wed Oct 14 18:46:17 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -14,10 +14,13 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
- 12. Analysis & Synthesis Suppressed Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |mux32x1_stack
+ 11. Port Connectivity Checks: "mux32x1:buildMux[0].muxxie|mux8x1:m5"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,14 +47,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 14 12:49:08 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Oct 14 18:46:16 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
-; Top-level Entity Name           ; mux8x1                                      ;
+; Top-level Entity Name           ; mux32x1_stack                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 12                                          ;
+; Total pins                      ; 2,117                                       ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -70,7 +73,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; mux8x1             ; DE1_SoC            ;
+; Top-level entity name                                                           ; mux32x1_stack      ; DE1_SoC            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -167,51 +170,244 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
-; mux2x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv ;         ;
-; mux8x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; mux32x1.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv       ;         ;
+; mux2x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv        ;         ;
+; mux8x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv        ;         ;
+; mux32x1_stack.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2                 ;
-;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 2                 ;
-;     -- 7 input functions                    ; 2                 ;
-;     -- 6 input functions                    ; 0                 ;
-;     -- 5 input functions                    ; 0                 ;
-;     -- 4 input functions                    ; 0                 ;
-;     -- <=3 input functions                  ; 0                 ;
-;                                             ;                   ;
-; Dedicated logic registers                   ; 0                 ;
-;                                             ;                   ;
-; I/O pins                                    ; 12                ;
-;                                             ;                   ;
-; Total DSP Blocks                            ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; selector[2]~input ;
-; Maximum fan-out                             ; 2                 ;
-; Total fan-out                               ; 27                ;
-; Average fan-out                             ; 1.04              ;
-+---------------------------------------------+-------------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 641             ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 705             ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 576             ;
+;     -- 5 input functions                    ; 128             ;
+;     -- 4 input functions                    ; 0               ;
+;     -- <=3 input functions                  ; 1               ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 2117            ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; select[2]~input ;
+; Maximum fan-out                             ; 321             ;
+; Total fan-out                               ; 6279            ;
+; Average fan-out                             ; 1.27            ;
++---------------------------------------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |mux8x1                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 12   ; 0            ; |mux8x1             ; mux8x1      ; work         ;
-;    |mux2x1:mux6|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux8x1|mux2x1:mux6 ; mux2x1      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name   ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------+--------------+
+; |mux32x1_stack                   ; 705 (0)             ; 0 (0)                     ; 0                 ; 0          ; 2117 ; 0            ; |mux32x1_stack                                                   ; mux32x1_stack ; work         ;
+;    |mux32x1:buildMux[0].muxxie|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[0].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[0].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[0].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[10].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[10].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[10].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[10].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[11].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[11].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[11].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[11].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[12].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[12].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[12].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[12].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[13].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[13].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[13].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[13].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[14].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[14].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[14].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[14].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[15].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[15].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[15].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[15].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[16].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[16].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[16].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[16].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[17].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[17].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[17].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[17].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[18].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[18].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[18].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[18].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[19].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[19].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[19].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[19].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[1].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[1].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[1].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[1].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[20].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[20].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[20].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[20].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[21].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[21].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[21].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[21].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[22].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[22].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[22].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[22].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[23].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[23].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[23].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[23].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[24].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[24].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[24].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[24].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[25].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[25].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[25].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[25].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[26].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[26].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[26].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[26].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[27].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[27].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[27].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[27].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[28].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[28].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[28].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[28].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[29].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[29].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[29].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[29].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[2].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[2].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[2].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[2].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[30].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[30].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[30].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[30].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[31].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[31].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[31].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[31].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[32].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[32].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[32].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[32].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[33].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[33].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[33].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[33].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[34].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[34].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[34].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[34].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[35].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[35].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[35].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[35].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[36].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[36].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[36].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[36].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[37].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[37].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[37].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[37].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[38].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[38].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[38].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[38].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[39].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[39].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[39].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[39].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[3].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[3].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[3].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[3].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[40].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[40].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[40].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[40].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[41].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[41].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[41].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[41].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[42].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[42].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[42].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[42].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[43].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[43].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[43].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[43].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[44].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[44].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[44].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[44].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[45].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[45].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[45].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[45].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[46].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[46].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[46].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[46].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[47].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[47].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[47].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[47].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[48].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[48].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[48].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[48].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[49].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[49].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[49].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[49].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[4].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[4].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[4].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[4].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[50].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[50].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[50].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[50].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[51].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[51].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[51].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[51].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[52].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[52].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[52].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[52].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[53].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[53].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[53].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[53].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[54].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[54].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[54].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[54].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[55].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[55].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[55].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[55].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[56].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[56].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[56].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[56].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[57].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[57].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[57].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[57].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[58].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[58].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[58].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[58].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[59].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[59].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[59].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[59].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[5].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[5].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[5].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[5].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[60].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[60].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[60].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[60].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[61].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[61].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[61].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[61].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[62].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[62].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[62].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[62].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[63].muxxie| ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[63].muxxie                       ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[63].muxxie|mux8x1:m5             ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[63].muxxie|mux8x1:m5|mux2x1:mux5 ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[6].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[6].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[6].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[6].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[7].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[7].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[7].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[7].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[8].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[8].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[8].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[8].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
+;    |mux32x1:buildMux[9].muxxie|  ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[9].muxxie                        ; mux32x1       ; work         ;
+;       |mux8x1:m5|                ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[9].muxxie|mux8x1:m5              ; mux8x1        ; work         ;
+;          |mux2x1:mux5|           ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |mux32x1_stack|mux32x1:buildMux[9].muxxie|mux8x1:m5|mux2x1:mux5  ; mux2x1        ; work         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -230,18 +426,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 32:1               ; 64 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; No         ; |mux32x1_stack|mux32x1:buildMux[0].muxxie|mux8x1:m5|mux2x1:mux5|outOr ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |mux32x1_stack ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 64    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "mux32x1:buildMux[0].muxxie|mux8x1:m5" ;
++-------------+-------+----------+---------------------------------+
+; Port        ; Type  ; Severity ; Details                         ;
++-------------+-------+----------+---------------------------------+
+; selector[2] ; Input ; Info     ; Stuck at GND                    ;
+; in[7..4]    ; Input ; Info     ; Stuck at GND                    ;
++-------------+-------+----------+---------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 2                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-; boundary_port         ; 12                          ;
+; arriav_lcell_comb     ; 705                         ;
+;     normal            ; 705                         ;
+;         2 data inputs ; 1                           ;
+;         5 data inputs ; 128                         ;
+;         6 data inputs ; 576                         ;
+; boundary_port         ; 2117                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.69                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -250,7 +477,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:02:25     ;
 +----------------+--------------+
 
 
@@ -260,53 +487,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Oct 14 12:48:47 2020
+    Info: Processing started: Wed Oct 14 18:42:36 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
 Info (12021): Found 3 design units, including 3 entities, in source file register.sv
-    Info (12023): Found entity 1: D_FF File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 8
-    Info (12023): Found entity 2: register File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 21
-    Info (12023): Found entity 3: register_dut_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 37
+    Info (12023): Found entity 1: D_FF File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 8
+    Info (12023): Found entity 2: register File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 21
+    Info (12023): Found entity 3: register_dut_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 37
 Info (12021): Found 2 design units, including 2 entities, in source file decoder.sv
-    Info (12023): Found entity 1: decoder5x32 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder.sv Line: 9
-    Info (12023): Found entity 2: decoder5x32_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder.sv Line: 28
+    Info (12023): Found entity 1: decoder5x32 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder.sv Line: 9
+    Info (12023): Found entity 2: decoder5x32_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder.sv Line: 28
 Info (12021): Found 2 design units, including 2 entities, in source file decoder2x4.sv
-    Info (12023): Found entity 1: decoder2x4 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv Line: 2
-    Info (12023): Found entity 2: decoder_2x4_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv Line: 16
+    Info (12023): Found entity 1: decoder2x4 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder2x4.sv Line: 2
+    Info (12023): Found entity 2: decoder_2x4_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder2x4.sv Line: 16
 Info (12021): Found 2 design units, including 2 entities, in source file decoder3x8.sv
-    Info (12023): Found entity 1: decoder3x8 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv Line: 2
-    Info (12023): Found entity 2: decoder_3x8_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv Line: 18
+    Info (12023): Found entity 1: decoder3x8 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder3x8.sv Line: 2
+    Info (12023): Found entity 2: decoder_3x8_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder3x8.sv Line: 18
 Info (12021): Found 2 design units, including 2 entities, in source file decoder1x2.sv
-    Info (12023): Found entity 1: decoder1x2 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv Line: 2
-    Info (12023): Found entity 2: decoder_1x2_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file mux32x1.sv
-    Info (12023): Found entity 1: mux32x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv Line: 2
+    Info (12023): Found entity 1: decoder1x2 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder1x2.sv Line: 2
+    Info (12023): Found entity 2: decoder_1x2_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder1x2.sv Line: 15
+Info (12021): Found 2 design units, including 2 entities, in source file mux32x1.sv
+    Info (12023): Found entity 1: mux32x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv Line: 2
+    Info (12023): Found entity 2: mux32x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv Line: 17
 Info (12021): Found 2 design units, including 2 entities, in source file mux2x1.sv
-    Info (12023): Found entity 1: mux2x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv Line: 2
-    Info (12023): Found entity 2: mux2x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv Line: 18
+    Info (12023): Found entity 1: mux2x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv Line: 2
+    Info (12023): Found entity 2: mux2x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv Line: 18
 Info (12021): Found 2 design units, including 2 entities, in source file mux8x1.sv
-    Info (12023): Found entity 1: mux8x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv Line: 2
-    Info (12023): Found entity 2: mux8x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv Line: 18
-Info (12127): Elaborating entity "mux8x1" for the top level hierarchy
-Info (12128): Elaborating entity "mux2x1" for hierarchy "mux2x1:mux1" File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv Line: 9
-Info (144001): Generated suppressed messages file C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/output_files/DE1_SoC.map.smsg
+    Info (12023): Found entity 1: mux8x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv Line: 2
+    Info (12023): Found entity 2: mux8x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv Line: 18
+Info (12021): Found 0 design units, including 0 entities, in source file arm64bitregister.sv
+Info (12021): Found 2 design units, including 2 entities, in source file mux32x1_stack.sv
+    Info (12023): Found entity 1: mux32x1_stack File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv Line: 1
+    Info (12023): Found entity 2: mux32x1_stack_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv Line: 16
+Info (12127): Elaborating entity "mux32x1_stack" for the top level hierarchy
+Info (12128): Elaborating entity "mux32x1" for hierarchy "mux32x1:buildMux[0].muxxie" File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv Line: 10
+Info (12128): Elaborating entity "mux8x1" for hierarchy "mux32x1:buildMux[0].muxxie|mux8x1:m1" File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv Line: 8
+Info (12128): Elaborating entity "mux2x1" for hierarchy "mux32x1:buildMux[0].muxxie|mux8x1:m1|mux2x1:mux1" File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/wutzk/Desktop/EE469_Labs/Lab1/output_files/DE1_SoC.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 2 logic cells
+Info (21057): Implemented 2822 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2053 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 705 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4802 megabytes
-    Info: Processing ended: Wed Oct 14 12:49:08 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Wed Oct 14 18:46:17 2020
+    Info: Elapsed time: 00:03:41
+    Info: Total CPU time (on all processors): 00:03:03
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/output_files/DE1_SoC.map.smsg.
+The suppressed messages can be found in C:/Users/wutzk/Desktop/EE469_Labs/Lab1/output_files/DE1_SoC.map.smsg.
 
 
