@@ -7,38 +7,414 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/wutzk/Desktop/EE469_Labs/Lab1/simulation/modelsim
-vmux2x1
+Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/simulation/modelsim
+vD_FF
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1602726069
+Z2 !s110 1602734360
 !i10b 1
-!s100 dM3>Um4Ybo:gXZi`@a<Zi0
-I4f7EK?F[i<Xd]RRe;Bz?a1
+!s100 C]8z5>S<mge:P7d7Z^m3c3
+I<8LI<aUB@SDYW?jIIEePQ1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 !s105 mux2x1_sv_unit
+Z4 !s105 register_sv_unit
 S1
 R0
-Z5 w1602719168
-Z6 8C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv
-Z7 FC:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv
-L0 2
+Z5 w1602561879
+Z6 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv
+Z7 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv
+L0 8
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1602726069.000000
-Z10 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv|
-Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab1|C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv|
+Z9 !s108 1602734360.000000
+Z10 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv|
 !i113 1
 Z12 o-sv -work work
-Z13 !s92 -sv -work work +incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab1
+Z13 !s92 -sv -work work {+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1}
 Z14 tCvgOpt 0
-vmux2x1_testbench
+n@d_@f@f
+vdecoder1x2
+R1
+Z15 !s110 1602734362
+!i10b 1
+!s100 @a162RzDNIDL`nVUZB[z33
+IN`4[2=BU2eJ?=>BK2mZEg3
+R3
+Z16 !s105 decoder1x2_sv_unit
+S1
+R0
+Z17 w1602651954
+Z18 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv
+Z19 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv
+L0 2
+R8
+r1
+!s85 0
+31
+Z20 !s108 1602734362.000000
+Z21 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv|
+Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv|
+!i113 1
+R12
+R13
+R14
+vdecoder2x4
 R1
 R2
 !i10b 1
+!s100 KhjF[^K;QzLiT]JeCY2nM0
+I^46fHjYd>KV3aJ<eEz2dZ2
+R3
+Z23 !s105 decoder2x4_sv_unit
+S1
+R0
+R17
+Z24 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv
+Z25 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+Z26 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv|
+Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv|
+!i113 1
+R12
+R13
+R14
+vdecoder3x8
+R1
+R15
+!i10b 1
+!s100 0T1zHLYo:HIXbh?iKSm[j0
+IV7SUG^g2>XRMY6eUgbCZI2
+R3
+Z28 !s105 decoder3x8_sv_unit
+S1
+R0
+R17
+Z29 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv
+Z30 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv
+L0 2
+R8
+r1
+!s85 0
+31
+Z31 !s108 1602734361.000000
+Z32 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv|
+Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv|
+!i113 1
+R12
+R13
+R14
+vdecoder5x32
+R1
+Z34 !s110 1602734363
+!i10b 1
+!s100 ZKRFO8UE=3VXPgO0Ea3Z<1
+IcX]^=IgB9;M^[31goW_VZ2
+R3
+Z35 !s105 decoder5x32_sv_unit
+S1
+R0
+R17
+Z36 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv
+Z37 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv
+L0 9
+R8
+r1
+!s85 0
+31
+Z38 !s108 1602734363.000000
+Z39 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv|
+Z40 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv|
+!i113 1
+R12
+R13
+R14
+vdecoder5x32_testbench
+R1
+R34
+!i10b 1
+!s100 aRKDZJnRNQzFZ`14XhhPd3
+I7ZPgXg4ZlDjIQXZOeaz^]2
+R3
+R35
+S1
+R0
+R17
+R36
+R37
+L0 28
+R8
+r1
+!s85 0
+31
+R38
+R39
+R40
+!i113 1
+R12
+R13
+R14
+vdecoder_1x2_testbench
+R1
+R15
+!i10b 1
+!s100 YSW?:m3:l05Hhi8i5bDSU2
+IGE0eA1L>8FNalKdCjLD1m0
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+L0 15
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!i113 1
+R12
+R13
+R14
+vdecoder_2x4_testbench
+R1
+R2
+!i10b 1
+!s100 RMRIZTa=_Qj_BJeL>VjQX3
+I08X8_RBbAN9gLCzREL[;_2
+R3
+R23
+S1
+R0
+R17
+R24
+R25
+L0 16
+R8
+r1
+!s85 0
+31
+R9
+R26
+R27
+!i113 1
+R12
+R13
+R14
+vdecoder_3x8_testbench
+R1
+R15
+!i10b 1
+!s100 AgWf2oCRZmIPMV[RaK3GB1
+IX:4IC;@XV[PF?RfkABXOW0
+R3
+R28
+S1
+R0
+R17
+R29
+R30
+Z41 L0 18
+R8
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R12
+R13
+R14
+vmux2x1
+R1
+R34
+!i10b 1
+!s100 dM3>Um4Ybo:gXZi`@a<Zi0
+IV;X2coc56`@dGcUk1^bQ40
+R3
+Z42 !s105 mux2x1_sv_unit
+S1
+R0
+R17
+Z43 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv
+Z44 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R38
+Z45 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv|
+Z46 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv|
+!i113 1
+R12
+R13
+R14
+vmux2x1_testbench
+R1
+R34
+!i10b 1
 !s100 OPUhOD8fS;o?KZ0;]_5cE3
-I[ONoJ1oA[kM55A>Gz7fag2
+I7EmFTV[ooN0WHMUTW7Sza1
+R3
+R42
+S1
+R0
+R17
+R43
+R44
+R41
+R8
+r1
+!s85 0
+31
+R38
+R45
+R46
+!i113 1
+R12
+R13
+R14
+vmux32x1
+R1
+R34
+!i10b 1
+!s100 fJbM=mCDWfL]ZPXfX>cao2
+I@9AYLmNImnUTUEPo<a8UY3
+R3
+Z47 !s105 mux32x1_sv_unit
+S1
+R0
+Z48 w1602726697
+Z49 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv
+Z50 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R20
+Z51 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv|
+Z52 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv|
+!i113 1
+R12
+R13
+R14
+vmux32x1_testbench
+R1
+R34
+!i10b 1
+!s100 AMmZ>04nK@c7ERObXQOCY0
+I;f^X5S:_YHj?^Sb=PD66Q3
+R3
+R47
+S1
+R0
+R48
+R49
+R50
+L0 17
+R8
+r1
+!s85 0
+31
+R20
+R51
+R52
+!i113 1
+R12
+R13
+R14
+vmux8x1
+R1
+R34
+!i10b 1
+!s100 7@b6c6aUO?]M]2Iz09AnN0
+ISb7DnY@dgWL3Q;dlFQ]NI0
+R3
+Z53 !s105 mux8x1_sv_unit
+S1
+R0
+R17
+Z54 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv
+Z55 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R38
+Z56 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv|
+Z57 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv|
+!i113 1
+R12
+R13
+R14
+vmux8x1_testbench
+R1
+R34
+!i10b 1
+!s100 [MHWNJbHi0ZJU^LWM7A^]2
+IbWfmAC_lHGRBLhhUQX]2K2
+R3
+R53
+S1
+R0
+R17
+R54
+R55
+R41
+R8
+r1
+!s85 0
+31
+R38
+R56
+R57
+!i113 1
+R12
+R13
+R14
+vregfile
+R1
+R34
+!i10b 1
+!s100 aBj3X21QCjRVn??Eg:[Z>2
+I1n=<UY3[9B[lPM:58F0B90
+R3
+Z58 !s105 regfile_sv_unit
+S1
+R0
+Z59 w1602734217
+Z60 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv
+Z61 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R38
+Z62 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv|
+Z63 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv|
+!i113 1
+R12
+R13
+R14
+vregister
+R1
+R2
+!i10b 1
+!s100 zYLHY39N@9VQ>:]LJ3E371
+ImA=C3f[]mkc00AeoKm32R0
 R3
 R4
 S1
@@ -46,7 +422,7 @@ R0
 R5
 R6
 R7
-Z15 L0 18
+L0 21
 R8
 r1
 !s85 0
@@ -58,152 +434,52 @@ R11
 R12
 R13
 R14
-vmux32x1
+vregister_dut_testbench
 R1
 R2
 !i10b 1
-!s100 fJbM=mCDWfL]ZPXfX>cao2
-II@FQEd;f<[V9H8N<gmgW51
+!s100 ga9@T`MH`kSf;FNQJ2dXB1
+IoO6zecXh47SWBLgW>=mb23
 R3
-Z16 !s105 mux32x1_sv_unit
-S1
-R0
-Z17 w1602723887
-Z18 8C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv
-Z19 FC:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv
-L0 2
-R8
-r1
-!s85 0
-31
-R9
-Z20 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv|
-Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab1|C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv|
-!i113 1
-R12
-R13
-R14
-vmux32x1_stack
-R1
-Z22 !s110 1602726070
-!i10b 1
-!s100 :MSoECUf<iG1YjNnzjJSb0
-IBNmWa;_5U1f9EM2:DghDM3
-R3
-Z23 !s105 mux32x1_stack_sv_unit
-S1
-R0
-Z24 w1602725830
-Z25 8C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv
-Z26 FC:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv
-L0 1
-R8
-r1
-!s85 0
-31
-Z27 !s108 1602726070.000000
-Z28 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv|
-Z29 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab1|C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1_stack.sv|
-!i113 1
-R12
-R13
-R14
-vmux32x1_stack_testbench
-R1
-R22
-!i10b 1
-!s100 ;;iBlDKD5>eYOAihkdW4K3
-IHf^EoGV8Qf7Qaf9glG^ZN3
-R3
-R23
-S1
-R0
-R24
-R25
-R26
-L0 16
-R8
-r1
-!s85 0
-31
-R27
-R28
-R29
-!i113 1
-R12
-R13
-R14
-vmux32x1_testbench
-R1
-R2
-!i10b 1
-!s100 AMmZ>04nK@c7ERObXQOCY0
-InT8BoeQ2k6V4?OR7i7e<G1
-R3
-R16
-S1
-R0
-R17
-R18
-R19
-L0 17
-R8
-r1
-!s85 0
-31
-R9
-R20
-R21
-!i113 1
-R12
-R13
-R14
-vmux8x1
-R1
-R22
-!i10b 1
-!s100 7@b6c6aUO?]M]2Iz09AnN0
-IV57EBohDES;La?9Kl[QK32
-R3
-Z30 !s105 mux8x1_sv_unit
+R4
 S1
 R0
 R5
-Z31 8C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv
-Z32 FC:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv
-L0 2
+R6
+R7
+L0 37
 R8
 r1
 !s85 0
 31
 R9
-Z33 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv|
-Z34 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab1|C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv|
+R10
+R11
 !i113 1
 R12
 R13
 R14
-vmux8x1_testbench
+vregstim
 R1
-R22
-!i10b 1
-!s100 [MHWNJbHi0ZJU^LWM7A^]2
-IgKL3W16dl]NWi[7Q`M6eM1
-R3
-R30
-S1
-R0
-R5
-R31
-R32
-R15
-R8
-r1
-!s85 0
-31
-R9
-R33
 R34
+!i10b 1
+!s100 5H:G3llKeOV_[R08ljFIZ3
+IkM0nQi<`Mo^iEH3:PY6020
+R3
+R58
+S1
+R0
+R59
+R60
+R61
+L0 42
+R8
+r1
+!s85 0
+31
+R38
+R62
+R63
 !i113 1
 R12
 R13

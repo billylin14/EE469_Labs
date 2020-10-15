@@ -1,4 +1,5 @@
 //1:2 decoder with enable
+`timescale 1ns/10ps
 module decoder1x2 (enable, in, out);
 	input logic enable, in;
 	output logic [1:0] out;
@@ -11,7 +12,6 @@ module decoder1x2 (enable, in, out);
 endmodule
 
 // Simulates the decoder I/O
-`timescale 1 ps / 1 ps
 module decoder_1x2_testbench();
 	
 	logic enable, in, clk;

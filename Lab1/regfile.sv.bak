@@ -1,0 +1,30 @@
+module regfile (clk, ReadRegister1, ReadRegister2, 
+	WriteRegister, WriteData, ReadData1, ReadData2, RegWrite);
+	
+	input logic	[4:0] 	ReadRegister1, ReadRegister2, WriteRegister;
+	input logic [63:0]	WriteData;
+	input logic 			RegWrite, clk;
+	output logic [63:0]	ReadData1, ReadData2;
+	
+	logic [31:0] regEn;
+	logic regData [31:0][63:0];
+	
+	decoder5x32 masterDecoder (.regWrite(RegWrite), 
+										.writeRegister(WriteRegister), .regEnable(regEn));
+	
+	genvar i;
+	generate
+		for (i = 0; i < 31; i++)begin: stackReg
+			register regs (.wrData(WriteData), .dOut(regData[i]), .reset(0), .clk, .wrEn(regEn[i]));
+		end
+	endgenerate
+	
+	genvar j;
+	generate 
+		for (j = 0; j < 64; j++) begin: stackMux1
+			mux32x1 mux1 (.select(ReadRegister1), in({1'b0, regData[30:0][j]}), .out(ReadData1));
+			mux32x1 mux2 (.select(ReadRegister2), in({1'b0, regData[30:0][j]}), .out(ReadData2));
+		end
+	endgenerate
+endmodule
+	

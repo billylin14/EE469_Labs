@@ -33,7 +33,6 @@ module register #(parameter WIDTH=64) (wrData, dOut, reset, clk, wrEn);
 endmodule
 
 //Simulates the register module
-`timescale 1 ps / 1 ps
 module register_dut_testbench #(parameter WIDTH=64) ();
 
 	logic clk, reset, wrEn;
