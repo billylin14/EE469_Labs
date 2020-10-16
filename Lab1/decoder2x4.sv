@@ -1,4 +1,11 @@
-//2:4 decoder with enable built using logic gates
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 decoder2x4.sv
+
+// Input with a 1-bit enable signal, a 2-bit input signal
+// Outputs a 4-bit signal that has a 1 in the bit indicated by the input signal when enable is on.
+// A 2x4 decoder is built from three 1x2 decoders.
 module decoder2x4 (enable, in, out);
 	input logic enable;
 	input logic [1:0] in;

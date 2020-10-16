@@ -1,4 +1,11 @@
-//8x1 mux
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 mux8x1.sv
+
+// Input with a 3-bit select-signal, 8 input signals,
+// Outputs a 1-bit signal that was indicated by the select-signal.
+// The 8x1 mux is built from 7 2x1 mux.
 module mux8x1 (selector, in, out);
 	input logic  [2:0] selector;
 	input logic  [7:0] in;
