@@ -1,7 +1,7 @@
 // Authors: Billy Lin, Cameron Wutzke
 // EE 469 Prof. Scott Hauck
 // 10/13/20
-// Lab 1 decoder.sv
+// Lab 1 decoder5x32.sv
 
 // Input with a write-enable signal (regWrite) and a select-signal (writeRegister)
 // Outputs a 31-bit regEnable that selects the specific register.
@@ -12,7 +12,6 @@ module decoder5x32 #(parameter HEIGHT=32) (regWrite, writeRegister, regEnable);
 	output logic [HEIGHT-1:0] regEnable; //32 enable wires
 	logic [3:0] enabler;  //selects which 3:8 decoder to use
 	
-	//assign regEnable = (1 & regWrite) << (writeRegister-1); //can't use this
 	decoder2x4 selector (.enable(regWrite), .in(writeRegister[4:3]), .out( enabler));
 	decoder3x8 decoder0 (.enable(enabler[0]), .in(writeRegister[2:0]), .out(regEnable[7:0])); 
 	decoder3x8 decoder1 (.enable(enabler[1]), .in(writeRegister[2:0]), .out(regEnable[15:8])); 

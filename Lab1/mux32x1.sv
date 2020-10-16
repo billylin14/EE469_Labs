@@ -1,4 +1,11 @@
-//1:2 mux
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 mux32x1.sv
+
+// Input with a 5-bit select-signal, a 32-bit input signals,
+// Outputs a 1-bit signal that was indicated by the select-signal.
+// The 32x1 multiplexer is built from 5 8x1 multiplexers.
 module mux32x1 (select, in, out);
 	input logic [4:0]select;
 	input logic [31:0]in;
@@ -14,6 +21,7 @@ module mux32x1 (select, in, out);
 	
 endmodule
 
+//Simulates the mux32x1 I/O
 module mux32x1_testbench();
 	logic out, clk;
 	logic [4:0]select;

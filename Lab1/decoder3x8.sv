@@ -1,4 +1,11 @@
-//3:8 decoder with enable built using logic gates
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/13/20
+// Lab 1 decoder3x8.sv
+
+// Input with a write-enable signal and a 3-bit select-signal 
+// Outputs a 8-bit signal that has a 1 in the bit indicated by the select-signal when enable is on..
+// Decoder is a 3x8 decoder built from one 1x2 decoder and two 2x4 decoders.
 module decoder3x8 (enable, in, out);
 	input logic enable;
 	input logic [2:0] in;

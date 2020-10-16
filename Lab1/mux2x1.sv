@@ -1,4 +1,10 @@
-//2x1 mux
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 mux2x1.sv
+
+// Input with a 1-bit selector and a 2-bit input,
+// Selects either bit of the 2-bit input by the 1-bit selector to output.
 `timescale 1ns/10ps
 module mux2x1 (selector, in, out);
 	input logic  selector;
@@ -16,6 +22,7 @@ module mux2x1 (selector, in, out);
 	
 endmodule
 
+// Testbench for the mux2x1 (tested all combinations)
 module mux2x1_testbench();
 	logic selector, out, clk;
 	logic  [1: 0]in;

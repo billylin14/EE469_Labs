@@ -1,4 +1,11 @@
-//1:2 decoder with enable
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 decoder1x2.sv
+
+// Input with a 1-bit enable signal and a 1-bit encoded signal,
+// Outputs a decoded 2-bit data that stores a 1 in the bit indicated by the input signal when enable is on.
+// Outputs 0 when enable is off.
 `timescale 1ns/10ps
 module decoder1x2 (enable, in, out);
 	input logic enable, in;

@@ -1,3 +1,10 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/14/20
+// Lab 1 regfile.sv
+
+// Input with a clock, three 5-bit register select signals, three 64-bit data buses, and an enable signal to write the registers,
+// Creates a 32x64 register that stores 32 lines of 64-bit data, writes one 64-bit data, and reads two lines of 64-bit data.
 module regfile (clk, ReadRegister1, ReadRegister2, 
 	WriteRegister, WriteData, ReadData1, ReadData2, RegWrite);
 	
