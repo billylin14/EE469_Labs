@@ -516,7 +516,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[4]",
+					"name" : "ReadRegister1[1]",
 					"strict" : false
 				},
 				{
@@ -524,7 +524,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[1]",
+					"name" : "ReadRegister1[3]",
 					"strict" : false
 				},
 				{
@@ -532,15 +532,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ReadRegister2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ReadRegister2[0]",
+					"name" : "ReadRegister1[4]",
 					"strict" : false
 				},
 				{
@@ -548,11 +540,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[2]",
+					"name" : "ReadRegister2[0]",
 					"strict" : false
 				},
 				{
 					"name" : "ReadRegister2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadRegister2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadRegister2[4]",
 					"strict" : false
 				},
 				{
@@ -561,18 +561,6 @@
 				},
 				{
 					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "WriteRegister[3]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteRegister[4]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteRegister[2]",
 					"strict" : false
 				},
 				{
@@ -585,6 +573,18 @@
 				},
 				{
 					"name" : "RegWrite",
+					"strict" : false
+				},
+				{
+					"name" : "WriteRegister[3]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteRegister[2]",
+					"strict" : false
+				},
+				{
+					"name" : "WriteRegister[4]",
 					"strict" : false
 				},
 				{

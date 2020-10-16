@@ -18,16 +18,25 @@ endmodule
 // Input with a clock, a reset signal, and a write-enable signal 
 // Creates a 64-bit register that stores a 64-bit data if write-enable is on, 0 otherwise.
 // Outputs whatever stores in the register from the last clock cycle.
+`timescale 1ns/10ps
+
 module register #(parameter WIDTH=64) (wrData, dOut, reset, clk, wrEn);
 	input logic [WIDTH-1:0] wrData;
 	input logic reset, clk, wrEn;
 	output logic [WIDTH-1:0] dOut;
 	initial assert (WIDTH > 0);
+	logic [WIDTH-1:0] temp1, temp2, notWrEn, d;
 	
 	genvar i;
 	generate
 		for (i = 0; i < WIDTH; i++) begin: buildReg
-			D_FF diff (.q(dOut[i]), .d((wrEn & wrData[i]) || (~wrEn & dOut[i])), .reset, .clk);
+			and #50 (temp1[i], wrEn, wrData[i]);
+			not #50 (notWrEn[i], wrEn);
+			and #50 (temp2[i], notWrEn[i], dOut[i]);
+			or  #50 (d[i], temp1[i], temp2[i]);
+			
+			D_FF diff (.q(dOut[i]), .d(d[i]), .reset, .clk); //(wrEn & wrData[i]) || (~wrEn & dOut[i])
+																			 //    temp1						temp2
 		end
 	endgenerate
 endmodule
