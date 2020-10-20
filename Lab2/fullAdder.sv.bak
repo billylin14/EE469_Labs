@@ -1,0 +1,32 @@
+module fullAdder (in1, in2, cin, result, cout);
+
+	input logic in1, in2, cin;
+	output logic result, cout;
+	
+	logic aAndB, cinAndA, cinAndB;
+	
+	xor #50 (sum, in1, in2, cin);
+	and #50 (aANdB, in1, in2);
+	and #50 (cinAndA, in1, cin);
+	and #50 (cinAndB, cin, in2);
+	or #50 (cout, aAndB, cinAndA, cinAndB); //cout = A&B | cin&A | cin&B;
+	
+endmodule
+
+module fullAdder_testbench();
+
+		logic A, B, cin, sum, cout;
+		
+		fullAdder dut (A, B, cin, sum, cout);
+		
+		integer i;
+		initial begin
+			
+				for (i=0; i<2**3;i++) begin //2**3 -> 2 to the power 3 (x**y), x inputs: 2**x
+				 {A, B, cin} = i; #10;
+				end //for loop
+		
+		end //initial
+		
+			
+endmodule

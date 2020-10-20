@@ -1,0 +1,35 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/simulation/modelsim
+vregister
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1603166183
+!i10b 1
+!s100 GLdQ`z:ofzGF=o4JjebMm2
+Ii_5dMlY5Y7jV<j:[@m57<0
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 DE1_SoC_svo_unit
+S1
+R0
+w1602557777
+8DE1_SoC.svo
+FDE1_SoC.svo
+L0 32
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1603166182.000000
+!s107 DE1_SoC.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|DE1_SoC.svo|
+!i113 1
+o-sv -work work
+!s92 -sv -work work +incdir+.
+tCvgOpt 0

@@ -1,0 +1,16 @@
+module andOp (A, B, result, zero, negative);
+	logic		[63:0]	A, B;
+	logic		[63:0]	result;
+	logic					negative, zero;
+
+	assign negative = result[63];
+	
+	genvar i;
+	generate begin
+		for (i = 0; i < 64; i++) begin: buildAndGates
+			and #50 (result[i], A[i], B[i]);
+			nor #50 (zero, zero, result[i]);
+		end
+	endgenerate
+endmodule
+

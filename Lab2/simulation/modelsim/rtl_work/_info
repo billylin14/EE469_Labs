@@ -7,480 +7,108 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/simulation/modelsim
-vD_FF
+Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/simulation/modelsim
+vfullAdder
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1602734360
+Z2 !s110 1603169025
 !i10b 1
-!s100 C]8z5>S<mge:P7d7Z^m3c3
-I<8LI<aUB@SDYW?jIIEePQ1
+!s100 iX8GK4^TWKQPXn6X]Q]Q=3
+IWf^3Z7JCVVlzzebM0CT>o1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 !s105 register_sv_unit
+Z4 !s105 fullAdder_sv_unit
 S1
 R0
-Z5 w1602561879
-Z6 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv
-Z7 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv
-L0 8
+Z5 w1603166094
+Z6 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv
+Z7 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv
+L0 1
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1602734360.000000
-Z10 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv|
-Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv|
+Z9 !s108 1603169025.000000
+Z10 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv|
 !i113 1
 Z12 o-sv -work work
-Z13 !s92 -sv -work work {+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1}
+Z13 !s92 -sv -work work {+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2}
 Z14 tCvgOpt 0
-n@d_@f@f
-vdecoder1x2
-R1
-Z15 !s110 1602734362
-!i10b 1
-!s100 @a162RzDNIDL`nVUZB[z33
-IN`4[2=BU2eJ?=>BK2mZEg3
-R3
-Z16 !s105 decoder1x2_sv_unit
-S1
-R0
-Z17 w1602651954
-Z18 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv
-Z19 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv
-L0 2
-R8
-r1
-!s85 0
-31
-Z20 !s108 1602734362.000000
-Z21 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv|
-Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv|
-!i113 1
-R12
-R13
-R14
-vdecoder2x4
+nfull@adder
+vfullAdder64bit
 R1
 R2
 !i10b 1
-!s100 KhjF[^K;QzLiT]JeCY2nM0
-I^46fHjYd>KV3aJ<eEz2dZ2
+!s100 3CeM=CXoN;STJ>N8jhem71
+IEEe0?bE17k``1aUcnPTfg1
 R3
-Z23 !s105 decoder2x4_sv_unit
+Z15 !s105 fullAdder64bit_sv_unit
 S1
 R0
-R17
-Z24 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv
-Z25 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv
-L0 2
+Z16 w1603168931
+Z17 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv
+Z18 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv
+L0 1
 R8
 r1
 !s85 0
 31
 R9
-Z26 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv|
-Z27 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv|
+Z19 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv|
+Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv|
 !i113 1
 R12
 R13
 R14
-vdecoder3x8
-R1
-R15
-!i10b 1
-!s100 0T1zHLYo:HIXbh?iKSm[j0
-IV7SUG^g2>XRMY6eUgbCZI2
-R3
-Z28 !s105 decoder3x8_sv_unit
-S1
-R0
-R17
-Z29 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv
-Z30 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv
-L0 2
-R8
-r1
-!s85 0
-31
-Z31 !s108 1602734361.000000
-Z32 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv|
-Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv|
-!i113 1
-R12
-R13
-R14
-vdecoder5x32
-R1
-Z34 !s110 1602734363
-!i10b 1
-!s100 ZKRFO8UE=3VXPgO0Ea3Z<1
-IcX]^=IgB9;M^[31goW_VZ2
-R3
-Z35 !s105 decoder5x32_sv_unit
-S1
-R0
-R17
-Z36 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv
-Z37 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv
-L0 9
-R8
-r1
-!s85 0
-31
-Z38 !s108 1602734363.000000
-Z39 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv|
-Z40 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv|
-!i113 1
-R12
-R13
-R14
-vdecoder5x32_testbench
-R1
-R34
-!i10b 1
-!s100 aRKDZJnRNQzFZ`14XhhPd3
-I7ZPgXg4ZlDjIQXZOeaz^]2
-R3
-R35
-S1
-R0
-R17
-R36
-R37
-L0 28
-R8
-r1
-!s85 0
-31
-R38
-R39
-R40
-!i113 1
-R12
-R13
-R14
-vdecoder_1x2_testbench
-R1
-R15
-!i10b 1
-!s100 YSW?:m3:l05Hhi8i5bDSU2
-IGE0eA1L>8FNalKdCjLD1m0
-R3
-R16
-S1
-R0
-R17
-R18
-R19
-L0 15
-R8
-r1
-!s85 0
-31
-R20
-R21
-R22
-!i113 1
-R12
-R13
-R14
-vdecoder_2x4_testbench
+nfull@adder64bit
+vfullAdder64bit_testbench
 R1
 R2
 !i10b 1
-!s100 RMRIZTa=_Qj_BJeL>VjQX3
-I08X8_RBbAN9gLCzREL[;_2
+!s100 _J>Y7Ih9XZo`_Gm14jO>O2
+IcT42bVoABBBCE0i5`[a2c3
 R3
-R23
+R15
 S1
 R0
+R16
 R17
-R24
-R25
+R18
+L0 32
+R8
+r1
+!s85 0
+31
+R9
+R19
+R20
+!i113 1
+R12
+R13
+R14
+nfull@adder64bit_testbench
+vfullAdder_testbench
+R1
+R2
+!i10b 1
+!s100 ng^I1fA=TlM]SG`Pel^MQ1
+IXh=g0YbMio`Z4?O`CUm`01
+R3
+R4
+S1
+R0
+R5
+R6
+R7
 L0 16
 R8
 r1
 !s85 0
 31
 R9
-R26
-R27
-!i113 1
-R12
-R13
-R14
-vdecoder_3x8_testbench
-R1
-R15
-!i10b 1
-!s100 AgWf2oCRZmIPMV[RaK3GB1
-IX:4IC;@XV[PF?RfkABXOW0
-R3
-R28
-S1
-R0
-R17
-R29
-R30
-Z41 L0 18
-R8
-r1
-!s85 0
-31
-R31
-R32
-R33
-!i113 1
-R12
-R13
-R14
-vmux2x1
-R1
-R34
-!i10b 1
-!s100 dM3>Um4Ybo:gXZi`@a<Zi0
-IV;X2coc56`@dGcUk1^bQ40
-R3
-Z42 !s105 mux2x1_sv_unit
-S1
-R0
-R17
-Z43 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv
-Z44 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv
-L0 2
-R8
-r1
-!s85 0
-31
-R38
-Z45 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv|
-Z46 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv|
-!i113 1
-R12
-R13
-R14
-vmux2x1_testbench
-R1
-R34
-!i10b 1
-!s100 OPUhOD8fS;o?KZ0;]_5cE3
-I7EmFTV[ooN0WHMUTW7Sza1
-R3
-R42
-S1
-R0
-R17
-R43
-R44
-R41
-R8
-r1
-!s85 0
-31
-R38
-R45
-R46
-!i113 1
-R12
-R13
-R14
-vmux32x1
-R1
-R34
-!i10b 1
-!s100 fJbM=mCDWfL]ZPXfX>cao2
-I@9AYLmNImnUTUEPo<a8UY3
-R3
-Z47 !s105 mux32x1_sv_unit
-S1
-R0
-Z48 w1602726697
-Z49 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv
-Z50 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv
-L0 2
-R8
-r1
-!s85 0
-31
-R20
-Z51 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv|
-Z52 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv|
-!i113 1
-R12
-R13
-R14
-vmux32x1_testbench
-R1
-R34
-!i10b 1
-!s100 AMmZ>04nK@c7ERObXQOCY0
-I;f^X5S:_YHj?^Sb=PD66Q3
-R3
-R47
-S1
-R0
-R48
-R49
-R50
-L0 17
-R8
-r1
-!s85 0
-31
-R20
-R51
-R52
-!i113 1
-R12
-R13
-R14
-vmux8x1
-R1
-R34
-!i10b 1
-!s100 7@b6c6aUO?]M]2Iz09AnN0
-ISb7DnY@dgWL3Q;dlFQ]NI0
-R3
-Z53 !s105 mux8x1_sv_unit
-S1
-R0
-R17
-Z54 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv
-Z55 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv
-L0 2
-R8
-r1
-!s85 0
-31
-R38
-Z56 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv|
-Z57 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv|
-!i113 1
-R12
-R13
-R14
-vmux8x1_testbench
-R1
-R34
-!i10b 1
-!s100 [MHWNJbHi0ZJU^LWM7A^]2
-IbWfmAC_lHGRBLhhUQX]2K2
-R3
-R53
-S1
-R0
-R17
-R54
-R55
-R41
-R8
-r1
-!s85 0
-31
-R38
-R56
-R57
-!i113 1
-R12
-R13
-R14
-vregfile
-R1
-R34
-!i10b 1
-!s100 aBj3X21QCjRVn??Eg:[Z>2
-I1n=<UY3[9B[lPM:58F0B90
-R3
-Z58 !s105 regfile_sv_unit
-S1
-R0
-Z59 w1602734217
-Z60 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv
-Z61 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv
-L0 1
-R8
-r1
-!s85 0
-31
-R38
-Z62 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv|
-Z63 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv|
-!i113 1
-R12
-R13
-R14
-vregister
-R1
-R2
-!i10b 1
-!s100 zYLHY39N@9VQ>:]LJ3E371
-ImA=C3f[]mkc00AeoKm32R0
-R3
-R4
-S1
-R0
-R5
-R6
-R7
-L0 21
-R8
-r1
-!s85 0
-31
-R9
 R10
 R11
 !i113 1
 R12
 R13
 R14
-vregister_dut_testbench
-R1
-R2
-!i10b 1
-!s100 ga9@T`MH`kSf;FNQJ2dXB1
-IoO6zecXh47SWBLgW>=mb23
-R3
-R4
-S1
-R0
-R5
-R6
-R7
-L0 37
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 1
-R12
-R13
-R14
-vregstim
-R1
-R34
-!i10b 1
-!s100 5H:G3llKeOV_[R08ljFIZ3
-IkM0nQi<`Mo^iEH3:PY6020
-R3
-R58
-S1
-R0
-R59
-R60
-R61
-L0 42
-R8
-r1
-!s85 0
-31
-R38
-R62
-R63
-!i113 1
-R12
-R13
-R14
+nfull@adder_testbench

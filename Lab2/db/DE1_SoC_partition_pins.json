@@ -4,839 +4,791 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ReadData1[0]",
+					"name" : "result[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[1]",
+					"name" : "result[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[2]",
+					"name" : "result[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[3]",
+					"name" : "result[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[4]",
+					"name" : "result[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[5]",
+					"name" : "result[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[6]",
+					"name" : "result[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[7]",
+					"name" : "result[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[8]",
+					"name" : "result[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[9]",
+					"name" : "result[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[10]",
+					"name" : "result[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[11]",
+					"name" : "result[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[12]",
+					"name" : "result[12]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[13]",
+					"name" : "result[13]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[14]",
+					"name" : "result[14]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[15]",
+					"name" : "result[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[16]",
+					"name" : "result[16]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[17]",
+					"name" : "result[17]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[18]",
+					"name" : "result[18]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[19]",
+					"name" : "result[19]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[20]",
+					"name" : "result[20]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[21]",
+					"name" : "result[21]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[22]",
+					"name" : "result[22]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[23]",
+					"name" : "result[23]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[24]",
+					"name" : "result[24]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[25]",
+					"name" : "result[25]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[26]",
+					"name" : "result[26]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[27]",
+					"name" : "result[27]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[28]",
+					"name" : "result[28]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[29]",
+					"name" : "result[29]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[30]",
+					"name" : "result[30]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[31]",
+					"name" : "result[31]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[32]",
+					"name" : "result[32]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[33]",
+					"name" : "result[33]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[34]",
+					"name" : "result[34]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[35]",
+					"name" : "result[35]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[36]",
+					"name" : "result[36]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[37]",
+					"name" : "result[37]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[38]",
+					"name" : "result[38]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[39]",
+					"name" : "result[39]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[40]",
+					"name" : "result[40]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[41]",
+					"name" : "result[41]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[42]",
+					"name" : "result[42]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[43]",
+					"name" : "result[43]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[44]",
+					"name" : "result[44]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[45]",
+					"name" : "result[45]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[46]",
+					"name" : "result[46]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[47]",
+					"name" : "result[47]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[48]",
+					"name" : "result[48]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[49]",
+					"name" : "result[49]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[50]",
+					"name" : "result[50]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[51]",
+					"name" : "result[51]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[52]",
+					"name" : "result[52]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[53]",
+					"name" : "result[53]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[54]",
+					"name" : "result[54]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[55]",
+					"name" : "result[55]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[56]",
+					"name" : "result[56]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[57]",
+					"name" : "result[57]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[58]",
+					"name" : "result[58]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[59]",
+					"name" : "result[59]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[60]",
+					"name" : "result[60]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[61]",
+					"name" : "result[61]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[62]",
+					"name" : "result[62]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData1[63]",
+					"name" : "result[63]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[0]",
+					"name" : "overflow",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[1]",
+					"name" : "negative",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[2]",
+					"name" : "zero",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[3]",
+					"name" : "carryout",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[4]",
+					"name" : "A[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[5]",
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[6]",
+					"name" : "B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[7]",
+					"name" : "sel",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[8]",
+					"name" : "A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[9]",
+					"name" : "B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[10]",
+					"name" : "A[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[11]",
+					"name" : "B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[12]",
+					"name" : "A[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[13]",
+					"name" : "B[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[14]",
+					"name" : "A[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[15]",
+					"name" : "B[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[16]",
+					"name" : "A[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[17]",
+					"name" : "B[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[18]",
+					"name" : "A[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[19]",
+					"name" : "B[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[20]",
+					"name" : "A[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[21]",
+					"name" : "B[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[22]",
+					"name" : "A[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[23]",
+					"name" : "B[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[24]",
+					"name" : "A[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[25]",
+					"name" : "B[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[26]",
+					"name" : "A[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[27]",
+					"name" : "B[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[28]",
+					"name" : "A[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[29]",
+					"name" : "B[12]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[30]",
+					"name" : "A[12]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[31]",
+					"name" : "B[13]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[32]",
+					"name" : "A[13]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[33]",
+					"name" : "B[14]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[34]",
+					"name" : "A[14]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[35]",
+					"name" : "B[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[36]",
+					"name" : "A[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[37]",
+					"name" : "B[16]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[38]",
+					"name" : "A[16]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[39]",
+					"name" : "B[17]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[40]",
+					"name" : "A[17]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[41]",
+					"name" : "B[18]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[42]",
+					"name" : "A[18]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[43]",
+					"name" : "B[19]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[44]",
+					"name" : "A[19]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[45]",
+					"name" : "B[20]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[46]",
+					"name" : "A[20]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[47]",
+					"name" : "B[21]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[48]",
+					"name" : "A[21]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[49]",
+					"name" : "B[22]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[50]",
+					"name" : "A[22]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[51]",
+					"name" : "B[23]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[52]",
+					"name" : "A[23]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[53]",
+					"name" : "B[24]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[54]",
+					"name" : "A[24]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[55]",
+					"name" : "B[25]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[56]",
+					"name" : "A[25]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[57]",
+					"name" : "B[26]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[58]",
+					"name" : "A[26]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[59]",
+					"name" : "B[27]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[60]",
+					"name" : "A[27]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[61]",
+					"name" : "B[28]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[62]",
+					"name" : "A[28]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadData2[63]",
+					"name" : "B[29]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[4]",
+					"name" : "A[29]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[0]",
+					"name" : "B[30]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[1]",
+					"name" : "A[30]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[2]",
+					"name" : "B[31]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister1[3]",
+					"name" : "A[31]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[4]",
+					"name" : "B[32]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[0]",
+					"name" : "A[32]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[1]",
+					"name" : "B[33]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[2]",
+					"name" : "A[33]",
 					"strict" : false
 				},
 				{
-					"name" : "ReadRegister2[3]",
+					"name" : "B[34]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[0]",
+					"name" : "A[34]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "B[35]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteRegister[3]",
+					"name" : "A[35]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteRegister[4]",
+					"name" : "B[36]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteRegister[2]",
+					"name" : "A[36]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteRegister[0]",
+					"name" : "B[37]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteRegister[1]",
+					"name" : "A[37]",
 					"strict" : false
 				},
 				{
-					"name" : "RegWrite",
+					"name" : "B[38]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[1]",
+					"name" : "A[38]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[2]",
+					"name" : "B[39]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[3]",
+					"name" : "A[39]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[4]",
+					"name" : "B[40]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[5]",
+					"name" : "A[40]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[6]",
+					"name" : "B[41]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[7]",
+					"name" : "A[41]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[8]",
+					"name" : "B[42]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[9]",
+					"name" : "A[42]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[10]",
+					"name" : "B[43]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[11]",
+					"name" : "A[43]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[12]",
+					"name" : "B[44]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[13]",
+					"name" : "A[44]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[14]",
+					"name" : "B[45]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[15]",
+					"name" : "A[45]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[16]",
+					"name" : "B[46]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[17]",
+					"name" : "A[46]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[18]",
+					"name" : "B[47]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[19]",
+					"name" : "A[47]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[20]",
+					"name" : "B[48]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[21]",
+					"name" : "A[48]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[22]",
+					"name" : "B[49]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[23]",
+					"name" : "A[49]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[24]",
+					"name" : "B[50]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[25]",
+					"name" : "A[50]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[26]",
+					"name" : "B[51]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[27]",
+					"name" : "A[51]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[28]",
+					"name" : "B[52]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[29]",
+					"name" : "A[52]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[30]",
+					"name" : "B[53]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[31]",
+					"name" : "A[53]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[32]",
+					"name" : "B[54]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[33]",
+					"name" : "A[54]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[34]",
+					"name" : "B[55]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[35]",
+					"name" : "A[55]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[36]",
+					"name" : "B[56]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[37]",
+					"name" : "A[56]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[38]",
+					"name" : "B[57]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[39]",
+					"name" : "A[57]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[40]",
+					"name" : "B[58]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[41]",
+					"name" : "A[58]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[42]",
+					"name" : "B[59]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[43]",
+					"name" : "A[59]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[44]",
+					"name" : "B[60]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[45]",
+					"name" : "A[60]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[46]",
+					"name" : "B[61]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[47]",
+					"name" : "A[61]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[48]",
+					"name" : "B[62]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[49]",
+					"name" : "A[62]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[50]",
+					"name" : "B[63]",
 					"strict" : false
 				},
 				{
-					"name" : "WriteData[51]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[52]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[53]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[54]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[55]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[56]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[57]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[58]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[59]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[60]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[61]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[62]",
-					"strict" : false
-				},
-				{
-					"name" : "WriteData[63]",
+					"name" : "A[63]",
 					"strict" : false
 				}
 			]
