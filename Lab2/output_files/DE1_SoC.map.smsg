@@ -1,0 +1,2 @@
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10030): Net "regData[31]" at regfile.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv Line: 10
