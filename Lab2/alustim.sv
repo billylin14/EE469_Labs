@@ -17,7 +17,7 @@
 // 101:			result = bitwise A | B		value of overflow and carry_out unimportant
 // 110:			result = bitwise A XOR B	value of overflow and carry_out unimportant
 
-module alu(A, B, cntrl, result, negative, zero, overflow, carryout)
+module alu(A, B, cntrl, result, negative, zero, overflow, carry_out);
 	input logic		[63:0]	A, B;
 	input logic		[2:0]		cntrl;
 	output logic		[63:0]	result;
@@ -31,7 +31,7 @@ module alu(A, B, cntrl, result, negative, zero, overflow, carryout)
 	//MUXes to select which output result is connected to overall output result
 	genvar i;
 	generate 
-		for( i = 0; i < 64; i++): begin buildMUX
+		for( i = 0; i < 64; i++)begin: buildMUX
 			mux8x1 resultControlMUX (.selector(cntrl), .in({B[i], 0, AB_Adder[i], 
 				AB_Adder[i], AandB[i], AorB[i], AxorB[i], 0}), .out(result[i]));
 		end
@@ -48,7 +48,7 @@ module alu(A, B, cntrl, result, negative, zero, overflow, carryout)
 		over_Adder, 0, 0, 0, 0}), .out(overflow));
 		
 	mux8x1 coutControlMUX(.selector(cntrl), .in({0, 0, over_Adder,
-		over_Adder, 0, 0, 0, 0}), .out(carryout));
+		over_Adder, 0, 0, 0, 0}), .out(carry_out));
 	
 	
 	norGate64x1 zeroFlag_B (.in(B), .out(zero_B));			//determine if B is all zero when crtl = 000
@@ -57,6 +57,8 @@ module alu(A, B, cntrl, result, negative, zero, overflow, carryout)
 	andOp andOperation (.A(A), .B(B), .result(AandB), .negative(neg_AandB), .zero(zero_AandB));
 	orOp orOperation (.A(A), .B(B), .result(AorB), .negative(neg_AorB), .zero(zero_AorB));
 	xorOp xorOperation (.A(A), .B(B), .result(AxorB), .negative(neg_AxorB), .zero(zero_AxorB));
+	
+endmodule
 
 module alustim();
 
