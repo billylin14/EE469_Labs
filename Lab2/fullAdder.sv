@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/21/20
+// Lab 2 fullAdder.sv
+
+// Takes two single bit inputs and carry-in bit and calculates addition.
+// Outputs the result and carry out bit.
+`timescale 1ns/10ps
 module fullAdder (in1, in2, cin, result, cout);
 
 	input logic in1, in2, cin;

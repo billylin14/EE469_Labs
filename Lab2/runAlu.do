@@ -12,6 +12,7 @@ vlog "./orOp.sv"
 vlog "./xorOp.sv"
 vlog "./norGate64x1.sv"
 vlog "./mux8x1.sv"
+vlog "./mux2x1.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the

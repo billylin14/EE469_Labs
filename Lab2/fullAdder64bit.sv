@@ -1,3 +1,12 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/21/20
+// Lab 2 fullAdder64bit.sv
+
+// Takes two 64-bit inputs and select signal. Calculates addition when select is low, subtraction when select is high.
+// Outputs the 64-bit result and carryout bit. Outputs overflow, negative, zero, and carryout flags.
+`timescale 1ns/10ps
+
 module fullAdder64bit (A, B, sel, result, overflow, negative, zero, carryout);
 	input logic [63:0] A, B;
 	input logic sel;

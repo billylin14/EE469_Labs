@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/21/20
+// Lab 2 orOp.sv
+
+// Gives the result from bitwise 64-bit OR operation of A and B
+// Output zero and negative flag.
+`timescale 1ns/10ps
 module orOp (A, B, result, zero, negative);
 	input logic		[63:0]	A, B;
 	output logic		[63:0]	result;

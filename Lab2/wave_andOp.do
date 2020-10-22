@@ -1,13 +1,11 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -radix unsigned /alustim/A
-add wave -noupdate -radix unsigned /alustim/B
-add wave -noupdate /alustim/cntrl
-add wave -noupdate -radix unsigned /alustim/result
-add wave -noupdate /alustim/negative
-add wave -noupdate /alustim/zero
-add wave -noupdate /alustim/overflow
-add wave -noupdate /alustim/carry_out
+add wave -noupdate /andOp_testbench/clk
+add wave -noupdate /andOp_testbench/A
+add wave -noupdate /andOp_testbench/B
+add wave -noupdate -radix unsigned /andOp_testbench/result
+add wave -noupdate /andOp_testbench/negative
+add wave -noupdate /andOp_testbench/zero
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {2695 ps} 0}
 quietly wave cursor active 1

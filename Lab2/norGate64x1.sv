@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 10/21/20
+// Lab 2 norGate64x1.sv
+
+// Takes 64-bits input and outputs the result from NORing each bit together
+`timescale 1ns/10ps
+
 module norGate64x1 (in, out);
 	input logic [63:0]in;
 	output logic out;

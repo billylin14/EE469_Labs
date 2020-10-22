@@ -1,55 +1,1844 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do runfullAdder64bit.do
+do runAlu.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:31:55 on Oct 21,2020
-# vlog -reportprogress 300 ./fullAdder64bit.sv 
-# -- Compiling module fullAdder64bit
-# -- Compiling module fullAdder64bit_testbench
+# Start time: 20:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
 # 
 # Top level modules:
-# 	fullAdder64bit_testbench
-# End time: 18:31:55 on Oct 21,2020, Elapsed time: 0:00:00
+# 	alustim
+# End time: 20:09:36 on Oct 21,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:31:55 on Oct 21,2020
+# Start time: 20:09:36 on Oct 21,2020
 # vlog -reportprogress 300 ./fullAdder.sv 
 # -- Compiling module fullAdder
 # -- Compiling module fullAdder_testbench
 # 
 # Top level modules:
 # 	fullAdder_testbench
-# End time: 18:31:55 on Oct 21,2020, Elapsed time: 0:00:00
+# End time: 20:09:36 on Oct 21,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:31:55 on Oct 21,2020
+# Start time: 20:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:09:37 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:37 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:09:37 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:37 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:09:37 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:37 on Oct 21,2020
 # vlog -reportprogress 300 ./norGate64x1.sv 
 # -- Compiling module norGate64x1
 # -- Compiling module norGate64x1_testbench
 # 
 # Top level modules:
 # 	norGate64x1_testbench
-# End time: 18:31:55 on Oct 21,2020, Elapsed time: 0:00:00
+# End time: 20:09:37 on Oct 21,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work fullAdder64bit_testbench 
-# Start time: 18:31:55 on Oct 21,2020
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:37 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:09:37 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:09:37 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:09:38 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:09:38 on Oct 21,2020
 # Loading sv_std.std
-# Loading work.fullAdder64bit_testbench
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
 # Loading work.fullAdder64bit
 # Loading work.fullAdder
-# Loading work.norGate64x1
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
-#           Attempting to use alternate WLF file "./wlftjj9air".
+#           Attempting to use alternate WLF file "./wlftfyh65i".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjj9air
-# ** Error: (vish-4014) No objects found matching '/fullAdder64bit_testbench/cin'.
-# Executing ONERROR command at macro ./wave_fullAdder64bit.do line 8
+#           Using alternate file: ./wlftfyh65i
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# ** Note: $stop    : ./fullAdder64bit.sv(64)
-#    Time: 95 ns  Iteration: 1  Instance: /fullAdder64bit_testbench
-# Break in Module fullAdder64bit_testbench at ./fullAdder64bit.sv line 64
-# End time: 18:38:37 on Oct 21,2020, Elapsed time: 0:06:42
-# Errors: 3, Warnings: 2
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 400 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 800 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1 ms  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1400 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1500 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1800 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 1900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2 ms  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2500 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 2800 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 3200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 3900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 4 ms  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 4200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 4300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 4700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 4900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5 ms  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5400 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5500 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5600 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 5900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 6100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 6200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 6300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 6700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 6800 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7 ms  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7400 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7500 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 7600 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 8200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 8300 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 8700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 8800 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 9100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 9400 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 9700 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 9900 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 10 ms  Scope: alustim File: ./alustim.sv Line: 89
+# 10000000.00 ns testing addition
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:18:30 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# ** Error: (vlog-13069) ./alustim.sv(99): near "'0": syntax error, unexpected UNSIZED_BIT, expecting ';'.
+# ** Error: (vlog-13053) ./alustim.sv(104): near "'F": Illegal base specifier in numeric constant.
+# ** Error: (vlog-13069) ./alustim.sv(106): near "=": syntax error, unexpected '=', expecting ++ or --.
+# ** Error: (vlog-13069) ./alustim.sv(109): near "'0": syntax error, unexpected UNSIZED_BIT, expecting ';'.
+# ** Error: (vlog-13069) ./alustim.sv(111): near "=": syntax error, unexpected '=', expecting ++ or --.
+# End time: 20:18:30 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runAlu.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./alustim.sv""
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:19:40 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# ** Warning: ./alustim.sv(99): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(104): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Error: (vlog-13069) ./alustim.sv(106): near "=": syntax error, unexpected '=', expecting ++ or --.
+# ** Warning: ./alustim.sv(109): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Error: (vlog-13069) ./alustim.sv(111): near "=": syntax error, unexpected '=', expecting ++ or --.
+# End time: 20:19:41 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 3
+# ** Error: C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runAlu.do line 7
+# C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./alustim.sv""
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:04 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# ** Warning: ./alustim.sv(99): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(104): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(109): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:20:04 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:04 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:20:04 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:04 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:20:05 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:05 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:20:05 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:05 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:20:05 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:05 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:20:05 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:05 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:20:05 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:05 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:20:06 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:20:06 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:20:06 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:20:07 on Oct 21,2020, Elapsed time: 0:10:29
+# Errors: 66, Warnings: 8
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:20:07 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlft6acqzv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft6acqzv
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 100 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 89
+# ** Error: Assertion error.
+#    Time: 400 us  Scope: alustim File: ./alustim.sv Line: 89
+# 500000.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 700 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 800 us  Scope: alustim File: ./alustim.sv Line: 106
+# ** Error: Assertion error.
+#    Time: 900 us  Scope: alustim File: ./alustim.sv Line: 111
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/wutzk/Desktop/EE469_Labs/Lab2/wave_alu.do
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:07 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# ** Warning: ./alustim.sv(99): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(104): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(109): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:27:08 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:08 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:27:08 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:08 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:27:08 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:08 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:27:08 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:08 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:27:08 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:08 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:27:09 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:09 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:27:09 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:09 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:27:09 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:27:09 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:27:09 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:27:10 on Oct 21,2020, Elapsed time: 0:07:03
+# Errors: 6, Warnings: 5
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:27:10 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlft8bqh7s".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8bqh7s
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# 500000.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 700 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 900 us  Scope: alustim File: ./alustim.sv Line: 111
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/wutzk/Desktop/EE469_Labs/Lab2/wave_alu.do
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:52 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# ** Warning: ./alustim.sv(99): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(105): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ./alustim.sv(110): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:33:52 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:52 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:33:53 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:53 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:33:53 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:53 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:33:53 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:53 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:33:53 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:53 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:33:53 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:53 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:33:54 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:54 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:33:54 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:33:54 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:33:54 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:33:55 on Oct 21,2020, Elapsed time: 0:06:45
+# Errors: 2, Warnings: 5
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:33:55 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlft3g4x92".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3g4x92
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# 500000.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 700 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 905 us  Scope: alustim File: ./alustim.sv Line: 112
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:11 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:37:12 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:12 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:37:12 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:12 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:37:12 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:12 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:37:12 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:12 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:37:13 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:13 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:37:13 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:13 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:37:13 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:13 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:37:13 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:37:13 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:37:14 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 20:37:23 on Oct 21,2020, Elapsed time: 0:03:28
+# Errors: 2, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:37:23 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftrgcssa".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftrgcssa
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+#    0.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 400 us  Scope: alustim File: ./alustim.sv Line: 111
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:51 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:39:51 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:51 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:39:51 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:51 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:39:52 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:52 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:39:52 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:52 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:39:52 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:52 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:39:52 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:52 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:39:52 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:52 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:39:53 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:39:53 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:39:53 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:39:54 on Oct 21,2020, Elapsed time: 0:02:31
+# Errors: 2, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:39:54 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftwtyr4m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwtyr4m
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+#    0.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 400 us  Scope: alustim File: ./alustim.sv Line: 111
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:46 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:40:46 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:46 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:40:46 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:46 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:40:47 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:47 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:40:47 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:47 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:40:47 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:47 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:40:47 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:47 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:40:47 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:47 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:40:48 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:40:48 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:40:48 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:40:49 on Oct 21,2020, Elapsed time: 0:00:55
+# Errors: 2, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:40:49 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftbjmvh0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftbjmvh0
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+#    0.00 ns testing addition
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 101
+# ** Error: Assertion error.
+#    Time: 400 us  Scope: alustim File: ./alustim.sv Line: 111
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:55 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:41:55 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:55 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:41:56 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:56 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:41:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:56 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:41:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:56 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:41:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:56 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:41:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:56 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:41:57 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:57 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:41:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:57 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:41:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:41:58 on Oct 21,2020, Elapsed time: 0:01:09
+# Errors: 2, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:41:58 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftkqmfin".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkqmfin
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+#    0.00 ns testing addition
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:44:43 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:44:43 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:44:43 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:44:43 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:44:43 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:43 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:44:44 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:44 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:44:44 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:44 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:44:44 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:44:44 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:44:44 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:44:46 on Oct 21,2020, Elapsed time: 0:02:48
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:44:46 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlft95kgrf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft95kgrf
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 100 us  Scope: alustim File: ./alustim.sv Line: 117
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:47:32 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:47:32 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:47:32 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:47:32 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:47:32 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:32 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:47:33 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:33 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:47:33 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:33 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:47:33 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:47:33 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:47:33 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:47:35 on Oct 21,2020, Elapsed time: 0:02:49
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:47:35 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftz6725i".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftz6725i
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 100 us  Scope: alustim File: ./alustim.sv Line: 117
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:56 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 20:53:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:56 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 20:53:56 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:56 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 20:53:57 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:57 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 20:53:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:57 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 20:53:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:57 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 20:53:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:57 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 20:53:57 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:57 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 20:53:58 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:53:58 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 20:53:58 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:53:59 on Oct 21,2020, Elapsed time: 0:06:24
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 20:53:59 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftbn7ai4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftbn7ai4
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 123
+# ** Error: Assertion error.
+#    Time: 300 us  Scope: alustim File: ./alustim.sv Line: 129
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:35 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 21:09:35 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:35 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 21:09:35 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 21:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 21:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 21:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 21:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 21:09:36 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:36 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 21:09:37 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:09:37 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 21:09:37 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:09:38 on Oct 21,2020, Elapsed time: 0:15:39
+# Errors: 2, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 21:09:38 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlft88xtiw".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft88xtiw
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 142
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 146
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 150
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 155
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 159
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 164
+# ** Error: Assertion error.
+#    Time: 0 ps  Scope: alustim File: ./alustim.sv Line: 168
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:39 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 21:10:39 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:39 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 21:10:39 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:39 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 21:10:39 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:39 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 21:10:39 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:39 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 21:10:40 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:40 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 21:10:40 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:40 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 21:10:40 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:40 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 21:10:40 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:10:40 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 21:10:40 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:10:42 on Oct 21,2020, Elapsed time: 0:01:04
+# Errors: 7, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 21:10:42 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftn0xdvb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftn0xdvb
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# ** Error: Assertion error.
+#    Time: 200 us  Scope: alustim File: ./alustim.sv Line: 148
+do runAlu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:25 on Oct 21,2020
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alu
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 21:11:25 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:25 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# -- Compiling module fullAdder_testbench
+# 
+# Top level modules:
+# 	fullAdder_testbench
+# End time: 21:11:25 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:25 on Oct 21,2020
+# vlog -reportprogress 300 ./fullAdder64bit.sv 
+# -- Compiling module fullAdder64bit
+# -- Compiling module fullAdder64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder64bit_testbench
+# End time: 21:11:26 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:26 on Oct 21,2020
+# vlog -reportprogress 300 ./andOp.sv 
+# -- Compiling module andOp
+# -- Compiling module andOp_testbench
+# 
+# Top level modules:
+# 	andOp_testbench
+# End time: 21:11:26 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:26 on Oct 21,2020
+# vlog -reportprogress 300 ./orOp.sv 
+# -- Compiling module orOp
+# -- Compiling module orOp_testbench
+# 
+# Top level modules:
+# 	orOp_testbench
+# End time: 21:11:26 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:26 on Oct 21,2020
+# vlog -reportprogress 300 ./xorOp.sv 
+# -- Compiling module xorOp
+# -- Compiling module xorOp_testbench
+# 
+# Top level modules:
+# 	xorOp_testbench
+# End time: 21:11:26 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:26 on Oct 21,2020
+# vlog -reportprogress 300 ./norGate64x1.sv 
+# -- Compiling module norGate64x1
+# -- Compiling module norGate64x1_testbench
+# 
+# Top level modules:
+# 	norGate64x1_testbench
+# End time: 21:11:26 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:26 on Oct 21,2020
+# vlog -reportprogress 300 ./mux8x1.sv 
+# -- Compiling module mux8x1
+# -- Compiling module mux8x1_testbench
+# 
+# Top level modules:
+# 	mux8x1_testbench
+# End time: 21:11:27 on Oct 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:27 on Oct 21,2020
+# vlog -reportprogress 300 ./mux2x1.sv 
+# -- Compiling module mux2x1
+# -- Compiling module mux2x1_testbench
+# 
+# Top level modules:
+# 	mux2x1_testbench
+# End time: 21:11:27 on Oct 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:11:28 on Oct 21,2020, Elapsed time: 0:00:46
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 21:11:28 on Oct 21,2020
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.mux8x1
+# Loading work.mux2x1
+# Loading work.norGate64x1
+# Loading work.fullAdder64bit
+# Loading work.fullAdder
+# Loading work.andOp
+# Loading work.orOp
+# Loading work.xorOp
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: wutzk  Hostname: LAPTOP-I94GQIDU  ProcessID: 812
+#           Attempting to use alternate WLF file "./wlftiddejk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftiddejk
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# End time: 21:11:42 on Oct 21,2020, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 2

@@ -1,12 +1,11 @@
 // Authors: Billy Lin, Cameron Wutzke
 // EE 469 Prof. Scott Hauck
 // 10/14/20
-// Lab 2 mux8x1.sv
+// Lab 1 mux8x1.sv
 
 // Input with a 3-bit select-signal, 8 input signals,
 // Outputs a 1-bit signal that was indicated by the select-signal.
 // The 8x1 mux is built from 7 2x1 mux.
-// LSB of input is selector = {000}
 module mux8x1 (selector, in, out);
 	input logic  [2:0] selector;
 	input logic  [7:0] in;
@@ -22,8 +21,6 @@ module mux8x1 (selector, in, out);
 	mux2x1 mux6 (.selector(selector[1]), .in({x4, x3}), .out(y2));
 	mux2x1 mux7 (.selector(selector[2]), .in({y2, y1}), .out(out)); 
 endmodule
-
-`timescale 1ns/10ps
 
 module mux8x1_testbench();
 	logic out, clk;
