@@ -12,7 +12,8 @@ module orOp (A, B, result, zero, negative);
 		end
 	endgenerate
 	
-	nor #50 (zero, result[63:0]); //unexpected or gate results
+		
+	norGate64x1 norgate(.in(result), .out(zero));
 	
 endmodule
 

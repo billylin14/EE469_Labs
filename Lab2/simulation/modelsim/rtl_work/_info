@@ -7,54 +7,54 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/simulation/modelsim
+Z0 dC:/Users/wutzk/Desktop/EE469_Labs/Lab2/simulation/modelsim
 vfullAdder
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1603169025
+Z2 !s110 1603330010
 !i10b 1
 !s100 iX8GK4^TWKQPXn6X]Q]Q=3
-IWf^3Z7JCVVlzzebM0CT>o1
+Iz[h6MCn=Ce[fR@8^]C:oZ3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 fullAdder_sv_unit
 S1
 R0
-Z5 w1603166094
-Z6 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv
-Z7 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv
+Z5 w1603327381
+Z6 8C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv
+Z7 FC:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv
 L0 1
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1603169025.000000
-Z10 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv|
-Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv|
+Z9 !s108 1603330010.000000
+Z10 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab2|C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv|
 !i113 1
 Z12 o-sv -work work
-Z13 !s92 -sv -work work {+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2}
+Z13 !s92 -sv -work work +incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab2
 Z14 tCvgOpt 0
 nfull@adder
 vfullAdder64bit
 R1
 R2
 !i10b 1
-!s100 3CeM=CXoN;STJ>N8jhem71
-IEEe0?bE17k``1aUcnPTfg1
+!s100 _?nM[AB435On`aJ;@D<j]2
+IX;jkofK_`iS>C5;L:O76]3
 R3
 Z15 !s105 fullAdder64bit_sv_unit
 S1
 R0
-Z16 w1603168931
-Z17 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv
-Z18 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv
+Z16 w1603329906
+Z17 8C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv
+Z18 FC:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv
 L0 1
 R8
 r1
 !s85 0
 31
 R9
-Z19 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv|
-Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv|
+Z19 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv|
+Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab2|C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv|
 !i113 1
 R12
 R13
@@ -64,8 +64,8 @@ vfullAdder64bit_testbench
 R1
 R2
 !i10b 1
-!s100 _J>Y7Ih9XZo`_Gm14jO>O2
-IcT42bVoABBBCE0i5`[a2c3
+!s100 3P5hUn4^FDzjO7n`]=4g43
+Ij`d^DMF;3goJ6Sg5PAJ8z3
 R3
 R15
 S1
@@ -73,7 +73,7 @@ R0
 R16
 R17
 R18
-L0 32
+L0 33
 R8
 r1
 !s85 0
@@ -91,7 +91,7 @@ R1
 R2
 !i10b 1
 !s100 ng^I1fA=TlM]SG`Pel^MQ1
-IXh=g0YbMio`Z4?O`CUm`01
+IXnLW<LTKKRkzTUz4hiX=]1
 R3
 R4
 S1
@@ -112,3 +112,55 @@ R12
 R13
 R14
 nfull@adder_testbench
+vnorGate64x1
+R1
+R2
+!i10b 1
+!s100 bhoHUM9dbSNDRY2ULLB3O3
+I7kJ0z09A>h;1TDW[Kgf2n1
+R3
+Z21 !s105 norGate64x1_sv_unit
+S1
+R0
+Z22 w1603329325
+Z23 8C:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv
+Z24 FC:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+Z25 !s107 C:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv|
+Z26 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/wutzk/Desktop/EE469_Labs/Lab2|C:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv|
+!i113 1
+R12
+R13
+R14
+nnor@gate64x1
+vnorGate64x1_testbench
+R1
+R2
+!i10b 1
+!s100 aQDOd`1mO>1[km5QXZDjg3
+Ihd6i?:G?dGaV`j5CL3:hi2
+R3
+R21
+S1
+R0
+R22
+R23
+R24
+L0 14
+R8
+r1
+!s85 0
+31
+R9
+R25
+R26
+!i113 1
+R12
+R13
+R14
+nnor@gate64x1_testbench

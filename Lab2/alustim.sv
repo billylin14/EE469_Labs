@@ -17,6 +17,47 @@
 // 101:			result = bitwise A | B		value of overflow and carry_out unimportant
 // 110:			result = bitwise A XOR B	value of overflow and carry_out unimportant
 
+module alu(A, B, cntrl, result, negative, zero, overflow, carryout)
+	input logic		[63:0]	A, B;
+	input logic		[2:0]		cntrl;
+	output logic		[63:0]	result;
+	output logic					negative, zero, overflow, carry_out ;
+	logic [63:0] AB_Adder, AandB, AorB, AxorB;							//all results
+	logic neg_Adder, neg_AandB, neg_AorB, neg_AxorB; 		//all negative flags
+	logic zero_Adder, zero_AandB, zero_AorB, zero_AxorB, zero_B;	//all zero flags
+	logic over_Adder;	//all overflow flags
+	logic cout_Adder;	//all carryout flags
+	
+	//MUXes to select which output result is connected to overall output result
+	genvar i;
+	generate 
+		for( i = 0; i < 64; i++): begin buildMUX
+			mux8x1 resultControlMUX (.selector(cntrl), .in({B[i], 0, AB_Adder[i], 
+				AB_Adder[i], AandB[i], AorB[i], AxorB[i], 0}), .out(result[i]));
+		end
+	endgenerate
+	
+	//MUXes to select which flag is connected to overall output flag
+	mux8x1 negativeControlMUX(.selector(cntrl), .in({B[63], 0, neg_Adder,
+		neg_Adder, neg_AandB, neg_AorB, neg_AxorB, 0}), .out(negative));
+	
+	mux8x1 zeroControlMUX(.selector(cntrl), .in({zero_B, 0, zero_Adder,
+		zero_Adder, zero_AandB, zero_AorB, zero_AxorB, 0}), .out(zero));
+		
+	mux8x1 overControlMUX(.selector(cntrl), .in({0, 0, over_Adder,
+		over_Adder, 0, 0, 0, 0}), .out(overflow));
+		
+	mux8x1 coutControlMUX(.selector(cntrl), .in({0, 0, over_Adder,
+		over_Adder, 0, 0, 0, 0}), .out(carryout));
+	
+	
+	norGate64x1 zeroFlag_B (.in(B), .out(zero_B));			//determine if B is all zero when crtl = 000
+
+	fullAdder64bit fullAdder (.A(A), .B(B), .sel(cntrl[0]), .result(AB_Adder), .overflow(over_Adder), .negative(neg_Adder), .zero(zero_Adder), .carryout(cout_Adder));
+	andOp andOperation (.A(A), .B(B), .result(AandB), .negative(neg_AandB), .zero(zero_AandB));
+	orOp orOperation (.A(A), .B(B), .result(AorB), .negative(neg_AorB), .zero(zero_AorB));
+	xorOp xorOperation (.A(A), .B(B), .result(AxorB), .negative(neg_AxorB), .zero(zero_AxorB));
+
 module alustim();
 
 	parameter delay = 100000;

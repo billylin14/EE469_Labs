@@ -6,6 +6,7 @@ vlib work
 #     their own "vlog" line below.
 vlog "./fullAdder64bit.sv"
 vlog "./fullAdder.sv"
+vlog "./norGate64x1.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the

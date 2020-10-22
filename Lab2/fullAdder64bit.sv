@@ -1,6 +1,6 @@
-module fullAdder64bit (A, B, sel, cin, result, overflow, negative, zero, carryout);
+module fullAdder64bit (A, B, sel, result, overflow, negative, zero, carryout);
 	input logic [63:0] A, B;
-	input logic sel, cin;
+	input logic sel;
 	output logic overflow, negative, zero, carryout;
 	output logic [63:0] result;
 	
@@ -26,12 +26,13 @@ module fullAdder64bit (A, B, sel, cin, result, overflow, negative, zero, carryou
 	assign negative = result[63]; //check it
 	assign carryout = carrout[63];
 	xor #50 (overflow, carrout[63], carrout[62]);
-	nor #50 (zero, result[63:0]);
+	norGate64x1 norgate (.in(result), .out(zero));
+	
 endmodule
 
 module fullAdder64bit_testbench();
 	logic [63:0] A, B;
-	logic sel, cin, clk;
+	logic sel, clk;
 	logic overflow, negative, zero, carryout;
 	logic [63:0] result;
 	

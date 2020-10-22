@@ -5,6 +5,7 @@ vlib work
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
 vlog "./orOp.sv"
+vlog "./norGate64x1.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
