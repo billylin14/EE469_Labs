@@ -13,7 +13,7 @@ module PCIncrementor (
 	se #(19) SE1	(.in(CondAddr19),.out(CondAddr19_SE));
 	se #(26) SE2 (.in(BrAddr26), .out(BrAddr26_SE));
 	
-	leftShift2 (.in(UncondOut), .out(UncondShifted));
+	leftShift #(2) (.in(UncondOut), .out(UncondShifted));
 	
 	fullAdder64bit UncondAdder(.A(UncondShifted), .B(PCout), .sel(0), 
 			.result(UncondAdderOut), .overflow(), .negative(), .zero(), .carryout()); //output flags don't matter
