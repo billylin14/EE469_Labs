@@ -1,8 +1,10 @@
+//Acts as control logic for single cycle processor
+//Control signals determine datapath and which operation is performed (memory write, add, sub...)
 module instrDecoder (
 						input logic [31:0] Instruction,
 						input logic zeroFlag, negativeFlag;
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor
-						output logic Reg2Loc, RegWrite, MemWrite, MemToReg, immSel, shiftSel, ALUsrc, //control signals to datapath
+						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, shiftSel, ALUsrc, //control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
 						output logic [11:0] 	imm12,
@@ -49,6 +51,7 @@ module instrDecoder (
 				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory
+				wrByte=1'b0;											//LDURB
 				immSel=1'b1; shiftSel=1'bx; ALUsrc=0'b1; ALUop=3'b010;
 				
 				imm12 = Instruction[21:10];
@@ -57,6 +60,7 @@ module instrDecoder (
 				CondAddr19 = 19'bx;
 				BrAddr26 = 26'bx;
 				SHAMT = 2'bx;
+			
 			end
 			//ADDS: R-type, Reg[Rd] = Reg[Rn] + Reg[Rm]
 			//OP          Rm    Shamt  Rn    Rd
@@ -70,6 +74,7 @@ module instrDecoder (
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
+				wrByte=1'b0;											//LDURB
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -90,6 +95,7 @@ module instrDecoder (
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'b0; ALUop=3'b011;		//ALUSrc
+				wrByte=1'b0;											//LDURB
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -110,6 +116,7 @@ module instrDecoder (
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
+				wrByte=1'b0;											//LDURB
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -132,6 +139,7 @@ module instrDecoder (
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
+				wrByte=1'b0;											//LDURB
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -153,6 +161,7 @@ module instrDecoder (
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
+				wrByte=1'b0;											//LDURB
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -161,9 +170,61 @@ module instrDecoder (
 				BrAddr26 = 26'bx;
 				SHAMT = 2'bx;
 			end
-			LDUR  = 11'b11111000010,
-			LDURB = 11'b00111000010,
+			//LDUR: D-type, Reg[Rt] = Mem[Reg[Rn] + SignExtend(Imm9)]
+			//OP          Imm9      00 Rn    Rt
+			//33222222222 211111111 11 00000 00000
+			//10987654321 098765432 10 98765 43210
+			//11111000010 2's Comp  00 0..31 0..31
+			LDUR: begin 
+				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
+				
+				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
+				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b0; MemToReg=1'b1; 														//Memory (STUR, LDUR)
+				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
+				wrByte=1'b0;											//LDURB			//ALUSrc
+				
+				imm12 = 12'bx;
+				imm16 = 16'bx;
+				DAddr9 = Instruction[20:12];
+				CondAddr19 = 19'bx;
+				BrAddr26 = 26'bx;
+				SHAMT = 2'bx;
+			end
+			
+			//LDURB: D-type, Reg[Rt] = {52'b0, Mem[Reg[Rn] + SignExtend(Imm9)][7:0]}
+			//OP          Imm9      00 Rn    Rt
+			//33222222222 211111111 11 00000 00000
+			//10987654321 098765432 10 98765 43210
+			//00111000010 2's Comp  00 0..31 0..31
+			LDURB: begin 
+				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
+				
+				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
+				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b0; MemToReg=1'b1; 														//Memory (STUR, LDUR)
+				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;			//ALUSrc
+				wrByte=1'b1;											//LDURB
+				
+				imm12 = 12'bx;
+				imm16 = 16'bx;
+				DAddr9 = Instruction[20:12];
+				CondAddr19 = 19'bx;
+				BrAddr26 = 26'bx;
+				SHAMT = 2'bx;
+			end
+			
+			//STUR: D-type, Mem[Reg[Rn] + SignExtend(Imm9)] = Reg[Rt]
+			//OP          Imm9      00 Rn    Rt
+			//33222222222 211111111 11 00000 00000
+			//10987654321 098765432 10 98765 43210
+			//11111000000 2's Comp  00 0..31 0..31
 			STUR  = 11'b11111000000,
+			//STURB: D-type, Mem[Reg[Rn] + SignExtend(Imm9)][7:0] = Reg[Rt][7:0]
+			//OP          Imm9      00 Rn    Rt
+			//33222222222 211111111 11 00000 00000
+			//10987654321 098765432 10 98765 43210
+			//00111000000 2's Comp  00 0..31 0..31
 			STURB = 11'b00111000000,
 			MOVK  = 11'b111100101xx,
 			MOVZ  = 11'b110100101xx;

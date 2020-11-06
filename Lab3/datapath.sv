@@ -1,11 +1,8 @@
 
 `timescale 1ns/10ps
-module datapath (clk, Rd, Rn, Rm, Reg2Loc, RegWrite, immSel, LDURBsel,
-						MemWrite, MemToReg, DAddr9, Imm12, Imm16, ALUsrc, ALUop, 
-						overflow, carry_out, zero, negative);
-						
+module datapath (						
 	input logic [4:0] Rd, Rn, Rm;
-	input logic Reg2Loc, RegWrite, MemWrite, MemToReg, immSel, clk, ALUsrc; 
+	input logic Reg2Loc, RegWrite, MemWrite, MemToReg, immSel, clk, ALUsrc, wrByte; 
 	input logic [2:0]ALUop;
 	output logic zero, negative, overflow, carry_out;
 	input logic [8:0] DAddr9;
@@ -13,10 +10,11 @@ module datapath (clk, Rd, Rn, Rm, Reg2Loc, RegWrite, immSel, LDURBsel,
 	input logic [15:0] Imm16; //for MOVZ, MOVK
 	input logic [1:0] SHAMT; //shift amount for MOVZ, MOVK
 	input logic [3:0] LDURBsel; //xfer-size for Data mem. (=1 when LDURB =8 when LDUR)
+	);
 	
 	logic [4:0] Aw, Ab, Aa;
 	logic [63:0] Dw, Da, Db, ALUin,
-					 Memout, ALUout, 
+					 Memout, Memout2, ALUout, 
 	             imm12_pad, //ADDI path
 	             DAddr9_SE, //LDUR(B), STUR(B) path
 					 imm,			//output from immSelector into ALUSrCSel
@@ -31,8 +29,9 @@ module datapath (clk, Rd, Rn, Rm, Reg2Loc, RegWrite, immSel, LDURBsel,
 	for (i=0; i<64; i++)begin: build64BitMux
 		mux2x1 immSelector (.selector(immSel), .in({imm12_pad[i], DAddr9_SE[i]}), .out(imm[i]));
 		mux2x1 ALUSrcSel 	(.selector(ALUSrc), .in({shift[i], Db[i]}), .out(ALUin));
-		mux2x1 MemOutSel (.selector(MemToReg), .in({Memout[i], ALUout[i]}), .out(Dw[i]));
+		mux2x1 MemOutSel (.selector(MemToReg), .in({Memout[i], ALUout[i]}), .out(Memout2[i]));
 		mux2x1 ShiftSelector (.selector(shiftSel), .in({imm16_shift[i], imm[i]}), .out(shift[i]));
+		mux2x1 WrByteMUX (.selector(wrByte), .in({byteResult[i], Memout2[i]}), .out(Dw[i]));
 	end
 	endgenerate
 	
