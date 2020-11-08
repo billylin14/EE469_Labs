@@ -14,11 +14,11 @@ module mux2x1 (selector, in, out);
 	logic notSel;
 	logic sel1, sel2;
 	
-	not #50 sel_a (notSel, selector); //negate selector
-	and #50 a (sel1, in[0], notSel);		//output in[0] when selector = 0
-	and #50 b (sel2, in[1], selector);  //output in[1] when selector = 1
+	not #0.05 sel_a (notSel, selector); //negate selector
+	and #0.05 a (sel1, in[0], notSel);		//output in[0] when selector = 0
+	and #0.05 b (sel2, in[1], selector);  //output in[1] when selector = 1
 	 
-	or #50 outOr (out, sel1, sel2); 
+	or #0.05 outOr (out, sel1, sel2); 
 	
 endmodule
 

@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module se #(parameter WIDTH = 9) (in, out);
 	input logic [WIDTH-1:0] in;
 	output logic [63:0] out;

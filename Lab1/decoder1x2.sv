@@ -12,9 +12,9 @@ module decoder1x2 (enable, in, out);
 	output logic [1:0] out;
 	logic inNot;
 	
-	not #50 n0 (inNot, in);
-	and #50 a0 (out[1], in, enable);
-	and #50 a1 (out[0], inNot, enable);
+	not #0.05 n0 (inNot, in);
+	and #0.05 a0 (out[1], in, enable);
+	and #0.05 a1 (out[0], inNot, enable);
 	
 endmodule
 

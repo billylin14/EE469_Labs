@@ -17,7 +17,7 @@ module andOp (A, B, result, zero, negative);
 	genvar i;
 	generate
 		for (i = 0; i < 64; i++) begin: buildAndGates
-			and #50 (result[i], A[i], B[i]);
+			and #0.05 (result[i], A[i], B[i]);
 		end
 	endgenerate
 	

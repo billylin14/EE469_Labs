@@ -23,7 +23,7 @@ module regfile (clk, ReadRegister1, ReadRegister2,
 	genvar i;
 	generate
 		for (i = 0; i < 31; i++)begin: stackReg
-			register regs (.wrData(WriteData), .dOut(regData[i]), .reset(0), .clk, .wrEn(regEn[i]));
+			register regs (.wrData(WriteData), .dOut(regData[i]), .reset(1'b0), .clk, .wrEn(regEn[i]));
 		end
 	endgenerate
 	

@@ -13,11 +13,11 @@ module PCIncrementor (
 	se #(19) SE1	(.in(CondAddr19),.out(CondAddr19_SE));
 	se #(26) SE2 (.in(BrAddr26), .out(BrAddr26_SE));
 	
-	leftShift #(2) (.in(UncondOut), .out(UncondShifted));
+	leftShift multiplyBy4 (.SHAMT(2'b10), .in(UncondOut), .out(UncondShifted));
 	
-	fullAdder64bit UncondAdder(.A(UncondShifted), .B(PCout), .sel(0), 
+	fullAdder64bit UncondAdder(.A(UncondShifted), .B(PCout), .sel(1'b0), 
 			.result(UncondAdderOut), .overflow(), .negative(), .zero(), .carryout()); //output flags don't matter
-	fullAdder64bit Adder4 (.A(PCout), .B(64'b100), .sel(0), .result(Adder4Out)
+	fullAdder64bit Adder4 (.A(PCout), .B(64'b100), .sel(1'b0), .result(Adder4Out),
 			.overflow(), .negative(), .zero(), .carryout()); //output flags don't matter
 	
 	pc programCounter (.in(BrTakenOut), .out(PCout), .clk, .reset);
@@ -27,7 +27,7 @@ module PCIncrementor (
 	genvar i;
 	generate
 	for (i=0; i<64; i++) begin: build64bitMux
-		mux2x1 UncondBrMUX (.selector(UncondBr), .in({BrAddr26_SE[i],CondAddr19_SE[i]}, .out(Uncondout[i])); //output to leftShift2
+		mux2x1 UncondBrMUX (.selector(UncondBr), .in({BrAddr26_SE[i],CondAddr19_SE[i]}), .out(UncondOut[i])); //output to leftShift2
 		mux2x1 BrTakenMUX (.selector(BrTaken), .in({UncondAdderOut[i], Adder4Out[i]}), .out(BrTakenOut[i])); //output to PC
 	end
 	endgenerate

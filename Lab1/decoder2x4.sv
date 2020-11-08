@@ -19,7 +19,7 @@ module decoder2x4 (enable, in, out);
 endmodule
 
 // Simulates the decoder I/O
-`timescale 1 ps / 1 ps
+`timescale 1ns/10ps
 module decoder_2x4_testbench();
 	
 	logic enable, clk;

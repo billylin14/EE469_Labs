@@ -16,7 +16,7 @@ module orOp (A, B, result, zero, negative);
 	genvar i;
 	generate
 		for (i = 0; i < 64; i++) begin: buildOrGates
-			or #50 (result[i], A[i], B[i]);
+			or #0.05 (result[i], A[i], B[i]);
 		end
 	endgenerate
 	

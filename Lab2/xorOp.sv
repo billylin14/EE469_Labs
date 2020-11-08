@@ -16,7 +16,7 @@ module xorOp (A, B, result, zero, negative);
 	genvar i;
 	generate
 		for (i = 0; i < 64; i++) begin: buildOrGates
-			xor #50 (result[i], A[i], B[i]);
+			xor #0.05 (result[i], A[i], B[i]);
 		end
 	endgenerate
 	

@@ -30,10 +30,10 @@ module register #(parameter WIDTH=64) (wrData, dOut, reset, clk, wrEn);
 	genvar i;
 	generate
 		for (i = 0; i < WIDTH; i++) begin: buildReg
-			and #50 (temp1[i], wrEn, wrData[i]);
-			not #50 (notWrEn[i], wrEn);
-			and #50 (temp2[i], notWrEn[i], dOut[i]);
-			or  #50 (d[i], temp1[i], temp2[i]);
+			and #0.05 (temp1[i], wrEn, wrData[i]);
+			not #0.05 (notWrEn[i], wrEn);
+			and #0.05 (temp2[i], notWrEn[i], dOut[i]);
+			or  #0.05 (d[i], temp1[i], temp2[i]);
 			
 			D_FF diff (.q(dOut[i]), .d(d[i]), .reset, .clk); //(wrEn & wrData[i]) || (~wrEn & dOut[i])
 																			 //    temp1						temp2

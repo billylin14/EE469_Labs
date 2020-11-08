@@ -21,7 +21,7 @@ module decoder3x8 (enable, in, out);
 endmodule
 
 // Simulates the decoder I/O
-`timescale 1 ps / 1 ps
+`timescale 1ns/10ps
 module decoder_3x8_testbench();
 	
 	logic enable, clk;

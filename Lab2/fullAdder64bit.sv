@@ -19,7 +19,7 @@ module fullAdder64bit (A, B, sel, result, overflow, negative, zero, carryout);
 	genvar i;
 	generate
 		for (i = 0; i < 64; i++)begin: buildXor
-			xor #50 (realB[i], B[i], sel);
+			xor #0.05 (realB[i], B[i], sel);
 		end
 	endgenerate
 	
@@ -34,7 +34,7 @@ module fullAdder64bit (A, B, sel, result, overflow, negative, zero, carryout);
 	
 	assign negative = result[63]; //check it
 	assign carryout = carrout[63];
-	xor #50 (overflow, carrout[63], carrout[62]);
+	xor #0.05 (overflow, carrout[63], carrout[62]);
 	norGate64x1 norgate (.in(result), .out(zero));
 	
 endmodule
@@ -47,11 +47,6 @@ module fullAdder64bit_testbench();
 	
 	fullAdder64bit dut (.*);
 	
-	initial begin
-		clk <= 0;
-		forever #5000 clk <= ~clk;
-	end
-
 	initial begin
 		clk <= 0;
 		forever #5000 clk <= ~clk;

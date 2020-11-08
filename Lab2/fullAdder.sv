@@ -13,11 +13,11 @@ module fullAdder (in1, in2, cin, result, cout);
 	
 	logic aAndB, cinAndA, cinAndB;
 	
-	xor #50 (result, in1, in2, cin);
-	and #50 (aAndB, in1, in2);
-	and #50 (cinAndA, in1, cin);
-	and #50 (cinAndB, cin, in2);
-	or #50 (cout, aAndB, cinAndA, cinAndB); //cout = A&B | cin&A | cin&B;
+	xor #0.05 (result, in1, in2, cin);
+	and #0.05 (aAndB, in1, in2);
+	and #0.05 (cinAndA, in1, cin);
+	and #0.05 (cinAndB, cin, in2);
+	or #0.05 (cout, aAndB, cinAndA, cinAndB); //cout = A&B | cin&A | cin&B;
 	
 endmodule
 
