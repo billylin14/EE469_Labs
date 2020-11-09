@@ -8,7 +8,8 @@ module BillyCPU (input logic clk, reset);
 	logic zeroFlag, negativeFlag;
 	logic Reg2Loc, RegWrite, 
 			MemWrite, wrByte, MemToReg, 
-			immSel, shiftSel, ALUsrc, KZsel, MOVsel;
+			immSel, shiftSel, ALUsrc, KZsel, MOVsel,
+			setFlag;
 	logic [4:0] Rn, Rm, Rd;
 	logic [2:0] ALUop;
 	logic [11:0] imm12;
@@ -25,7 +26,7 @@ module BillyCPU (input logic clk, reset);
 	instrDecoder instrDec (.Instruction,
 									.zeroFlag, .negativeFlag,
 									.UncondBr, .BrTaken, //control signals to PCIncrementor
-									.Reg2Loc, .RegWrite, .MemWrite, .wrByte, .MemToReg, .immSel, .shiftSel, .ALUsrc, .KZsel, .MOVsel,//control signals to datapath
+									.Reg2Loc, .RegWrite, .MemWrite, .wrByte, .MemToReg, .immSel, .shiftSel, .ALUsrc, .KZsel, .MOVsel, .setFlag,//control signals to datapath
 									.Rn, .Rm, .Rd, //register
 									.ALUop,
 									.imm12,
@@ -38,7 +39,7 @@ module BillyCPU (input logic clk, reset);
 	
 	datapath dataP (						
 						.Rd, .Rn, .Rm,
-						.Reg2Loc, .RegWrite, .MemWrite, .MemToReg, .immSel, .clk, .ALUsrc, .wrByte, .shiftSel, .KZsel, .MOVsel, 
+						.Reg2Loc, .RegWrite, .MemWrite, .MemToReg, .immSel, .clk, .ALUsrc, .wrByte, .shiftSel, .KZsel, .MOVsel, .setFlag,
 						.ALUop,
 						.zero(zeroFlag), .negative(negativeFlag), .overflow(), .carry_out(),
 						.DAddr9,
@@ -62,7 +63,7 @@ module BillyCPU_testbench();
 	
 	initial begin
 		reset <= 1; @(posedge clk);
-		reset <= 0; repeat (15) @(posedge clk);
+		reset <= 0; repeat (18) @(posedge clk);
 		$stop;
 	end
 endmodule

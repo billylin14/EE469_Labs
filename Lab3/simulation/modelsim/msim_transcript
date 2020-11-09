@@ -10,30 +10,31 @@
 # Copying C:/intelFPGA_lite/17.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/USER/Desktop/UW/courses/20\ AU/EE\ 469/EE469_Labs/Lab3 {C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/leftShift2.sv}
+# vlog -sv -work work +incdir+C:/Users/USER/Desktop/UW/courses/20\ AU/EE\ 469/EE469_Labs/Lab3 {C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:16:52 on Nov 03,2020
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3" C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/leftShift2.sv 
-# -- Compiling module leftShift2
-# -- Compiling module leftShift2_testbench
+# Start time: 12:37:44 on Nov 09,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3" C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv 
+# -- Compiling module dff_real
+# -- Compiling module dff_real_testbench
 # 
 # Top level modules:
-# 	leftShift2_testbench
-# End time: 12:16:52 on Nov 03,2020, Elapsed time: 0:00:00
+# 	dff_real_testbench
+# End time: 12:37:44 on Nov 09,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.leftShift2_testbench
-# vsim work.leftShift2_testbench 
-# Start time: 12:16:55 on Nov 03,2020
+vsim work.dff_real_testbench
+# vsim work.dff_real_testbench 
+# Start time: 12:37:47 on Nov 09,2020
 # Loading sv_std.std
-# Loading work.leftShift2_testbench
-# Loading work.leftShift2
-add wave -position end  sim:/leftShift2_testbench/clk
-add wave -position end  sim:/leftShift2_testbench/in
-add wave -position end  sim:/leftShift2_testbench/out
+# Loading work.dff_real_testbench
+# Loading work.dff_real
+add wave -position end  sim:/dff_real_testbench/out
+add wave -position end  sim:/dff_real_testbench/in
+add wave -position end  sim:/dff_real_testbench/clk
+add wave -position end  sim:/dff_real_testbench/en
 run -all
-# ** Note: $stop    : C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/leftShift2.sv(26)
-#    Time: 250 ps  Iteration: 1  Instance: /leftShift2_testbench
-# Break in Module leftShift2_testbench at C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/leftShift2.sv line 26
-# End time: 12:17:56 on Nov 03,2020, Elapsed time: 0:01:01
+# ** Note: $stop    : C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv(27)
+#    Time: 550 ps  Iteration: 1  Instance: /dff_real_testbench
+# Break in Module dff_real_testbench at C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv line 27
+# End time: 12:38:32 on Nov 09,2020, Elapsed time: 0:00:45
 # Errors: 0, Warnings: 0

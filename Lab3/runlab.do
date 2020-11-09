@@ -33,6 +33,7 @@ vlog "./PCIncrementor.sv"
 vlog "./instrDecoder.sv"
 vlog "./leftShift.sv"
 vlog "./BillyCPU.sv"
+vlog "./dff_real.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
@@ -42,7 +43,7 @@ vsim -voptargs="+acc" -t 1ps -lib work BillyCPU_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do wave.do
+do wave_test6.do
 
 # Set the window types
 view wave

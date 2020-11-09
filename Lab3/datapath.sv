@@ -2,9 +2,9 @@
 `timescale 1ns/10ps
 module datapath (						
 	input logic [4:0] Rd, Rn, Rm,
-	input logic Reg2Loc, RegWrite, MemWrite, MemToReg, immSel, clk, ALUsrc, wrByte, shiftSel, KZsel, MOVsel, 
+	input logic Reg2Loc, RegWrite, MemWrite, MemToReg, immSel, clk, ALUsrc, wrByte, shiftSel, KZsel, MOVsel, setFlag, 
 	input logic [2:0]ALUop,
-	output logic zero, negative, overflow, carry_out,
+	output logic zero, negative, overflow, carry_out, cbzFlag,
 	input logic [8:0] DAddr9,
 	input logic [11:0] Imm12, //for ADDI
 	input logic [15:0] Imm16, //for MOVZ, MOVK
@@ -36,15 +36,16 @@ module datapath (
 		mux2x1 MemOutSel (.selector(MemToReg), .in({Memout[i], ALUout[i]}), .out(Memout2[i]));
 		mux2x1 ShiftSelector (.selector(shiftSel), .in({imm16_shift[i], imm[i]}), .out(shift[i]));
 		mux2x1 WrByteMUX (.selector(wrByte), .in({byteResult[i], Memout2[i]}), .out(wrBout[i]));
-		or  #0.05 orGate (ored_out[i], wrBout[i]);
+		or  #0.05 orGate (ored_out[i], wrBout[i], imm16_shift[i]);
 		mux2x1 KZselector (.selector(KZsel), .in({imm16_shift[i], ored_out[i]}), .out(KZout[i]));
 		mux2x1 MOVselector (.selector(MOVsel), .in({KZout[i], wrBout[i]}), .out(Dw[i]));
 	end
 	endgenerate
 	
-	
 	assign Aa = Rn;
 	assign Aw = Rd;
+	
+	logic [3:0] flags;
 	
 	regfile registers (.clk, .ReadRegister1(Aa), .ReadRegister2(Ab), 
 		.WriteRegister(Aw), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
@@ -55,10 +56,17 @@ module datapath (
 	
 	leftShift shiftSHAMT (.SHAMT(SHAMT), .in(imm16_pad), .out(imm16_shift));
 	
-	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative, .zero, .overflow, .carry_out);
+	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative(flags[0]), .zero(flags[1]), .overflow(flags[2]), .carry_out(flags[3]));
 	
 	datamem memory(.address(ALUout), .write_enable(MemWrite), .read_enable(1'b1), .write_data(Db), .clk,
 						.xfer_size(LDURBsel), .read_data(Memout));
+	
+	dff_real negDff (.in(flags[0]), .en(setFlag), .out(negative), .clk);
+	dff_real zeroDff (.in(flags[1]), .en(setFlag), .out(zero), .clk);
+	dff_real ofDff (.in(flags[2]), .en(setFlag), .out(overflow), .clk);
+	dff_real coutDff (.in(flags[3]), .en(setFlag), .out(carry_out), .clk);	
+	
+	and #0.05 andZero (cbzFlag, flags[1], setFlag); 
 						
 endmodule
 

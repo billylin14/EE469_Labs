@@ -8,9 +8,9 @@ module leftShift (SHAMT, in, out);
 	always_comb begin
 		case (SHAMT)
 			0: out = in;
-			1: out = {in[63:1], 1'b0};
-			2: out = {in[63:2], 2'b0};
-			3: out = {in[63:3], 3'b0};
+			1: out = {in[62:0], 1'b0};
+			2: out = {in[61:0], 2'b0};
+			3: out = {in[60:0], 3'b0};
 		endcase
 	end
 	
