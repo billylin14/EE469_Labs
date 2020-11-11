@@ -12,7 +12,7 @@ A diagram for the basic CPU concept is below:
 
 Our messy completed diagram:
 <p align="left">
-  <img src="https://github.com/billylin14/EE469_Labs/blob/master/Lab3/Final_CPU_Diagram.PNG" width="700" title="Basic CPU Diagram">
+  <img src="https://github.com/billylin14/EE469_Labs/blob/master/Lab3/Final_CPU_Diagram.PNG" width="700" title="Final CPU Diagram">
 </p>
 
 ORIGINAL:
