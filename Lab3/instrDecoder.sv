@@ -5,7 +5,7 @@ module instrDecoder (
 						input logic [31:0] Instruction,
 						input logic zeroFlag, negativeFlag, cbzFlag,
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor
-						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, shiftSel, ALUsrc, KZsel, MOVsel, setFlag,//control signals to datapath
+						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, shiftSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
 						output logic [11:0] 	imm12,
@@ -62,7 +62,7 @@ module instrDecoder (
 				wrByte=1'b0;											//LDURB
 				immSel=1'b1; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = Instruction[21:10];
 				imm16 = 16'bx;
@@ -86,7 +86,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b1;
+				setFlag=1'b1; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -110,7 +110,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'b0; ALUop=3'b011;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b1;
+				setFlag=1'b1; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -134,7 +134,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -160,7 +160,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -185,7 +185,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b1;
+				setFlag=1'b1; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -209,7 +209,7 @@ module instrDecoder (
 				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
 				wrByte=1'b0;											//LDURB			//ALUSrc
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b1;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -234,7 +234,7 @@ module instrDecoder (
 				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;			//ALUSrc
 				wrByte=1'b1;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b1;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -259,7 +259,7 @@ module instrDecoder (
 				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
 				wrByte=1'b0;											//LDURB			//ALUSrc
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -284,7 +284,7 @@ module instrDecoder (
 				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;			//ALUSrc
 				wrByte=1'b1;											//STURB
 				KZsel=1'b0; MOVsel=1'b0;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = 16'bx;
@@ -309,7 +309,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'b1; ALUsrc=1'b1; ALUop=3'b100;			//ALUSrc
 				wrByte=1'b0;											//STURB
 				KZsel=1'b0; MOVsel=1'b1;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = Instruction[20:5];
@@ -334,7 +334,7 @@ module instrDecoder (
 				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;			//ALUSrc
 				wrByte=1'bx;											//STURB
 				KZsel=1'b1; MOVsel=1'b1;
-				setFlag=1'b0;
+				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
 				imm16 = Instruction[20:5];
