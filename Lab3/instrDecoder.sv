@@ -5,7 +5,7 @@ module instrDecoder (
 						input logic [31:0] Instruction,
 						input logic zeroFlag, negativeFlag, cbzFlag,
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor
-						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, shiftSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
+						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
 						output logic [11:0] 	imm12,
@@ -60,7 +60,7 @@ module instrDecoder (
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory
 				wrByte=1'b0;											//LDURB
-				immSel=1'b1; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;
+				immSel=1'b1; ALUsrc=1'b1; ALUop=3'b010;
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b0;
 				
@@ -83,7 +83,7 @@ module instrDecoder (
 				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
+				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b1; load = 1'b0;
@@ -107,7 +107,7 @@ module instrDecoder (
 				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'b0; ALUop=3'b011;		//ALUSrc
+				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b011;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b1; load = 1'b0;
@@ -131,7 +131,7 @@ module instrDecoder (
 				UncondBr=1'b1; BrTaken=1'b1;  					//Branching
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
+				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b0;
@@ -157,7 +157,7 @@ module instrDecoder (
 				UncondBr=1'b0; BrTaken=negativeFlag;  			//Branching
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'b0; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
+				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b0;
@@ -182,7 +182,7 @@ module instrDecoder (
 				BrTaken=cbzFlag;										//Branching
 				RegWrite=1'b0; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
+				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b0;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b1; load = 1'b0;
@@ -206,7 +206,7 @@ module instrDecoder (
 				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b1; 														//Memory (STUR, LDUR)
-				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
+				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
 				wrByte=1'b0;											//LDURB			//ALUSrc
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b1;
@@ -228,10 +228,10 @@ module instrDecoder (
 			LDURB: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
-				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
-				MemWrite=1'b0; MemToReg=1'b1; 														//Memory (STUR, LDUR)
-				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;			//ALUSrc
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
+				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b0; MemToReg=1'b1; 					//Memory (STUR, LDUR)
+				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b1;											//LDURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b1;
@@ -253,11 +253,11 @@ module instrDecoder (
 			STUR: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
-				RegWrite=1'b0; Reg2Loc=1'b0;															//RegFile (ADD, SUB, LDUR)
-				MemWrite=1'b1; MemToReg=1'bx; 														//Memory (STUR, LDUR)
-				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
-				wrByte=1'b0;											//LDURB			//ALUSrc
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
+				RegWrite=1'b0; Reg2Loc=1'b0;						//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b1; MemToReg=1'bx; 					//Memory (STUR, LDUR)
+				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
+				wrByte=1'b0;											//LDURB			
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b0;
 				
@@ -278,10 +278,10 @@ module instrDecoder (
 			STURB: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
-				RegWrite=1'b0; Reg2Loc=1'b0;															//RegFile (ADD, SUB, LDUR)
-				MemWrite=1'b1; MemToReg=1'bx; 														//Memory (STUR, LDUR)
-				immSel=1'b0; shiftSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;			//ALUSrc
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
+				RegWrite=1'b0; Reg2Loc=1'b0;						//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b1; MemToReg=1'bx; 					//Memory (STUR, LDUR)
+				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
 				wrByte=1'b1;											//STURB
 				KZsel=1'b0; MOVsel=1'b0;
 				setFlag=1'b0; load = 1'b0;
@@ -303,12 +303,12 @@ module instrDecoder (
 				
 				Rn=Instruction[4:0]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
-				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
-				MemWrite=1'b0; MemToReg=1'b0; 														//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'b1; ALUsrc=1'b1; ALUop=3'b100;			//ALUSrc
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
+				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
+				immSel=1'bx; ALUsrc=1'b1; ALUop=3'b100;		//ALUSrc
 				wrByte=1'b0;											//STURB
-				KZsel=1'b0; MOVsel=1'b1;
+				KZsel=1'b1; MOVsel=1'b1;
 				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
@@ -328,12 +328,12 @@ module instrDecoder (
 				
 				Rn=5'bx; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
-				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
-				MemWrite=1'b0; MemToReg=1'bx; 														//Memory (STUR, LDUR)
-				immSel=1'bx; shiftSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;			//ALUSrc
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
+				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
+				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
+				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;			//ALUSrc
 				wrByte=1'bx;											//STURB
-				KZsel=1'b1; MOVsel=1'b1;
+				KZsel=1'b0; MOVsel=1'b1;
 				setFlag=1'b0; load = 1'b0;
 				
 				imm12 = 12'bx;
@@ -347,29 +347,3 @@ module instrDecoder (
 		endcase
 	end
 endmodule
-
-
-						
-//ADDI: I-type, Reg[Rd] = Reg[Rn] + {'0, Imm12}
-//OP         Imm12        Rn    Rd
-//1001000100 Unsigned     0..31 0..31
-
-//B: B-type, PC = PC + SignExtend({Imm26, 2'b00})
-//OP     Imm26
-//000101 2's Comp Imm26
-
-//LDUR: D-type, Reg[Rt] = Mem[Reg[Rn] + SignExtend(Imm9)]
-//OP          Imm9      00 Rn    Rt
-//11111000010 2's Comp  00 0..31 0..31
-
-//LDURB: D-type, Reg[Rt] = {52'b0, Mem[Reg[Rn] + SignExtend(Imm9)][7:0]}
-//OP          Imm9      00 Rn    Rt
-//00111000010 2's Comp  00 0..31 0..31
-
-//STUR: D-type, Mem[Reg[Rn] + SignExtend(Imm9)] = Reg[Rt]
-//OP          Imm9      00 Rn    Rt
-//11111000000 2's Comp  00 0..31 0..31
-
-//STURB: D-type, Mem[Reg[Rn] + SignExtend(Imm9)][7:0] = Reg[Rt][7:0]
-//OP          Imm9      00 Rn    Rt
-//00111000000 2's Comp  00 0..31 0..31

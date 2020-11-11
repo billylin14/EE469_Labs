@@ -43,7 +43,7 @@ vsim -voptargs="+acc" -t 1ps -lib work BillyCPU_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do wave_test6.do
+do wave_test5.do
 
 # Set the window types
 view wave

@@ -7,11 +7,12 @@ add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/pc/PCout
 add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/instrDec/Rn
 add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/dataP/Aa
 add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/instrDec/Rd
+add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/dataP/Ab
+add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/Db
 add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/dataP/Aw
+add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/ALUout
+add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/Memout
 add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/wrBout
-add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/KZin
-add wave -noupdate -radix unsigned /BillyCPU_testbench/dut/dataP/shiftSHAMT
-add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/MOVout
 add wave -noupdate -radix hexadecimal /BillyCPU_testbench/dut/dataP/Dw
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/UncondBr
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/BrTaken
@@ -25,6 +26,7 @@ add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/ALU
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/ALUop
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/KZsel
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/MOVsel
+add wave -noupdate -expand -group Constants -radix hexadecimal /BillyCPU_testbench/dut/dataP/DAddr9
 add wave -noupdate -expand -group Constants -radix hexadecimal /BillyCPU_testbench/dut/instrDec/imm12
 add wave -noupdate -expand -group Constants -radix hexadecimal /BillyCPU_testbench/dut/instrDec/imm16
 add wave -noupdate -expand -group Constants -radix unsigned /BillyCPU_testbench/dut/instrDec/SHAMT
@@ -36,7 +38,7 @@ add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/negative
 add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/overflow
 add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/carry_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1151150 ps} 0}
+WaveRestoreCursors {{Cursor 1} {91929 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 136
 configure wave -valuecolwidth 214

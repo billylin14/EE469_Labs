@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 datapath.sv
+
+// Input with destination register Rd, operand registers Rn and Rm, 
+// immediate values of 9, 12, and 16 bits, shift amount, and control logics,
+// operates with a regfile, an ALU, and a data memory and outputs flags from mathematical operations.
 
 `timescale 1ns/10ps
 module datapath (						
@@ -9,7 +17,7 @@ module datapath (
 	input logic [11:0] Imm12, //for ADDI
 	input logic [15:0] Imm16, //for MOVZ, MOVK
 	input logic [1:0] SHAMT, //shift amount for MOVZ, MOVK
-	input logic [3:0] LDURBsel, shiftSHAMT //xfer-size for Data mem. (=0 when LDURB =7 when LDUR)
+	input logic [3:0] LDURBsel //xfer-size for Data mem. (=0 when LDURB =7 when LDUR)
 	);
 	
 	logic [4:0] Aw, Ab, Aa;
@@ -19,7 +27,8 @@ module datapath (
 	             imm12_pad, //ADDI path
 	             DAddr9_SE, //LDUR(B), STUR(B) path
 					 imm,			//output from immSelector into ALUSrCSel
-					 imm16_extended, KZin;
+					 KZin;
+	logic [3:0] shiftSHAMT;
 					 
 	assign byteResult = {56'b0, Memout2[7:0]};
 	
@@ -35,11 +44,13 @@ module datapath (
 		mux2x1 MemOutSel (.selector(MemToReg), .in({Memout[i], ALUout[i]}), .out(Memout2[i]));
 		mux2x1 WrByteMUX (.selector(wrByte), .in({byteResult[i], Memout2[i]}), .out(wrBout[i]));
 		mux2x1 MOVselector (.selector(MOVsel), .in({MOVout[i], wrBout[i]}), .out(Dw[i]));
-		mux2x1 KZselector (.selector(KZsel), .in({Da[i], 1'b0}), .out(KZin));
+		mux2x1 KZselector (.selector(KZsel), .in({Da[i], 1'b0}), .out(KZin[i]));
 	end
 	for (i=0; i<4; i++)begin: movBitSel
 		for (j=0; j<16; j++)begin: padMuxes
-			mux2x1 movBit (.selector(shiftSHAMT[i]), .in({imm16[j], KZin[16*i+j]}), .out(KZresult[16*i+j]));
+			mux2x1 movBit (.selector(shiftSHAMT[i]), .in({Imm16[j], KZin[16*i+j]}), .out(MOVout[16*i+j]));
+		end
+	end
 	endgenerate
 	
 	decoder2x4 cntrlSHAMT (.enable(MOVsel), .in(SHAMT), .out(shiftSHAMT));
@@ -54,10 +65,6 @@ module datapath (
 	
 	se #(9) SE1(.in(DAddr9), .out(DAddr9_SE));
 	assign imm12_pad = {52'b0, Imm12};
-	assign imm16_pad = {48'b0, Imm16};
-	assign imm16_extended = 
-	
-	leftShift shiftSHAMT (.SHAMT(SHAMT), .in(imm16_pad), .out(imm16_shift));
 	
 	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative(flags[0]), .zero(flags[1]), .overflow(flags[2]), .carry_out(flags[3]));
 	

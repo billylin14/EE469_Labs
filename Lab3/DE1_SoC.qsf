@@ -59,7 +59,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ../Lab2/fullAdder64bit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../Lab2/fullAdder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../Lab2/andOp.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../Lab2/alustim.sv
-set_global_assignment -name SYSTEMVERILOG_FILE math.sv
 set_global_assignment -name SYSTEMVERILOG_FILE instructmem.sv
 set_global_assignment -name SYSTEMVERILOG_FILE datamem.sv
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
