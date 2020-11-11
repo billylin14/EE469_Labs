@@ -1,3 +1,12 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 pc.sv
+
+// Input with a 64-bit of the previous program counter and a reset signal
+// Stores the value of the previous program counter and passes it to the next cycle
+// Resets to 0 when reset signal is high.
+
 `timescale 1ns/10ps
 
 module pc (in, out, clk, reset);

@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 leftShift.sv
+
+// Input with a shift amount (SHAMT) and a 64-bit data,
+// Arithmetically shifts the data by the specified SHAMT.
+
 `timescale 1ns/10ps
 
 module leftShift (SHAMT, in, out);

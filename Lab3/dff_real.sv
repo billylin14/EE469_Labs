@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 dff_real.sv
+
+// Input with a 1-bit in, enable,
+// Outputs a delayed input data from the previous cycle and holds the value when enable is OFF.
+
 module dff_real (in, out, en, clk);
  output reg out;
  input in, en, clk;

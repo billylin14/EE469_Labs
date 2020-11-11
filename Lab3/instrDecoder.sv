@@ -1,6 +1,13 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 instrDecocer.sv
+
+// Input with a 32-bit instruction and flags,
+// Decodes the instruction bits and outputs corresponding registers, 
+// immediate addresses, and control logics to datapath and PCIncrementor.
+
 `timescale 1ns/10ps
-//Acts as control logic for single cycle processor
-//Control signals determine datapath and which operation is performed (memory write, add, sub...)
 module instrDecoder (
 						input logic [31:0] Instruction,
 						input logic zeroFlag, negativeFlag, cbzFlag,
@@ -15,18 +22,7 @@ module instrDecoder (
 						output logic [25:0] 	BrAddr26,
 						output logic [3:0]	LDURBsel,
 						output logic [1:0] 	SHAMT);
-//1001000100	ADDI: Imm12:1, ALUSrc: 1, ALUop: 010, RegWrite:1
-//10101011000	ADDS: ALUop: 010, RegWrite:1, Reg2Loc:1
-//11101011000 SUBS: ALUop: 011, RegWrite:1, Reg2Loc:1
-//000101			B	 : UncondBr: 1, BrTaken:1
-//01010100		B.LT: BrTaken:1
-//10110100		CBZ : 
-//11111000010	LDUR
-//00111000010	LDURB
-//11111000000	STUR
-//00111000000	STURB
-//111100101	MOVK
-//110100101	MOVZ 
+						
 	localparam ADDI  = 11'b1001000100x,
 				  ADDS  = 11'b10101011000,
 				  SUBS  = 11'b11101011000,

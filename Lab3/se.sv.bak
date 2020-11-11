@@ -1,16 +1,17 @@
-module se (#parameter WIDTH = 9) (in, out);
-	input logic [WIDTH:0] in;
+`timescale 1ns/10ps
+module se #(parameter WIDTH = 9) (in, out);
+	input logic [WIDTH-1:0] in;
 	output logic [63:0] out;
 	
-	assign out = {{64-WIDTH{in[8]}}, in}; //is this allowed?
+	assign out = {{64-WIDTH{in[WIDTH-1]}}, in}; //is this allowed?
 endmodule
 
-module se_9bit_testbench();
-	logic [8:0] in;
+module se_testbench #(parameter WIDTH = 9) ();
+	logic [WIDTH-1:0] in;
 	logic [63:0] out;
 	logic clk;
 	
-	se_9bit dut (.*);
+	se dut (.*);
 	
 	initial begin
 		clk <= 0;

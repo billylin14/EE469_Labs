@@ -1,4 +1,11 @@
-//Acts as the program counter able to branch and increment instruction register by 4
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 PCIncrementor.sv
+
+// Input with control signals,
+// Acts as the program counter that outputs the next instruction from the instruction memory (instructmem)
+// Increments the program counter by 4 or by the addresses specified by branching instructions.
 
 `timescale 1ns/10ps
 module PCIncrementor (

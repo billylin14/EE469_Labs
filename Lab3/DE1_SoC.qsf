@@ -68,9 +68,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SYSTEMVERILOG_FILE pc.sv
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
-set_global_assignment -name SYSTEMVERILOG_FILE se_9bit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE se_19bit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE se_26bit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE se.sv
 set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PCIncrementor.sv

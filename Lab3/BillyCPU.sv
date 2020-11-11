@@ -1,3 +1,13 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 11/10/20
+// Lab 3 BillyCPU.sv
+
+// Input with a clock and a reset signal,
+// Performs the specified instruction set from the instruction memory (instrmem) and
+// Acts as a single cycle CPU that performs one instruction in a cycle
+
+
 `timescale 1ns/10ps
 module BillyCPU (input logic clk, reset);
 	

@@ -8,7 +8,7 @@ module pc (in, out, clk, reset);
 	genvar i;
 	generate
 		for (i = 0; i < 64; i++)begin: build64bitPC
-			D_FF (.q(out[i]), .d(in[i]), .reset, .clk);
+			D_FF smallPC (.q(out[i]), .d(in[i]), .reset, .clk);
 		end
 	endgenerate
 endmodule
@@ -21,7 +21,7 @@ module pc_testbench();
 	
 	initial begin
 		clk <= 0;
-		forever #5000 clk <= ~clk;
+		forever #0.05 clk <= ~clk;
 	end
 
 	initial begin
@@ -30,6 +30,7 @@ module pc_testbench();
 		in <= 64'hFFFFFFFFFFFFFFFF; @(posedge clk);
 		in <= 64'h0000000000000001; @(posedge clk);
 		reset <= 1; @(posedge clk); @(posedge clk);
+		$stop;
 	end
 endmodule
 	
