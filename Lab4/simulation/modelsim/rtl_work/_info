@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/simulation/modelsim
+vdff_real
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1604896664
+!i10b 1
+!s100 gD5h<51KTNV314@iRQfcQ3
+IWioNeNkf5goT[hXn:A[U20
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 dff_real_sv_unit
+S1
+R0
+Z5 w1604896623
+Z6 8C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv
+Z7 FC:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv
+L0 1
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1604896664.000000
+Z10 !s107 C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3|C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3/dff_real.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab3}
+Z14 tCvgOpt 0
+vdff_real_testbench
+R1
+R2
+!i10b 1
+!s100 Q94W`QdOK4Z<<zDXhLezS2
+IXXL7]3B=V61U3SIje9<NI0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 10
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
