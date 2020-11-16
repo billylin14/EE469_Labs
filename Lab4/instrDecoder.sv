@@ -27,7 +27,7 @@ module instrDecoder (
 				  ADDS  = 11'b10101011000,
 				  SUBS  = 11'b11101011000,
 				  B	  = 11'b000101xxxxx,
-				  BLT  = 11'b01010100xxx,
+				  BLT   = 11'b01010100xxx,
 				  CBZ	  = 11'b10110100xxx,
 				  LDUR  = 11'b11111000010,
 				  LDURB = 11'b00111000010,
