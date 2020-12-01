@@ -49,6 +49,7 @@ module pipeline_registers(
 						output logic [3:0]	outLDURBsel,
 						output logic [1:0] 	outSHAMT);
 						
+<<<<<<< HEAD
 	logic [63:0]  
 					 byteResult,
 	             imm12_pad, //ADDI path
@@ -106,3 +107,34 @@ module pipeline_registers(
 	register LDURBsel 	#(4) 	(.wrData(inLDURBsel), 	.dOut(outLDURBsel), .reset, .clk, .wrEn);
 	register SHAMT 		#(2) 	(.wrData(inSHAMT), 		.dOut(outSHAMT), .reset, .clk, .wrEn);
 	
+=======
+	register #(1) uncondBr		(.wrData(inUncondBr), 	.dOut(outUncondBr), .reset, .clk, .wrEn);
+	register #(1) brTaken 		(.wrData(inBrTaken), 	.dOut(outBrTaken), .reset, .clk, .wrEn);
+	register #(1) Reg2Loc 	 	(.wrData(inReg2Loc), 	.dOut(outReg2Loc), .reset, .clk, .wrEn);
+	register #(1) RegWrite 	 	(.wrData(inRegWrite), 	.dOut(outRegWrite), .reset, .clk, .wrEn);
+	register #(1) MemWrite 	 	(.wrData(inMemWrite), 	.dOut(outMemWrite), .reset, .clk, .wrEn);
+	register #(1) wrByte 		(.wrData(inwrByte), 		.dOut(outwrByte), .reset, .clk, .wrEn);
+	register #(1) MemToReg 	 	(.wrData(inMemToReg), 	.dOut(outMemToReg), .reset, .clk, .wrEn);
+	register #(1) immSel 	 	(.wrData(inimmSel), 		.dOut(outimmSel), .reset, .clk, .wrEn);
+	register #(1) ALUsrc 	 	(.wrData(inALUsrc), 		.dOut(outALUsrc), .reset, .clk, .wrEn);
+	register #(1) KZsel 			(.wrData(inKZsel), 		.dOut(outKZsel), .reset, .clk, .wrEn);
+	register #(1) MOVsel 		(.wrData(inMOVsel), 		.dOut(outMOVsel), .reset, .clk, .wrEn);
+	register #(1) setFlag 	 	(.wrData(insetFlag), 	.dOut(outsetFlag), .reset, .clk, .wrEn);
+	register #(1) load 		 	(.wrData(inload), 		.dOut(outload), .reset, .clk, .wrEn);
+
+	
+	register #(5)Rn 			 	(.wrData(inRn), 			.dOut(outRn), .reset, .clk, .wrEn);
+	register #(5)Rm 			 	(.wrData(inRm), 			.dOut(outRm), .reset, .clk, .wrEn);
+	register #(5)Rd 			 	(.wrData(inRd), 			.dOut(outRd), .reset, .clk, .wrEn);
+	register #(3)ALUop 	 		(.wrData(inALUop), 		.dOut(outALUop), .reset, .clk, .wrEn);
+		
+	//constants
+	register #(12) imm12 		(.wrData(inimm12), 		.dOut(outimm12), .reset, .clk, .wrEn);
+	register #(16) imm16 		(.wrData(inimm16), 		.dOut(outimm16), .reset, .clk, .wrEn);
+	register #(9)  DAddr9		(.wrData(inDAddr9), 		.dOut(outDAddr9), .reset, .clk, .wrEn);
+	register #(19) CondAddr19	(.wrData(inCondAddr19), .dOut(outCondAddr19), .reset, .clk, .wrEn);
+	register #(26) BrAddr26		(.wrData(inBrAddr26), 	.dOut(outBrAddr26), .reset, .clk, .wrEn);
+	register #(4)  LDURBsel 	(.wrData(inLDURBsel), 	.dOut(outLDURBsel), .reset, .clk, .wrEn);
+	register #(2)  SHAMT 		(.wrData(inSHAMT), 		.dOut(outSHAMT), .reset, .clk, .wrEn);
+endmodule	
+>>>>>>> c271c725f188e3bafcb6a1ae88e45d6b3c56d309

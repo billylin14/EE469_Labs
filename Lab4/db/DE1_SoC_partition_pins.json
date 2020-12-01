@@ -8,15 +8,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "in",
+					"name" : "in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "en",
+					"name" : "in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[0]",
+					"strict" : false
+				},
+				{
+					"name" : "selector[1]",
 					"strict" : false
 				}
 			]
