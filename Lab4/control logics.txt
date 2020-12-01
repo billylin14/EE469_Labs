@@ -1,0 +1,16 @@
+IF2RF:
+	control logics
+	Rn, Rm, Rd,
+	Immediates
+RF2EX:
+	Da, ALUin, Db
+	control logics
+	
+EX2MEM:
+	ALUout, Db, Flags, MOVout, 
+	control logics
+MEM2WB:
+	wrBout, MOVout
+	control logics
+		
+
