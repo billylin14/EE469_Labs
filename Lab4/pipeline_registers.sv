@@ -1,29 +1,63 @@
 //wrEn = regWE
 module pipeline_registers(
 						input logic wrEn, clk, reset,
-						input logic inUncondBr, inBrTaken, //control signals to PCIncrementor
+						//INPUT control signals to PCIncrementor
+						input logic inUncondBr, inBrTaken, 
+						//INPUT control signals to datapath
 						input logic inReg2Loc, inRegWrite, inMemWrite, inwrByte, inMemToReg, inimmSel, inALUsrc, inKZsel, inMOVsel, insetFlag, inload,//control signals to datapath
-						input logic [4:0] 	inRn, inRm, inRd, //register
+						//INPUT registers
+						input logic [4:0] 	inRn, inRm, inRd, 
 						input logic [2:0] 	inALUop,
-						input logic [11:0] 	inimm12,
+						input logic [4:0]		inAa, inAb, inAw,
+						//INPUT data (after RF) 
+						//**CONCERN: THE OUTPUT WILL NOT bE WRITTEN TO RF UNTIL WR STAGE. HOWEVER, WE DO HAVE THE DATA READY IN THE INTERMEDIATE LOGICS
+						input logic [63:0] 	inDa, inDb, inALUin, inimm, inKZin,
+						//INPUT data (after EX)
+						input logic [63:0]	inALUout,
+						//INPUT data (after MEM)
+						input logic [63:0]	inMemout, inMemout2, inwrBout, inDw, inMOVout, byteResult,
+						//INPUT immediates
+						input logic [11:0] 	inimm12, inimm12_pad, 
 						input logic [15:0] 	inimm16,
-						input logic [8:0]		inDAddr9,
+						input logic [8:0]		inDAddr9, inDAddr9_SE, 
 						input logic [18:0] 	inCondAddr19,
 						input logic [25:0] 	inBrAddr26,
 						input logic [3:0]		inLDURBsel,
 						input logic [1:0] 	inSHAMT,
-						output logic outUncondBr, outBrTaken, //control signals to PCIncrementor
+						
+						//OUTPUT control signals to PCIncrementor
+						output logic outUncondBr, outBrTaken,
+						//OUTPUT control signals to datapath
 						output logic outReg2Loc, outRegWrite, outMemWrite, outwrByte, outMemToReg, outimmSel, outALUsrc, outKZsel, outMOVsel, outsetFlag, outload,//control signals to datapath
-						output logic [4:0] 	outRn, outRm, outRd, //register
+						//OUTPUT registers
+						output logic [4:0] 	outRn, outRm, outRd, 
 						output logic [2:0] 	outALUop,
-						output logic [11:0] 	outimm12,
+						output logic [4:0]	outAa, outAb, outAw,
+						//OUTPUT data (after RF) 
+						//**CONCERN: THE OUTPUT WILL NOT bE WRITTEN TO RF UNTIL WR STAGE. HOWEVER, WE DO HAVE THE DATA READY IN THE INTERMEDIATE LOGICS
+						output logic [63:0] 	outDa, outDb, outALUin, outimm, outKZin,
+						//OUTPUT data (after EX)
+						output logic [63:0]	outALUout,
+						//OUTPUT data (after MEM)
+						output logic [63:0]	outMemout, inMemout2, inwrBout, inDw, inMOVout, byteResult,
+						//OUTPUT immediates
+						output logic [11:0] 	outimm12, outimm12_pad,
 						output logic [15:0] 	outimm16,
-						output logic [8:0]	outDAddr9,
+						output logic [8:0]	outDAddr9, outDAddr9_SE,
 						output logic [18:0] 	outCondAddr19,
 						output logic [25:0] 	outBrAddr26,
 						output logic [3:0]	outLDURBsel,
 						output logic [1:0] 	outSHAMT);
 						
+	logic [63:0]  
+					 byteResult,
+	             imm12_pad, //ADDI path
+	             DAddr9_SE, //LDUR(B), STUR(B) path
+					 imm,			//output from immSelector into ALUSrCSel
+					 KZin;
+	logic [3:0] shiftSHAMT;
+	
+	//CONTROL SIGNALS					
 	register uncondBr 	#(1) 	(.wrData(inUncondBr), 	.dOut(outUncondBr), .reset, .clk, .wrEn);
 	register brTaken 		#(1) 	(.wrData(inBrTaken), 	.dOut(outBrTaken), .reset, .clk, .wrEn);
 	register Reg2Loc 		#(1) 	(.wrData(inReg2Loc), 	.dOut(outReg2Loc), .reset, .clk, .wrEn);
@@ -38,13 +72,32 @@ module pipeline_registers(
 	register setFlag 		#(1) 	(.wrData(insetFlag), 	.dOut(outsetFlag), .reset, .clk, .wrEn);
 	register load 			#(1) 	(.wrData(inload), 		.dOut(outload), .reset, .clk, .wrEn);
 
-	
+	//REGISTERS
 	register Rn 			#(5) 	(.wrData(inRn), 			.dOut(outRn), .reset, .clk, .wrEn);
 	register Rm 			#(5) 	(.wrData(inRm), 			.dOut(outRm), .reset, .clk, .wrEn);
 	register Rd 			#(5) 	(.wrData(inRd), 			.dOut(outRd), .reset, .clk, .wrEn);
 	register ALUop 		#(3) 	(.wrData(inALUop), 		.dOut(outALUop), .reset, .clk, .wrEn);
+	register Aa		 		#(5) 	(.wrData(inAa), 			.dOut(outAa), .reset, .clk, .wrEn);
+	register Ab		 		#(5) 	(.wrData(inAb), 			.dOut(outAb), .reset, .clk, .wrEn);
+	register Aw		 		#(5) 	(.wrData(inAw), 			.dOut(outAw), .reset, .clk, .wrEn);
 	
-	//constants
+	//DATA
+	register Da 			#(64) 	(.wrData(inDa), 			.dOut(outDa), .reset, .clk, .wrEn);
+	register Db 			#(64) 	(.wrData(inDb), 			.dOut(outDb), .reset, .clk, .wrEn);
+	register ALUin			#(64) 	(.wrData(inALUin), 		.dOut(outALUin), .reset, .clk, .wrEn);
+	register imm	 		#(64) 	(.wrData(inimm), 			.dOut(outimm), .reset, .clk, .wrEn);
+	register KZin 			#(64) 	(.wrData(inKZin), 		.dOut(outKZin), .reset, .clk, .wrEn);
+	register ALUout		#(64) 	(.wrData(inALUout), 		.dOut(outALUout), .reset, .clk, .wrEn);
+	register Memout		#(64) 	(.wrData(inMemout), 		.dOut(outMemout), .reset, .clk, .wrEn);
+	register Memout2 		#(64) 	(.wrData(inMemout2), 	.dOut(outMemout2), .reset, .clk, .wrEn);
+	register wrBout		#(64) 	(.wrData(inwrBout), 		.dOut(outwrBout), .reset, .clk, .wrEn);
+	register Dw 			#(64) 	(.wrData(inDw), 			.dOut(outDw), .reset, .clk, .wrEn);
+	register MOVout		#(64) 	(.wrData(inMOVout), 		.dOut(outMOVout), .reset, .clk, .wrEn);
+	register byteResult	#(64) 	(.wrData(inbyteResult), .dOut(outbyteResult), .reset, .clk, .wrEn);
+	register imm12_pad	#(64) 	(.wrData(inimm12_pad),	.dOut(outimm12_pad), .reset, .clk, .wrEn);
+	register DAddr9_SE 	#(64) 	(.wrData(inDAddr9_SE), 	.dOut(outDAddr9_SE), .reset, .clk, .wrEn);
+
+	//IMMEDIATES
 	register imm12 		#(12) (.wrData(inimm12), 		.dOut(outimm12), .reset, .clk, .wrEn);
 	register imm16 		#(16) (.wrData(inimm16), 		.dOut(outimm16), .reset, .clk, .wrEn);
 	register DAddr9		#(9) 	(.wrData(inDAddr9), 		.dOut(outDAddr9), .reset, .clk, .wrEn);

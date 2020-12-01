@@ -20,13 +20,9 @@ vlog "../Lab2/fullAdder64bit.sv"
 vlog "../Lab2/fullAdder.sv"
 vlog "../Lab2/andOp.sv"
 vlog "../Lab2/alustim.sv"
-vlog "./math.sv"
 vlog "./instructmem.sv"
 vlog "./datamem.sv"
 vlog "./pc.sv"
-vlog "./se_9bit.sv"
-vlog "./se_19bit.sv"
-vlog "./se_26bit.sv"
 vlog "./se.sv"
 vlog "./datapath.sv"
 vlog "./PCIncrementor.sv"
@@ -43,7 +39,7 @@ vsim -voptargs="+acc" -t 1ps -lib work BillyCPU_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do wave_test5.do
+do wave_test4.do
 
 # Set the window types
 view wave

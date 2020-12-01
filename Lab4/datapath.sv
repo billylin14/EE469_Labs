@@ -30,7 +30,7 @@ module datapath (
 					 KZin;
 	logic [3:0] shiftSHAMT;
 					 
-	assign byteResult = {56'b0, Memout2[7:0]};
+	assign byteResult = {56'b0, Memout2[7:0]}; //after WR
 	
 	genvar i;
 	genvar j;

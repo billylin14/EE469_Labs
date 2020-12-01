@@ -26,7 +26,6 @@ add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/Mem
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/MemToReg
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/wrByte
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/immSel
-add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/shiftSel
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/ALUsrc
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/ALUop
 add wave -noupdate -group {Control Signals} /BillyCPU_testbench/dut/instrDec/KZsel
@@ -38,6 +37,8 @@ add wave -noupdate -expand -group Constants -radix decimal /BillyCPU_testbench/d
 add wave -noupdate -expand -group Constants -radix decimal /BillyCPU_testbench/dut/instrDec/BrAddr26
 add wave -noupdate -expand -group Constants /BillyCPU_testbench/dut/instrDec/SHAMT
 add wave -noupdate /BillyCPU_testbench/dut/instrDec/LDURBsel
+add wave -noupdate /BillyCPU_testbench/dut/dataP/registers/regData
+add wave -noupdate /BillyCPU_testbench/dut/dataP/memory/mem
 add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/flags
 add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/setFlag
 add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/zero
@@ -47,7 +48,7 @@ add wave -noupdate -group Flags /BillyCPU_testbench/dut/dataP/carry_out
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {610996 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 136
+configure wave -namecolwidth 197
 configure wave -valuecolwidth 81
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
@@ -61,4 +62,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {143357 ps} {1114607 ps}
+WaveRestoreZoom {0 ps} {1695488 ps}

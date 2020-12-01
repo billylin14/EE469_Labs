@@ -7,28 +7,21 @@
 // Performs the specified instruction set from the instruction memory (instrmem) and
 // Acts as a single cycle CPU that performs one instruction in a cycle
 
+//PLAN:
+//1. make pipeline working without adding any extra hardware
+// **check if structural hazard (padding stages) exists in our implementation**
+//2. invert the clock signal for regfile
+//3. add accelerate branches
+//4. add forwarding unit
+//5. **not sure about the delay slots (do NOOP? switch order of instruction??)
+//**in the pipeline_registers, we might not need to store every logic
+
 
 `timescale 1ns/10ps
 module CameronCPU (input logic clk, reset);
 	
-	logic UncondBr, BrTaken;
-	logic [18:0] CondAddr19;
-	logic [25:0] BrAddr26;
-	logic [31:0] Instruction;
-	logic zeroFlag, negativeFlag, cbzFlag;
-	logic Reg2Loc, RegWrite, 
-			MemWrite, wrByte, MemToReg, 
-			immSel, ALUsrc, KZsel, MOVsel,
-			setFlag, load;
-	logic [4:0] Rn, Rm, Rd;
-	logic [2:0] ALUop;
-	logic [11:0] imm12;
-	logic [15:0] imm16;
-	logic [8:0] DAddr9;
-	logic [3:0] LDURBsel;
-	logic [1:0] SHAMT;
-	
 	//IF- Instruction Fetch
+	logic [31:0] Instruction;
 	logic UncondBr, BrTaken; //control signals to PCIncrementor
 	logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel,
 			ALUsrc, KZsel, MOVsel, setFlag, load;//control signals to datapath
@@ -41,6 +34,8 @@ module CameronCPU (input logic clk, reset);
 	logic [25:0] 	BrAddr26;
 	logic [3:0]		LDURBsel;
 	logic [1:0] 	SHAMT;
+	logic zeroFlag, negativeFlag, cbzFlag;
+	
 	PCIncrementor pc (.UncondBr, .BrTaken, .clk, .reset,
 							.CondAddr19,
 							.BrAddr26,
@@ -61,13 +56,17 @@ module CameronCPU (input logic clk, reset);
 						.SHAMT);
 	
 	pipeline_registers IF2RF(
-						.wrEn, .clk, .reset,
-						.inUncondBr, .inBrTaken, //control signals to PCIncrementor
-						.inReg2Loc(Reg2Loc), .inRegWrite(RegWrite), .inMemWrite(MemWrite), .inwrByte(wrByte), //control signals to datapath
+						.wrEn(1'b1), .clk, .reset, //**not sure about wrEn but we could look at it later
+						//INPUT control signals to PCIncrementor
+						.inUncondBr(UncondBr), .inBrTaken(BrTaken), 
+						//INPUT control signals to datapath
+						.inReg2Loc(Reg2Loc), .inRegWrite(RegWrite), .inMemWrite(MemWrite), .inwrByte(wrByte), 
 						.inMemToReg(MemToReg), .inimmSel(immSel), .inALUsrc(ALUsrc), .inKZsel(KZsel), 
 						.inMOVsel(MOVsel), .insetFlag(setFlag), .inload(load),
-						.inRn(Rn), .inRm(Rm), .inRd(Rd), //registers
+						//INPUT registers
+						.inRn(Rn), .inRm(Rm), .inRd(Rd), 
 						.inALUop(ALUop),
+						//INPUT immediates
 						.inimm12(imm12),
 						.inimm16(imm16),
 						.inDAddr9(DAddr9),
@@ -75,12 +74,17 @@ module CameronCPU (input logic clk, reset);
 						.inBrAddr26(BrAddr26),
 						.inLDURBsel(LDURBsel),
 						.inSHAMT(SHAMT),
-						.outUncondBr(UncondBrRF), .outBrTaken(BrTakenRF), //control signals to PCIncrementor
-						.outReg2Loc(Reg2LocRF), .outRegWrite(RegWriteRF), .outMemWrite(MemWriteRF), .outwrByte(wrByteRF), //control signals to datapath
+						
+						//OUTPUT control signals to PCIncrementor
+						.outUncondBr(UncondBrRF), .outBrTaken(BrTakenRF), 
+						//OUTPUT control signals to datapath
+						.outReg2Loc(Reg2LocRF), .outRegWrite(RegWriteRF), .outMemWrite(MemWriteRF), .outwrByte(wrByteRF), 
 						.outMemToReg(MemToRegRF), .outimmSel(immSelRF), .outALUsrc(ALUsrcRF), .outKZsel(KZselRF), .outMOVsel(MOVselRF),
 						.outsetFlag(setFlagRF), .outload(loadRF),
-						.outRn(RnRF), .outRm(RmRF), .outRd(RdRF), //register
+						//OUTPUT registers
+						.outRn(RnRF), .outRm(RmRF), .outRd(RdRF), 
 						.outALUop(ALUopRF),
+						//OUTPUT immediates
 						.outimm12(imm12RF),
 						.outimm16(imm16RF),
 						.outDAddr9(DAddr9RF),
@@ -89,10 +93,12 @@ module CameronCPU (input logic clk, reset);
 						.outLDURBsel(LDURBselRF),
 						.outSHAMT(SHAMTRF));
 
+	
 	//RF- Register Fetch
 	//TODO: 	1. Accelerate branch
 	//			2. Delay Slot
 	//			3. Forwarding
+
 	logic UncondBrRF, BrTakenRF; //control signals to PCIncrementor
 	logic Reg2LocRF, RegWriteRF, MemWriteRF, wrByteRF, MemToRegRF, immSelRF,
 			ALUsrcRF, KZselRF, MOVselRF, setFlagRF, loadRF;//control signals to datapath
@@ -106,10 +112,70 @@ module CameronCPU (input logic clk, reset);
 	logic [3:0]		LDURBselRF;
 	logic [1:0] 	SHAMTRF;
 	
-	regfile registers (.clk, .ReadRegister1(Aa), .ReadRegister2(Ab), 
-		.WriteRegister(Aw), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
+	
+	generate
+		for (i=0; i<5; i++)begin: build5bitMux
+			mux2x1 reg2location (.selector(Reg2Loc), .in({Rm[i], Rd[i]}), .out(Ab[i]));
+		end
+	endgenerate
+	
+	regfile registers (.clk, .ReadRegister1(RnRF), .ReadRegister2(Ab), 
+		.WriteRegister(RdRF), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
+		
+	pipeline_registers RF2EX(
+						.wrEn(1'b1), .clk, .reset, //**not sure about wrEn but we could look at it later
+						//INPUT control signals to PCIncrementor
+						.inUncondBr(UncondBrRF), .inBrTaken(BrTakenRF), 
+						//INPUT control signals to datapath
+						.inReg2Loc(Reg2LocRF), .inRegWrite(RegWriteRF), .inMemWrite(MemWriteRF), .inwrByte(wrByteRF), 
+						.inMemToReg(MemToRegRF), .inimmSel(immSelRF), .inALUsrc(ALUsrcRF), .inKZsel(KZselRF), 
+						.inMOVsel(MOVselRF), .insetFlag(setFlagRF), .inload(loadRF),
+						//INPUT registers
+						.inRn(RnRF), .inRm(RmRF), .inRd(RdRF), 
+						.inALUop(ALUopRF),
+						//INPUT immediates
+						.inimm12(imm12RF),
+						.inimm16(imm16RF),
+						.inDAddr9(DAddr9RF),
+						.inCondAddr19(CondAddr19RF),
+						.inBrAddr26(BrAddr26RF),
+						.inLDURBsel(LDURBselRF),
+						.inSHAMT(SHAMTRF),
+						
+						//OUTPUT control signals to PCIncrementor
+						.outUncondBr(UncondBrRF), .outBrTaken(BrTakenRF), 
+						//OUTPUT control signals to datapath
+						.outReg2Loc(Reg2LocRF), .outRegWrite(RegWriteRF), .outMemWrite(MemWriteRF), .outwrByte(wrByteRF), 
+						.outMemToReg(MemToRegRF), .outimmSel(immSelRF), .outALUsrc(ALUsrcRF), .outKZsel(KZselRF), .outMOVsel(MOVselRF),
+						.outsetFlag(setFlagRF), .outload(loadRF),
+						//OUTPUT register
+						.outRn(RnRF), .outRm(RmRF), .outRd(RdRF), 
+						.outALUop(ALUopRF),
+						//OUTPUT immediates
+						.outimm12(imm12RF),
+						.outimm16(imm16RF),
+						.outDAddr9(DAddr9RF),
+						.outCondAddr19(CondAddr19RF),
+						.outBrAddr26(BrAddr26RF),
+						.outLDURBsel(LDURBselRF),
+						.outSHAMT(SHAMTRF));
 	
 	//EX- Execute
+	logic UncondBrRF, BrTakenRF; //control signals to PCIncrementor
+	logic Reg2LocRF, RegWriteRF, MemWriteRF, wrByteRF, MemToRegRF, immSelRF,
+			ALUsrcRF, KZselRF, MOVselRF, setFlagRF, loadRF;//control signals to datapath
+	logic [4:0] 	RnRF, RmRF, RdRF; //register
+	logic [2:0] 	ALUopRF;
+	logic [11:0] 	imm12RF;
+	logic [15:0] 	imm16RF;
+	logic [8:0]		DAddr9RF;
+	logic [18:0] 	CondAddr19RF;
+	logic [25:0] 	BrAddr26RF;
+	logic [3:0]		LDURBselRF;
+	logic [1:0] 	SHAMTRF;
+	
+	logic [4:0] 	Ab;
+	
 	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative(flags[0]), .zero(flags[1]), .overflow(flags[2]), .carry_out(flags[3]));
 		
 	//MEM- Data Memory
