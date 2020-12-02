@@ -1,3 +1,5 @@
+// When selector = 0, output LSB of in
+// When selector = 3, output MSB of in
 `timescale 1ns/10ps
 module mux4x1 (input logic [1:0] selector, 
 					input logic [3:0] in,

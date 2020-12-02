@@ -127,6 +127,7 @@ module CameronCPU (input logic clk, reset);
 	
 	logic 			negativeWB, zeroWB, overflowWB, carry_outWB, cbzFlagWB;
 	
+	
 	//IF- Instruction Fetch	
 	IF_stage ifStage (.clk, .reset, //input
 							.zeroFlag(zeroEX), .negativeFlag(negativeEX), .cbzFlag(cbzFlagEX),
@@ -179,7 +180,7 @@ module CameronCPU (input logic clk, reset);
 
 	
 	//RF- Register Fetch
-	//TODO: 	1. Accelerate branch
+	//TODO: 	1. Accelerate branch (slide 118)
 	//			2. Delay Slot
 	//			3. Forwarding
 
@@ -197,6 +198,8 @@ module CameronCPU (input logic clk, reset);
 							 .DAddr9(DAddr9RF),
 							 .Dw(DwWB), 		 //from WB stage mux
 							 .RegWrite(RegWriteWB), //from WB
+							 .DwMEM(DwWB), .ALUoutEX(ALUoutEX),	//for forwarding, from EX and MEM
+							 .AwEX(RdEX), .AwMEM(RdMEM),
 							 .Da(DaRF), .ALUin(ALUinRF), .Db(DbRF));
 	
 	pipeline_registers RF2EX(	.clk, .reset, .wrEn(1'b1),

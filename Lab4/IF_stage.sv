@@ -18,7 +18,7 @@ module IF_stage  (input logic clk, reset,
 							.CondAddr19,
 							.BrAddr26,
 							.Instruction);
-				
+	
 	instrDecoder instrDec (.Instruction,
 						.zeroFlag, .negativeFlag, .cbzFlag,
 						.UncondBr, .BrTaken, //control signals to PCIncrementor

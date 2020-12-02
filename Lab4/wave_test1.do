@@ -4,24 +4,25 @@ add wave -noupdate /CameronCPU_testbench/clk
 add wave -noupdate /CameronCPU_testbench/reset
 add wave -noupdate -radix unsigned /CameronCPU_testbench/dut/ifStage/pc/PCout
 add wave -noupdate -radix decimal /CameronCPU_testbench/dut/rfStage/imm12
-add wave -noupdate -expand -group ALUout -radix unsigned /CameronCPU_testbench/dut/ALUoutRF
-add wave -noupdate -expand -group ALUout -radix unsigned /CameronCPU_testbench/dut/ALUoutEX
-add wave -noupdate -expand -group ALUout -radix unsigned /CameronCPU_testbench/dut/ALUoutMEM
-add wave -noupdate -expand -group ALUout -radix unsigned /CameronCPU_testbench/dut/ALUoutWB
-add wave -noupdate -expand -group Da -radix unsigned /CameronCPU_testbench/dut/DaRF
-add wave -noupdate -expand -group Da -radix unsigned /CameronCPU_testbench/dut/DaEX
-add wave -noupdate -expand -group Da -radix unsigned /CameronCPU_testbench/dut/DaMEM
-add wave -noupdate -expand -group Da -radix unsigned /CameronCPU_testbench/dut/DaWB
-add wave -noupdate -expand -group ALUin -radix unsigned /CameronCPU_testbench/dut/ALUinRF
-add wave -noupdate -expand -group ALUin -radix unsigned /CameronCPU_testbench/dut/ALUinEX
-add wave -noupdate -expand -group ALUin -radix unsigned /CameronCPU_testbench/dut/ALUinMEM
-add wave -noupdate -expand -group ALUin -radix unsigned /CameronCPU_testbench/dut/ALUinWB
-add wave -noupdate -expand -group Dw -radix unsigned /CameronCPU_testbench/dut/DwRF
-add wave -noupdate -expand -group Dw -radix unsigned /CameronCPU_testbench/dut/DwEX
-add wave -noupdate -expand -group Dw -radix unsigned /CameronCPU_testbench/dut/DwMEM
-add wave -noupdate -expand -group Dw -radix unsigned /CameronCPU_testbench/dut/DwWB
+add wave -noupdate -expand -group {IF outputs} -radix unsigned /CameronCPU_testbench/dut/ifStage/Rd
+add wave -noupdate -expand -group {IF outputs} -radix unsigned /CameronCPU_testbench/dut/ifStage/Rm
+add wave -noupdate -expand -group {IF outputs} -radix unsigned /CameronCPU_testbench/dut/ifStage/Rn
+add wave -noupdate -expand -group {RF outputs} -radix unsigned /CameronCPU_testbench/dut/DaRF
+add wave -noupdate -expand -group {RF outputs} -radix unsigned /CameronCPU_testbench/dut/ALUinRF
+add wave -noupdate -radix decimal /CameronCPU_testbench/dut/rfStage/Da
+add wave -noupdate -expand -group {EX outputs} -radix decimal /CameronCPU_testbench/dut/rfStage/ALUoutEX
+add wave -noupdate -expand -group {EX outputs} -radix unsigned /CameronCPU_testbench/dut/exStage/ALUout
+add wave -noupdate -expand -group {WB outputs} -radix unsigned /CameronCPU_testbench/dut/wbStage/Dw
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/Rm
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/Rd
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/AaRF
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/AbRF
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/AwEX
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/AwMEM
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/DaSEL
+add wave -noupdate -expand -group Forwarding -radix unsigned /CameronCPU_testbench/dut/rfStage/forward/DbSEL
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {281992 ps} 0}
+WaveRestoreCursors {{Cursor 1} {239501 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 173
 configure wave -valuecolwidth 78
@@ -37,4 +38,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1338752 ps}
+WaveRestoreZoom {0 ps} {2677500 ps}
