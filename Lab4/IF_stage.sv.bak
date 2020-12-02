@@ -1,5 +1,4 @@
 module IF_stage  (input logic clk, reset,
-						input logic zeroFlag, negativeFlag, cbzFlag,
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor
 						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
@@ -11,8 +10,6 @@ module IF_stage  (input logic clk, reset,
 						output logic [25:0] 	BrAddr26,
 						output logic [3:0]	LDURBsel,
 						output logic [1:0] 	SHAMT);
-						
-	logic [31:0] Instruction;
 	PCIncrementor pc (.UncondBr, .BrTaken, .clk, .reset,
 							.CondAddr19,
 							.BrAddr26,
@@ -31,4 +28,4 @@ module IF_stage  (input logic clk, reset,
 						.BrAddr26,
 						.LDURBsel,
 						.SHAMT);
-endmodule
+}

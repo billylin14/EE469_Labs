@@ -11,7 +11,7 @@ module RF_stage  (input logic clk, //invert this later
 	logic [63:0] DAddr9_SE, imm12_pad, imm;
 	
 	se #(9) SE1(.in(DAddr9), .out(DAddr9_SE));
-	assign imm12_pad = {52'b0, Imm12};
+	assign imm12_pad = {52'b0, imm12};
 	
 	genvar i;
 	generate
@@ -26,4 +26,4 @@ module RF_stage  (input logic clk, //invert this later
 	
 	regfile registers (.clk, .ReadRegister1(Rn), .ReadRegister2(Ab), 
 		.WriteRegister(Rd), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
-}
+endmodule

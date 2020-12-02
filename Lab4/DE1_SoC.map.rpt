@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Mon Nov 16 21:00:25 2020
+Wed Dec 02 09:58:29 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 16 21:00:25 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 02 09:58:29 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; mux4x1                                      ;
@@ -167,14 +167,14 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
-; ../Lab1/mux2x1.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv ;         ;
-; mux4x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/wutzk/Desktop/EE469_Labs/Lab4/mux4x1.sv ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; ../Lab1/mux2x1.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv ;         ;
+; mux4x1.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/mux4x1.sv ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
@@ -260,118 +260,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Nov 16 20:59:42 2020
+    Info: Processing started: Wed Dec 02 09:58:05 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 3 design units, including 3 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/register.sv
-    Info (12023): Found entity 1: D_FF File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 8
-    Info (12023): Found entity 2: register File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 23
-    Info (12023): Found entity 3: register_dut_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/register.sv Line: 45
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/mux32x1.sv
-    Info (12023): Found entity 1: mux32x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv Line: 9
-    Info (12023): Found entity 2: mux32x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux32x1.sv Line: 25
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/mux8x1.sv
-    Info (12023): Found entity 1: mux8x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv Line: 9
-    Info (12023): Found entity 2: mux8x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux8x1.sv Line: 25
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/mux2x1.sv
-    Info (12023): Found entity 1: mux2x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv Line: 9
-    Info (12023): Found entity 2: mux2x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/mux2x1.sv Line: 26
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/decoder5x32.sv
-    Info (12023): Found entity 1: decoder5x32 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder5x32.sv Line: 9
-    Info (12023): Found entity 2: decoder5x32_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder5x32.sv Line: 27
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/decoder3x8.sv
-    Info (12023): Found entity 1: decoder3x8 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder3x8.sv Line: 9
-    Info (12023): Found entity 2: decoder_3x8_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder3x8.sv Line: 25
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/decoder2x4.sv
-    Info (12023): Found entity 1: decoder2x4 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder2x4.sv Line: 9
-    Info (12023): Found entity 2: decoder_2x4_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder2x4.sv Line: 23
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/decoder1x2.sv
-    Info (12023): Found entity 1: decoder1x2 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder1x2.sv Line: 10
-    Info (12023): Found entity 2: decoder_1x2_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/decoder1x2.sv Line: 22
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/xorop.sv
-    Info (12023): Found entity 1: xorOp File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/xorOp.sv Line: 9
-    Info (12023): Found entity 2: xorOp_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/xorOp.sv Line: 27
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/orop.sv
-    Info (12023): Found entity 1: orOp File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/orOp.sv Line: 9
-    Info (12023): Found entity 2: orOp_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/orOp.sv Line: 28
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/norgate64x1.sv
-    Info (12023): Found entity 1: norGate64x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv Line: 9
-    Info (12023): Found entity 2: norGate64x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/norGate64x1.sv Line: 22
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/fulladder64bit.sv
-    Info (12023): Found entity 1: fullAdder64bit File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv Line: 10
-    Info (12023): Found entity 2: fullAdder64bit_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder64bit.sv Line: 42
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/fulladder.sv
-    Info (12023): Found entity 1: fullAdder File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv Line: 9
-    Info (12023): Found entity 2: fullAdder_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/fullAdder.sv Line: 24
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/andop.sv
-    Info (12023): Found entity 1: andOp File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/andOp.sv Line: 10
-    Info (12023): Found entity 2: andOp_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/andOp.sv Line: 29
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab2/alustim.sv
-    Info (12023): Found entity 1: alu File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/alustim.sv Line: 28
-    Info (12023): Found entity 2: alustim File: C:/Users/wutzk/Desktop/EE469_Labs/Lab2/alustim.sv Line: 74
+Info (12021): Found 3 design units, including 3 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/register.sv
+    Info (12023): Found entity 1: D_FF File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 8
+    Info (12023): Found entity 2: register File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 23
+    Info (12023): Found entity 3: register_dut_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/register.sv Line: 45
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/mux32x1.sv
+    Info (12023): Found entity 1: mux32x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv Line: 9
+    Info (12023): Found entity 2: mux32x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux32x1.sv Line: 25
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/mux8x1.sv
+    Info (12023): Found entity 1: mux8x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv Line: 9
+    Info (12023): Found entity 2: mux8x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux8x1.sv Line: 25
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/mux2x1.sv
+    Info (12023): Found entity 1: mux2x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv Line: 9
+    Info (12023): Found entity 2: mux2x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/mux2x1.sv Line: 26
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/decoder5x32.sv
+    Info (12023): Found entity 1: decoder5x32 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv Line: 9
+    Info (12023): Found entity 2: decoder5x32_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder5x32.sv Line: 27
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/decoder3x8.sv
+    Info (12023): Found entity 1: decoder3x8 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv Line: 9
+    Info (12023): Found entity 2: decoder_3x8_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder3x8.sv Line: 25
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/decoder2x4.sv
+    Info (12023): Found entity 1: decoder2x4 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv Line: 9
+    Info (12023): Found entity 2: decoder_2x4_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder2x4.sv Line: 23
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/decoder1x2.sv
+    Info (12023): Found entity 1: decoder1x2 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv Line: 10
+    Info (12023): Found entity 2: decoder_1x2_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/decoder1x2.sv Line: 22
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/xorop.sv
+    Info (12023): Found entity 1: xorOp File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/xorOp.sv Line: 9
+    Info (12023): Found entity 2: xorOp_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/xorOp.sv Line: 27
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/orop.sv
+    Info (12023): Found entity 1: orOp File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/orOp.sv Line: 9
+    Info (12023): Found entity 2: orOp_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/orOp.sv Line: 28
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/norgate64x1.sv
+    Info (12023): Found entity 1: norGate64x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/norGate64x1.sv Line: 9
+    Info (12023): Found entity 2: norGate64x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/norGate64x1.sv Line: 22
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/fulladder64bit.sv
+    Info (12023): Found entity 1: fullAdder64bit File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv Line: 10
+    Info (12023): Found entity 2: fullAdder64bit_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder64bit.sv Line: 42
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/fulladder.sv
+    Info (12023): Found entity 1: fullAdder File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv Line: 9
+    Info (12023): Found entity 2: fullAdder_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/fullAdder.sv Line: 24
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/andop.sv
+    Info (12023): Found entity 1: andOp File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/andOp.sv Line: 10
+    Info (12023): Found entity 2: andOp_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/andOp.sv Line: 29
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab2/alustim.sv
+    Info (12023): Found entity 1: alu File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/alustim.sv Line: 28
+    Info (12023): Found entity 2: alustim File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab2/alustim.sv Line: 74
 Info (12021): Found 2 design units, including 2 entities, in source file instructmem.sv
-    Info (12023): Found entity 1: instructmem File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/instructmem.sv Line: 27
-    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/instructmem.sv Line: 67
+    Info (12023): Found entity 1: instructmem File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/instructmem.sv Line: 27
+    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/instructmem.sv Line: 67
 Info (12021): Found 2 design units, including 2 entities, in source file datamem.sv
-    Info (12023): Found entity 1: datamem File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/datamem.sv Line: 17
-    Info (12023): Found entity 2: datamem_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/datamem.sv Line: 75
+    Info (12023): Found entity 1: datamem File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/datamem.sv Line: 17
+    Info (12023): Found entity 2: datamem_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/datamem.sv Line: 75
 Info (12021): Found 2 design units, including 2 entities, in source file pc.sv
-    Info (12023): Found entity 1: pc File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/pc.sv Line: 12
-    Info (12023): Found entity 2: pc_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/pc.sv Line: 25
+    Info (12023): Found entity 1: pc File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/pc.sv Line: 12
+    Info (12023): Found entity 2: pc_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/pc.sv Line: 25
 Info (12021): Found 2 design units, including 2 entities, in source file se.sv
-    Info (12023): Found entity 1: se File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/se.sv Line: 10
-    Info (12023): Found entity 2: se_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/se.sv Line: 17
+    Info (12023): Found entity 1: se File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/se.sv Line: 10
+    Info (12023): Found entity 2: se_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/se.sv Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
-    Info (12023): Found entity 1: datapath File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/datapath.sv Line: 11
+    Info (12023): Found entity 1: datapath File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/datapath.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pcincrementor.sv
-    Info (12023): Found entity 1: PCIncrementor File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/PCIncrementor.sv Line: 11
+    Info (12023): Found entity 1: PCIncrementor File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/PCIncrementor.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file instrdecoder.sv
-    Info (12023): Found entity 1: instrDecoder File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/instrDecoder.sv Line: 11
+    Info (12023): Found entity 1: instrDecoder File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/instrDecoder.sv Line: 11
 Info (12021): Found 2 design units, including 2 entities, in source file leftshift.sv
-    Info (12023): Found entity 1: leftShift File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/leftShift.sv Line: 11
-    Info (12023): Found entity 2: leftShift_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/leftShift.sv Line: 30
+    Info (12023): Found entity 1: leftShift File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/leftShift.sv Line: 11
+    Info (12023): Found entity 2: leftShift_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/leftShift.sv Line: 30
 Info (12021): Found 2 design units, including 2 entities, in source file billycpu.sv
-    Info (12023): Found entity 1: BillyCPU File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/BillyCPU.sv Line: 12
-    Info (12023): Found entity 2: BillyCPU_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/BillyCPU.sv Line: 62
+    Info (12023): Found entity 1: BillyCPU File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/BillyCPU.sv Line: 12
+    Info (12023): Found entity 2: BillyCPU_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/BillyCPU.sv Line: 62
 Info (12021): Found 2 design units, including 2 entities, in source file dff_real.sv
-    Info (12023): Found entity 1: dff_real File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/dff_real.sv Line: 9
-    Info (12023): Found entity 2: dff_real_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/dff_real.sv Line: 18
-Warning (10090): Verilog HDL syntax warning at CameronCPU.sv(45): extra block comment delimiter characters /* within block comment File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 45
-Warning (10090): Verilog HDL syntax warning at CameronCPU.sv(130): extra block comment delimiter characters /* within block comment File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 130
-Warning (10090): Verilog HDL syntax warning at CameronCPU.sv(133): extra block comment delimiter characters /* within block comment File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 133
-Warning (10090): Verilog HDL syntax warning at CameronCPU.sv(273): extra block comment delimiter characters /* within block comment File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 273
-Info (12021): Found 0 design units, including 0 entities, in source file cameroncpu.sv
+    Info (12023): Found entity 1: dff_real File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/dff_real.sv Line: 9
+    Info (12023): Found entity 2: dff_real_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/dff_real.sv Line: 18
+Info (12021): Found 2 design units, including 2 entities, in source file cameroncpu.sv
+    Info (12023): Found entity 1: CameronCPU File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/CameronCPU.sv Line: 23
+    Info (12023): Found entity 2: CameronCPU_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/CameronCPU.sv Line: 331
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline_registers.sv
-    Info (12023): Found entity 1: pipeline_registers File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/pipeline_registers.sv Line: 2
-Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/regfile.sv
-    Info (12023): Found entity 1: regfile File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/regfile.sv Line: 8
-    Info (12023): Found entity 2: regstim File: C:/Users/wutzk/Desktop/EE469_Labs/Lab1/regfile.sv Line: 51
+    Info (12023): Found entity 1: pipeline_registers File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/pipeline_registers.sv Line: 2
+Info (12021): Found 2 design units, including 2 entities, in source file /users/user/desktop/uw/courses/20 au/ee 469/ee469_labs/lab1/regfile.sv
+    Info (12023): Found entity 1: regfile File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv Line: 8
+    Info (12023): Found entity 2: regstim File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab1/regfile.sv Line: 51
 Info (12021): Found 1 design units, including 1 entities, in source file forwardingunit.sv
-    Info (12023): Found entity 1: forwardingUnit File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/forwardingUnit.sv Line: 1
+    Info (12023): Found entity 1: forwardingUnit File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/forwardingUnit.sv Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file mux4x1.sv
-    Info (12023): Found entity 1: mux4x1 File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/mux4x1.sv Line: 2
-    Info (12023): Found entity 2: mux4x1_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/mux4x1.sv Line: 13
+    Info (12023): Found entity 1: mux4x1 File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/mux4x1.sv Line: 2
+    Info (12023): Found entity 2: mux4x1_testbench File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/mux4x1.sv Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file if_stage.sv
+    Info (12023): Found entity 1: IF_stage File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/IF_stage.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rf_stage.sv
+    Info (12023): Found entity 1: RF_stage File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/RF_stage.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ex_stage.sv
+    Info (12023): Found entity 1: EX_stage File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/EX_stage.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mem_stage.sv
+    Info (12023): Found entity 1: MEM_stage File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/MEM_stage.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file wb_stage.sv
+    Info (12023): Found entity 1: WB_stage File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/WB_stage.sv Line: 1
 Info (12127): Elaborating entity "mux4x1" for the top level hierarchy
-Info (12128): Elaborating entity "mux2x1" for hierarchy "mux2x1:m1" File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/mux4x1.sv Line: 8
+Info (12128): Elaborating entity "mux2x1" for hierarchy "mux2x1:m1" File: C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/mux4x1.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/wutzk/Desktop/EE469_Labs/Lab4/DE1_SoC.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/DE1_SoC.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 8 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Mon Nov 16 21:00:25 2020
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:00:55
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Wed Dec 02 09:58:29 2020
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/wutzk/Desktop/EE469_Labs/Lab4/DE1_SoC.map.smsg.
+The suppressed messages can be found in C:/Users/USER/Desktop/UW/courses/20 AU/EE 469/EE469_Labs/Lab4/DE1_SoC.map.smsg.
 
 

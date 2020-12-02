@@ -38,4 +38,4 @@ module EX_stage  (input logic clk,
 		end
 	end
 	endgenerate
-}
+endmodule

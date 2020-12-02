@@ -8,4 +8,4 @@ module WB_stage  (input logic MOVsel,
 			mux2x1 MOVselector (.selector(MOVsel), .in({MOVout[i], wrBout[i]}), .out(Dw[i]));
 		end
 	endgenerate
-}
+endmodule

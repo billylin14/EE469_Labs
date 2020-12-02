@@ -18,4 +18,4 @@ module MEM_stage (input logic clk,
 	datamem memory(.address(ALUout), .write_enable(MemWrite), .read_enable(load), .write_data(Db), .clk,
 						.xfer_size(LDURBsel), .read_data(Memout));
 
-}
+endmodule
