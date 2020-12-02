@@ -36,6 +36,7 @@ vlog "./EX_stage.sv"
 vlog "./MEM_stage.sv"
 vlog "./WB_stage.sv"
 vlog "./mux4x1.sv"
+vlog "./pipeline_registers.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the

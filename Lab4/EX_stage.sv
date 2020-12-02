@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module EX_stage  (input logic clk,
 						input logic [63:0] 	Da, Db, ALUin,
 						input logic [1:0] 	SHAMT,
@@ -6,11 +7,11 @@ module EX_stage  (input logic clk,
 						input logic [15:0]		imm16,
 						output logic [63:0] 	ALUout, MOVout,
 						output logic negative, zero, overflow, carry_out, cbzFlag);
+	//Flags
+	logic [3:0] flags;					
+						
 	//ALU		
 	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative(flags[0]), .zero(flags[1]), .overflow(flags[2]), .carry_out(flags[3]));
-	
-	//Flags
-	logic [3:0] flags;
 	
 	dff_real negDff (.in(flags[0]), .en(setFlag), .out(negative), .clk);
 	dff_real zeroDff (.in(flags[1]), .en(setFlag), .out(zero), .clk);

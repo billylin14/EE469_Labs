@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module RF_stage  (input logic clk, //invert this later
 						input logic Reg2Loc, immSel, ALUsrc, setFlag,//control signals to datapath
 						input logic [4:0] 	Rn, Rm, Rd, //register
@@ -23,7 +24,7 @@ module RF_stage  (input logic clk, //invert this later
 		mux2x1 ALUSrcSel 	(.selector(ALUsrc), .in({imm[i], Db[i]}), .out(ALUin[i]));
 		end
 	endgenerate
-	
-	regfile registers (.clk, .ReadRegister1(Rn), .ReadRegister2(Ab), 
+
+	regfile registers (.clk(~clk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
 		.WriteRegister(Rd), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
 endmodule

@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module IF_stage  (input logic clk, reset,
 						input logic zeroFlag, negativeFlag, cbzFlag,
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor

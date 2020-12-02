@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module MEM_stage (input logic clk,
 						input logic [3:0] 	LDURBsel,
 						input logic [63:0] 	ALUout, Db,
