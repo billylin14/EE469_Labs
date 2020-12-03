@@ -1,3 +1,4 @@
+//Place inside of Cameron CPU?
 module forwardingUnit ( input logic [4:0] AaRF, AbRF, AwEX, AwMEM,
 								output logic [1:0] DaSEL, DbSEL);
 	always_comb begin

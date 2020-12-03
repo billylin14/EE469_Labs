@@ -18,7 +18,6 @@
 //**in the pipeline_registers, we might not need to store every logic
 
 
-
 `timescale 1ns/10ps
 module CameronCPU (input logic clk, reset);
 	

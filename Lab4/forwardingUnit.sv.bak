@@ -1,12 +1,13 @@
 module forwardingUnit ( input logic [4:0] AaRF, AbRF, AwEX, AwMEM,
-								output logic [1:0] DaSEL, DbSEL );
-	
-	if(AaRF == AwEX) 				DaSEL = 2'b0;
-	else if (AaRF == AwMEM) 	DaSEL = 2'b01;
-	else 								DaSEL = 2'b10;
-	
-	if(AbRF == AwEX) 				DbSEL = 2'b0;
-	else if (AbRF == AwMEM) 	DbSEL = 2'b01;
-	else 								DbSEL = 2'b10;
+								output logic [1:0] DaSEL, DbSEL);
+	always_comb begin
+		if (AaRF == AwEX)			begin				DaSEL = 2'b0; end
+		else if (AaRF == AwMEM)	begin	 			DaSEL = 2'b01;end
+		else 							begin				DaSEL = 2'b10;end
+		
+		if (AbRF == AwEX) 		begin				DbSEL = 2'b0; end
+		else if (AbRF == AwMEM)	begin				DbSEL = 2'b01;end
+		else 							begin				DbSEL = 2'b10;end
+	end
 	
 endmodule
