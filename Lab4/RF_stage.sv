@@ -4,10 +4,11 @@ module RF_stage  (input logic clk, //invert this later
 						input logic [4:0] 	Rn, Rm, Rd, //register
 						input logic [11:0] 	imm12,
 						input logic [8:0]		DAddr9,
-						input logic [63:0]	Dw, 		 		//from WB stage mux
-						input logic 			RegWrite, 		//from WB
+						input logic [4:0]		AwWB,				//from WB stage to write
+						input logic [63:0]	Dw, 		 		//from WB stage mux to write
+						input logic 			RegWrite, 		//from WB to write
 						input logic [63:0]	DwMEM, ALUoutEX,	//for forwarding, from EX and MEM
-						input logic [4:0]		AwEX, AwMEM, 
+						input logic [4:0]		AwEX, AwMEM, 		//for forwarding
 						output logic [63:0] 	Da, ALUin, Db);
 						
 	logic [4:0] Ab;
@@ -26,15 +27,15 @@ module RF_stage  (input logic clk, //invert this later
 	end
 	for (i=0; i<64; i++)begin: build64BitMux
 		mux2x1 immSelector (.selector(immSel), .in({imm12_pad[i], DAddr9_SE[i]}), .out(imm[i]));
-		mux2x1 ALUSrcSel 	(.selector(ALUsrc), .in({imm[i], Db[i]}), .out(ALUin[i]));
+		mux2x1 ALUSrcSel 	(.selector(ALUsrc), .in({imm[i], Db[i]}), .out(ALUinRF[i]));
 		//Forwarding MUX
-		mux4x1 DaRF_MUX (.selector(DaSEL), .in({1'b0, DaRF[i], DwMEM[i], ALUoutEX[i]}), .out(Da));
-		mux4x1 DbRF_MUX (.selector(DbSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin));
+		mux4x1 DaRF_MUX (.selector(DaSEL), .in({1'b0, DaRF[i], DwMEM[i], ALUoutEX[i]}), .out(Da[i]));
+		mux4x1 DbRF_MUX (.selector(DbSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin[i]));
 		end
 	endgenerate
 	
 	forwardingUnit forward (.AaRF(Rn), .AbRF(Ab), .AwEX(AwEX), .AwMEM(AwMEM),
 									.DaSEL, .DbSEL);
 	regfile registers (.clk(~clk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
-		.WriteRegister(Rd), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
+		.WriteRegister(AwWB), .WriteData(Dw), .ReadData1(DaRF), .ReadData2(Db), .RegWrite);
 endmodule

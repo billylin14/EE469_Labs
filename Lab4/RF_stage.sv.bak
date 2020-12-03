@@ -15,8 +15,6 @@ module RF_stage  (input logic clk, //invert this later
 	
 	//Forwarding unit
 	logic [1:0] DaSEL, DbSEL;
-	forwardingUnit forward (.AaRF(Rn), .AbRF(Ab), .AwEX(), .AwMEM(),
-									.DaSEL, .DbSEL);
 	
 	se #(9) SE1(.in(DAddr9), .out(DAddr9_SE));
 	assign imm12_pad = {52'b0, imm12};
@@ -34,7 +32,9 @@ module RF_stage  (input logic clk, //invert this later
 		mux4x1 DbRF_MUX (.selector(DbSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin));
 		end
 	endgenerate
-
+	
+	forwardingUnit forward (.AaRF(Rn), .AbRF(Ab), .AwEX(AwEX), .AwMEM(AwMEM),
+									.DaSEL, .DbSEL);
 	regfile registers (.clk(~clk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
 		.WriteRegister(Rd), .WriteData(Dw), .ReadData1(Da), .ReadData2(Db), .RegWrite);
 endmodule
