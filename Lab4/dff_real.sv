@@ -7,8 +7,8 @@
 // Outputs a delayed input data from the previous cycle and holds the value when enable is OFF.
 
 module dff_real (in, out, en, clk);
- output reg out;
- input in, en, clk;
+ output logic out;
+ input logic in, en, clk;
  
  always_ff @(posedge clk)
  if (en) out <= in;

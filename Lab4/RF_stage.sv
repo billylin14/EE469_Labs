@@ -10,7 +10,8 @@ module RF_stage  (input logic clk, //invert this later
 						input logic [63:0]	DwMEM, ALUoutEX,	//for forwarding, from EX and MEM
 						input logic [4:0]		AwEX, AwMEM, 		//for forwarding
 						output logic [63:0] 	Da, ALUin, Db);
-						
+	logic notClk;
+	not #0.05 (notClk, clk);	
 	logic [4:0] Ab;
 	logic [63:0] DAddr9_SE, imm12_pad, imm, DaRF, ALUinRF;
 	
@@ -36,6 +37,6 @@ module RF_stage  (input logic clk, //invert this later
 	
 	forwardingUnit forward (.AaRF(Rn), .AbRF(Ab), .AwEX(AwEX), .AwMEM(AwMEM),
 									.DaSEL, .DbSEL);
-	regfile registers (.clk(~clk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
+	regfile registers (.clk(notClk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
 		.WriteRegister(AwWB), .WriteData(Dw), .ReadData1(DaRF), .ReadData2(Db), .RegWrite);
 endmodule

@@ -23,6 +23,7 @@ module CameronCPU (input logic clk, reset);
 	
 		// IF variables
 	logic 			UncondBr, BrTaken; //control signals to PCIncrementor
+	logic [63:0]	PC;
 	logic 			Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load;//control signals to datapath
 	logic [4:0] 	Rn, Rm, Rd; //register
 	logic [2:0] 	ALUop;
@@ -39,11 +40,13 @@ module CameronCPU (input logic clk, reset);
 	logic [63:0] 	Da, ALUin, Db;
 	logic [63:0] 	MOVout, wrBout;
 	logic [63:0] 	ALUout;
+	logic [63:0]	PCout;
 	
 	logic 			negative, zero, overflow, carry_out, cbzFlag;
 	
 	// RF Variables
 	logic 			UncondBrRF, BrTakenRF; //control signals to PCIncrementor
+	logic [63:0]	PCRF;
 	logic 			Reg2LocRF, RegWriteRF, MemWriteRF, wrByteRF, MemToRegRF, immSelRF, ALUsrcRF, KZselRF, MOVselRF, setFlagRF, loadRF;//control signals to datapath
 	logic [4:0] 	RnRF, RmRF, RdRF; //register
 	logic [2:0] 	ALUopRF;
@@ -129,7 +132,12 @@ module CameronCPU (input logic clk, reset);
 	
 	//IF- Instruction Fetch	
 	IF_stage ifStage (.clk, .reset, //input
-							.zeroFlag(zeroEX), .negativeFlag(negativeEX), .cbzFlag(cbzFlagEX),
+							.zeroFlag(zeroEX), .negativeFlag(negativeEX), .cbzFlag(cbzFlag),
+							.UncondBrRF, .BrTakenRF,
+							.PCRF,
+							.CondAddr19RF,
+							.BrAddr26RF,
+							
 							.UncondBr, .BrTaken, //control signals to PCIncrementor
 							.Reg2Loc, .RegWrite, .MemWrite, .wrByte, .MemToReg, .immSel, .ALUsrc, .KZsel, .MOVsel, .setFlag, .load,//control signals to datapath
 							.Rn, .Rm, .Rd, //register
@@ -137,13 +145,15 @@ module CameronCPU (input logic clk, reset);
 							.imm12,
 							.imm16,
 							.DAddr9,
-							.CondAddr19,
-							.BrAddr26,
+							.CondAddr19,	
+							.BrAddr26,		
 							.LDURBsel,
-							.SHAMT);
+							.SHAMT,
+							.PCout);
 	
 	pipeline_registers IF2RF(	.clk, .reset, .wrEn(1'b1),
 										.inUncondBr(UncondBr), .inBrTaken(BrTaken), //control signals to PCIncrementor
+										.inPC(PCout),
 										.inReg2Loc(Reg2Loc), .inRegWrite(RegWrite), .inMemWrite(MemWrite), .inwrByte(wrByte), .inMemToReg(MemToReg), .inimmSel(immSel), .inALUsrc(ALUsrc), .inKZsel(KZsel), .inMOVsel(MOVsel), .insetFlag(setFlag), .inload(load),//control signals to datapath
 										.inRn(Rn), .inRm(Rm), .inRd(Rd), //register
 										.inALUop(ALUop),
@@ -161,6 +171,7 @@ module CameronCPU (input logic clk, reset);
 										.innegative(), .inzero(), .inoverflow(), .incarry_out(), .incbzFlag(),
 										
 										.outUncondBr(UncondBrRF), .outBrTaken(BrTakenRF), //control signals to PCincrementor
+										.outPC(PCRF),
 										.outReg2Loc(Reg2LocRF), .outRegWrite(RegWriteRF), .outMemWrite(MemWriteRF), .outwrByte(wrByteRF), .outMemToReg(MemToRegRF), .outimmSel(immSelRF), .outALUsrc(ALUsrcRF), .outKZsel(KZselRF), .outMOVsel(MOVselRF), .outsetFlag(setFlagRF), .outload(loadRF),//control signals to datapath
 										.outRn(RnRF), .outRm(RmRF), .outRd(RdRF), //register
 										.outALUop(ALUopRF),
@@ -179,16 +190,8 @@ module CameronCPU (input logic clk, reset);
 
 	
 	//RF- Register Fetch
-	//TODO: 	1. Accelerate branch (slide 118)
-	//			2. Delay Slot
-	//			3. Forwarding
-
-	
-	//TODO: 	
-	//			1. Delay Slot
-	//			2. Forwarding ()
-	//					-wire .WriteData
-	//					-add logic for DwMEM and DwEX
+	logic cbzFlagTemp;
+	norGate64x1 norgate (.in(DaRF), .out(cbzFlag));
 	
 	RF_stage rfStage	(.clk, //invert this
 							 .Reg2Loc(Reg2LocRF), .immSel(immSelRF), .ALUsrc(ALUsrcRF), .setFlag(setFlagRF),//control signals to datapath
@@ -204,6 +207,7 @@ module CameronCPU (input logic clk, reset);
 	
 	pipeline_registers RF2EX(	.clk, .reset, .wrEn(1'b1),
 										.inUncondBr(UncondBrRF), .inBrTaken(BrTakenRF), //control signals to PCincrementor
+										.inPC(),
 										.inReg2Loc(), .inRegWrite(RegWriteRF), .inMemWrite(MemWriteRF), .inwrByte(wrByteRF), .inMemToReg(MemToRegRF), .inimmSel(), .inALUsrc(), .inKZsel(KZselRF), .inMOVsel(MOVselRF), .insetFlag(setFlagRF), .inload(loadRF),//control signals to datapath
 										.inRn(RnRF), .inRm(RmRF), .inRd(RdRF), //register
 										.inALUop(ALUopRF),
@@ -221,6 +225,7 @@ module CameronCPU (input logic clk, reset);
 										.innegative(), .inzero(), .inoverflow(), .incarry_out(), .incbzFlag(),
 										
 										.outUncondBr(UncondBrEX), .outBrTaken(BrTakenEX), //control signals to PCincrementor
+										.outPC(),
 										.outReg2Loc(), .outRegWrite(RegWriteEX), .outMemWrite(MemWriteEX), .outwrByte(wrByteEX), .outMemToReg(MemToRegEX), .outimmSel(), .outALUsrc(), .outKZsel(KZselEX), .outMOVsel(MOVselEX), .outsetFlag(setFlagEX), .outload(loadEX),//control signals to datapath
 										.outRn(RnEX), .outRm(RmEX), .outRd(RdEX), //register
 										.outALUop(ALUopEX),
@@ -247,10 +252,11 @@ module CameronCPU (input logic clk, reset);
 							.ALUop(ALUopEX),
 							.imm16(imm16EX),
 							.ALUout(ALUoutEX), .MOVout(MOVoutEX),
-							.negative(negativeEX), .zero(zeroEX), .overflow(overflowEX), .carry_out(carry_outEX), .cbzFlag(cbzFlagEX));
+							.negative(negativeEX), .zero(zeroEX), .overflow(overflowEX), .carry_out(carry_outEX), .cbzFlag());
 		
 	pipeline_registers EX2MEM( .clk, .reset, .wrEn(1'b1),
 										.inUncondBr(UncondBrEX), .inBrTaken(BrTakenEX), //control signals to PCincrementor
+										.inPC(),
 										.inReg2Loc(), .inRegWrite(RegWriteEX), .inMemWrite(MemWriteEX), .inwrByte(wrByteEX), .inMemToReg(MemToRegEX), .inimmSel(), .inALUsrc(), .inKZsel(), .inMOVsel(MOVselEX), .insetFlag(), .inload(loadEX),//control signals to datapath
 										.inRn(RnEX), .inRm(RmEX), .inRd(RdEX), //register
 										.inALUop(),
@@ -265,9 +271,10 @@ module CameronCPU (input logic clk, reset);
 										.inDa(), .inALUin(), .inDb(DbEX),
 										.inMOVout(MOVoutEX), .inwrBout(),
 										.inALUout(ALUoutEX),
-										.innegative(negativeEX), .inzero(zeroEX), .inoverflow(overflowEX), .incarry_out(carry_outEX), .incbzFlag(cbzFlagEX),
+										.innegative(negativeEX), .inzero(zeroEX), .inoverflow(overflowEX), .incarry_out(carry_outEX), .incbzFlag(),
 										
 										.outUncondBr(UncondBrMEM), .outBrTaken(BrTakenMEM), //control signals to PCincrementor
+										.outPC(),
 										.outReg2Loc(), .outRegWrite(RegWriteMEM), .outMemWrite(MemWriteMEM), .outwrByte(wrByteMEM), .outMemToReg(MemToRegMEM), .outimmSel(), .outALUsrc(), .outKZsel(), .outMOVsel(MOVselMEM), .outsetFlag(), .outload(loadMEM),//control signals to datapath
 										.outRn(RnMEM), .outRm(RmMEM), .outRd(RdMEM), //register
 										.outALUop(),
@@ -282,7 +289,7 @@ module CameronCPU (input logic clk, reset);
 										.outDa(), .outALUin(), .outDb(DbMEM),
 										.outMOVout(MOVoutMEM), .outwrBout(),
 										.outALUout(ALUoutMEM),
-										.outnegative(negativeMEM), .outzero(zeroMEM), .outoverflow(overflowMEM), .outcarry_out(carry_outMEM), .outcbzFlag(cbzFlagMEM));
+										.outnegative(negativeMEM), .outzero(zeroMEM), .outoverflow(overflowMEM), .outcarry_out(carry_outMEM), .outcbzFlag());
 	
 	//MEM- Data Memory
 
@@ -294,6 +301,7 @@ module CameronCPU (input logic clk, reset);
 						
 	pipeline_registers MEM2WB( .clk, .reset, .wrEn(1'b1),
 										.inUncondBr(), .inBrTaken(), //control signals to PCincrementor
+										.inPC(),
 										.inReg2Loc(), .inRegWrite(RegWriteMEM), .inMemWrite(), .inwrByte(), .inMemToReg(), .inimmSel(), .inALUsrc(), .inKZsel(), .inMOVsel(MOVselMEM), .insetFlag(), .inload(),//control signals to datapath
 										.inRn(RnMEM), .inRm(RmMEM), .inRd(RdMEM), //register
 										.inALUop(),
@@ -311,6 +319,7 @@ module CameronCPU (input logic clk, reset);
 										.innegative(), .inzero(), .inoverflow(), .incarry_out(), .incbzFlag(),
 										
 										.outUncondBr(), .outBrTaken(), //control signals to PCincrementor
+										.outPC(),
 										.outReg2Loc(), .outRegWrite(RegWriteWB), .outMemWrite(), .outwrByte(), .outMemToReg(), .outimmSel(), .outALUsrc(), .outKZsel(), .outMOVsel(MOVselWB), .outsetFlag(), .outload(),//control signals to datapath
 										.outRn(RnWB), .outRm(RmWB), .outRd(RdWB), //register
 										.outALUop(),

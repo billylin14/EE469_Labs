@@ -1,6 +1,10 @@
 `timescale 1ns/10ps
 module IF_stage  (input logic clk, reset,
 						input logic zeroFlag, negativeFlag, cbzFlag,
+						input logic UncondBrRF, BrTakenRF,
+						input logic [63:0]	PCRF,
+						input logic [18:0]	CondAddr19RF,
+						input logic [25:0]	BrAddr26RF,
 						output logic UncondBr, BrTaken, //control signals to PCIncrementor
 						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
@@ -11,13 +15,16 @@ module IF_stage  (input logic clk, reset,
 						output logic [18:0] 	CondAddr19,
 						output logic [25:0] 	BrAddr26,
 						output logic [3:0]	LDURBsel,
-						output logic [1:0] 	SHAMT);
+						output logic [1:0] 	SHAMT,
+						output logic [63:0]	PCout);
 						
 	logic [31:0] Instruction;
-	PCIncrementor pc (.UncondBr, .BrTaken, .clk, .reset,
-							.CondAddr19,
-							.BrAddr26,
-							.Instruction);
+	PCIncrementor pc (.UncondBrRF, .BrTakenRF, .clk, .reset,
+							.CondAddr19RF,
+							.BrAddr26RF,
+							.PCRF,
+							.Instruction,
+							.PCout);
 	
 	instrDecoder instrDec (.Instruction,
 						.zeroFlag, .negativeFlag, .cbzFlag,

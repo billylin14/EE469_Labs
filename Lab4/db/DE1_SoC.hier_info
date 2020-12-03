@@ -5,7 +5,7 @@ in[0] => in[0].IN1
 in[1] => in[1].IN1
 in[2] => in[2].IN1
 in[3] => in[3].IN1
-out <= mux2x1:m3.out
+out << mux2x1:m3.out
 
 
 |mux4x1|mux2x1:m1

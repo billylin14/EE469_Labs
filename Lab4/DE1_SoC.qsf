@@ -72,7 +72,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PCIncrementor.sv
 set_global_assignment -name SYSTEMVERILOG_FILE instrDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE leftShift.sv
-set_global_assignment -name SYSTEMVERILOG_FILE BillyCPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE dff_real.sv
 set_global_assignment -name SYSTEMVERILOG_FILE CameronCPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pipeline_registers.sv
