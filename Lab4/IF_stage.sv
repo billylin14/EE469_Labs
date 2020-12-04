@@ -1,11 +1,13 @@
 `timescale 1ns/10ps
 module IF_stage  (input logic clk, reset,
-						input logic zeroFlag, negativeFlag, cbzFlag,
-						input logic UncondBrRF, BrTakenRF,
+						input logic negativeFlag, cbzFlag, //maybe we need an overflow flag for BLT: overflow^negative?
+						input logic UncondBrRF, 
+						input logic [1:0] BrSelRF,
 						input logic [63:0]	PCRF,
 						input logic [18:0]	CondAddr19RF,
 						input logic [25:0]	BrAddr26RF,
-						output logic UncondBr, BrTaken, //control signals to PCIncrementor
+						output logic UncondBr,
+						output logic [1:0] BrSel, //control signals to PCIncrementor
 						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
@@ -18,8 +20,12 @@ module IF_stage  (input logic clk, reset,
 						output logic [1:0] 	SHAMT,
 						output logic [63:0]	PCout);
 						
+	logic BrTaken;					
+	//CBZ, BLT, B, normal
+	mux4x1 BrTakenSel (.selector(BrSelRF), .in({cbzFlag, negativeFlag, 1'b1, 1'b0}), .out(BrTaken));
+						
 	logic [31:0] Instruction;
-	PCIncrementor pc (.UncondBrRF, .BrTakenRF, .clk, .reset,
+	PCIncrementor pc (.UncondBrRF, .BrTakenRF(BrTaken), .clk, .reset,
 							.CondAddr19RF,
 							.BrAddr26RF,
 							.PCRF,
@@ -27,8 +33,8 @@ module IF_stage  (input logic clk, reset,
 							.PCout);
 	
 	instrDecoder instrDec (.Instruction,
-						.zeroFlag, .negativeFlag, .cbzFlag,
-						.UncondBr, .BrTaken, //control signals to PCIncrementor
+						.negativeFlag, .cbzFlag,
+						.UncondBr, .BrSel, //control signals to PCIncrementor
 						.Reg2Loc, .RegWrite, .MemWrite, .wrByte, .MemToReg, .immSel, .ALUsrc, .KZsel, .MOVsel, .setFlag, .load,//control signals to datapath
 						.Rn, .Rm, .Rd, //register
 						.ALUop,

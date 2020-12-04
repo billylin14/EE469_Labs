@@ -13,10 +13,10 @@ module EX_stage  (input logic clk,
 	//ALU		
 	alu ALU(.A(Da), .B(ALUin), .cntrl(ALUop), .result(ALUout), .negative(flags[0]), .zero(flags[1]), .overflow(flags[2]), .carry_out(flags[3]));
 	
-	dff_real negDff (.in(flags[0]), .en(setFlag), .out(negative), .clk(~clk));
-	dff_real zeroDff (.in(flags[1]), .en(setFlag), .out(zero), .clk(~clk));
-	dff_real ofDff (.in(flags[2]), .en(setFlag), .out(overflow), .clk(~clk));
-	dff_real coutDff (.in(flags[3]), .en(setFlag), .out(carry_out), .clk(~clk));	
+	dff_real negDff (.in(flags[0]), .en(setFlag), .out(negative), .clk);
+	dff_real zeroDff (.in(flags[1]), .en(setFlag), .out(zero), .clk);
+	dff_real ofDff (.in(flags[2]), .en(setFlag), .out(overflow), .clk);
+	dff_real coutDff (.in(flags[3]), .en(setFlag), .out(carry_out), .clk);	
 	and #0.05 andZero (cbzFlag, flags[1], setFlag); //accelerated branch - combinational zero flag
 	
 	//shift logic for MOV

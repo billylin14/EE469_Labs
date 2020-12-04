@@ -10,9 +10,8 @@
 `timescale 1ns/10ps
 module instrDecoder (
 						input logic [31:0] Instruction,
-						input logic  negativeFlag, cbzFlag,
-						output logic UncondBr,
-						output logic [1:0] BrSel, //control signals to PCIncrementor
+						input logic zeroFlag, negativeFlag, cbzFlag,
+						output logic UncondBr, BrTaken, //control signals to PCIncrementor
 						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
@@ -53,7 +52,7 @@ module instrDecoder (
 			ADDI: begin //working
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'b0; BrSel=2'b0;  					//Branching
+				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory
 				wrByte=1'b0;											//LDURB
@@ -77,7 +76,7 @@ module instrDecoder (
 			ADDS: begin
 				Rn=Instruction[9:5]; Rm=Instruction[20:16]; Rd=Instruction[4:0];
 				
-				UncondBr=1'b0; BrSel=2'b0;  					//Branching
+				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
@@ -101,7 +100,7 @@ module instrDecoder (
 			SUBS: begin
 				Rn=Instruction[9:5]; Rm=Instruction[20:16]; Rd=Instruction[4:0];
 				
-				UncondBr=1'b0; BrSel=2'b0;  					//Branching
+				UncondBr=1'b0; BrTaken=1'b0;  					//Branching
 				RegWrite=1'b1; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b011;		//ALUSrc
@@ -125,7 +124,7 @@ module instrDecoder (
 			B: begin //working
 				Rn=5'bx; Rm=5'bx; Rd=5'bx;
 				
-				UncondBr=1'b1; BrSel=2'b01;  					//Branching
+				UncondBr=1'b1; BrTaken=1'b1;  					//Branching
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
@@ -151,7 +150,7 @@ module instrDecoder (
 			BLT: begin
 				Rn=5'bx; Rm=5'bx; Rd=5'bx;
 				
-				UncondBr=1'b0; BrSel=2'b10;  			//Branching
+				UncondBr=1'b0; BrTaken=negativeFlag;  			//Branching
 				RegWrite=1'b0; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;		//ALUSrc
@@ -176,7 +175,7 @@ module instrDecoder (
 				Rn=Instruction[4:0]; Rm=5'b11111; Rd=5'bx;
 				
 				UncondBr=1'b0; 
-				BrSel=2'b11;										//Branching
+				BrTaken=cbzFlag;										//Branching
 				RegWrite=1'b0; Reg2Loc=1'b1;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'b0; ALUop=3'b010;		//ALUSrc
@@ -200,7 +199,7 @@ module instrDecoder (
 			LDUR: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 															//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 															//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;															//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b1; 														//Memory (STUR, LDUR)
 				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;				
@@ -225,7 +224,7 @@ module instrDecoder (
 			LDURB: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 						//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b1; 					//Memory (STUR, LDUR)
 				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
@@ -250,7 +249,7 @@ module instrDecoder (
 			STUR: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 						//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
 				RegWrite=1'b0; Reg2Loc=1'b0;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b1; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
@@ -275,7 +274,7 @@ module instrDecoder (
 			STURB: begin 
 				Rn=Instruction[9:5]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 						//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
 				RegWrite=1'b0; Reg2Loc=1'b0;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b1; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'b0; ALUsrc=1'b1; ALUop=3'b010;		//ALUSrc
@@ -300,7 +299,7 @@ module instrDecoder (
 				
 				Rn=Instruction[4:0]; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 						//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'b0; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'b1; ALUop=3'b100;		//ALUSrc
@@ -325,7 +324,7 @@ module instrDecoder (
 				
 				Rn=5'bx; Rm=5'bx; Rd=Instruction[4:0];
 				
-				UncondBr=1'bx; BrSel=2'b0; 						//Branching
+				UncondBr=1'bx; BrTaken=1'b0; 						//Branching
 				RegWrite=1'b1; Reg2Loc=1'bx;						//RegFile (ADD, SUB, LDUR)
 				MemWrite=1'b0; MemToReg=1'bx; 					//Memory (STUR, LDUR)
 				immSel=1'bx; ALUsrc=1'bx; ALUop=3'bx;			//ALUSrc

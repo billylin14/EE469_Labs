@@ -1,7 +1,8 @@
 //wrEn = regWE
 module pipeline_registers(
 	input logic 			clk, reset, wrEn,
-	input logic 			inUncondBr, inBrTaken, //control signals to PCIncrementor
+	input logic 			inUncondBr, 
+	input logic [1:0]		inBrSel, //control signals to PCIncrementor
 	input logic [63:0]	inPC,
 	input logic 			inReg2Loc, inRegWrite, inMemWrite, inwrByte, inMemToReg, inimmSel, inALUsrc, inKZsel, inMOVsel, insetFlag, inload,//control signals to datapath
 	input logic [4:0] 	inRn, inRm, inRd, //register
@@ -23,7 +24,8 @@ module pipeline_registers(
 	input logic 			innegative, inzero, inoverflow, incarry_out, incbzFlag,
 	
 	
-	output logic 			outUncondBr, outBrTaken, //control signals to PCIncrementor
+	output logic 			outUncondBr,
+	output logic [1:0]	outBrSel, //control signals to PCIncrementor
 	output logic [63:0]	outPC,
 	output logic 			outReg2Loc, outRegWrite, outMemWrite, outwrByte, outMemToReg, outimmSel, outALUsrc, outKZsel, outMOVsel, outsetFlag, outload,//control signals to datapath
 	output logic [4:0] 	outRn, outRm, outRd, //register
@@ -48,7 +50,7 @@ module pipeline_registers(
 	register  #(64) PC	(.wrData(inPC), .dOut(outPC), .reset, .clk, .wrEn);
 	//CONTROL SIGNALS					
 	register  #(1) uncondBr	(.wrData(inUncondBr), 	.dOut(outUncondBr), .reset, .clk, .wrEn);
-	register  #(1) brTaken	(.wrData(inBrTaken), 	.dOut(outBrTaken), .reset, .clk, .wrEn);
+	register  #(2) brSel	(.wrData(inBrSel), 	.dOut(outBrSel), .reset, .clk, .wrEn);
 	register  #(1) Reg2Loc	(.wrData(inReg2Loc), 	.dOut(outReg2Loc), .reset, .clk, .wrEn);
 	register  #(1) RegWrite(.wrData(inRegWrite), 	.dOut(outRegWrite), .reset, .clk, .wrEn);
 	register  #(1) MemWrite(.wrData(inMemWrite), 	.dOut(outMemWrite), .reset, .clk, .wrEn);
