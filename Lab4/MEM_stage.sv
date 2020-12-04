@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 MEM_Stage.sv
+
+// Input with a clock, control signals, and data from EX stage,
+// Outputs the data wired from the EX stage or the new data from the memory.
+
 `timescale 1ns/10ps
 module MEM_stage (input logic clk,
 						input logic [3:0] 	LDURBsel,

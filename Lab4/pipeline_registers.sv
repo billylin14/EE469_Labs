@@ -1,4 +1,11 @@
-//wrEn = regWE
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 pipeline_registers.sv
+
+// Input with a set of control logics, immediate values, data, and flags,
+// uses DFFs to store the values and passes them out in the next cycles.
+
 module pipeline_registers(
 	input logic 			clk, reset, wrEn,
 	input logic 			inUncondBr, 

@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 mux4x1.sv
+
+// Input with a 2-bit selector, 3-bit input data,
+// Acts like a 4x1 multiplexer and Outputs 1-bit result based on selector.
+
 // When selector = 0, output LSB of in
 // When selector = 3, output MSB of in
 `timescale 1ns/10ps
