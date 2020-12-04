@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 module RF_stage  (input logic clk, //invert this later
-						input logic Reg2Loc, immSel, ALUsrc, setFlag,//control signals to datapath
+						input logic Reg2Loc, immSel, ALUsrc, setFlag, MOVsel, load, memWrite,//control signals to datapath
 						input logic [4:0] 	Rn, Rm, Rd, //register
 						input logic [11:0] 	imm12,
 						input logic [8:0]		DAddr9,
@@ -9,14 +9,17 @@ module RF_stage  (input logic clk, //invert this later
 						input logic 			RegWrite, 		//from WB to write
 						input logic [63:0]	DwMEM, ALUoutEX,	//for forwarding, from EX and MEM
 						input logic [4:0]		AwEX, AwMEM, 		//for forwarding
+						input logic [63:0]	MOVoutEX,			//for forwarding (MOVZ, MOVK)
+						input logic memWriteEX,
+						input logic [63:0] DbEX,
 						output logic [63:0] 	Da, ALUin, Db);
 	logic notClk;
 	not #0.05 (notClk, clk);	
 	logic [4:0] Ab;
-	logic [63:0] DAddr9_SE, imm12_pad, imm, DaRF, ALUinRF;
+	logic [63:0] DAddr9_SE, imm12_pad, imm, DaRF, ALUinRF, DbReg;
 	
 	//Forwarding unit
-	logic [1:0] DaSEL, DbSEL;
+	logic [1:0] DaSEL, DbSEL, ALUSEL;
 	
 	se #(9) SE1(.in(DAddr9), .out(DAddr9_SE));
 	assign imm12_pad = {52'b0, imm12};
@@ -30,13 +33,15 @@ module RF_stage  (input logic clk, //invert this later
 		mux2x1 immSelector (.selector(immSel), .in({imm12_pad[i], DAddr9_SE[i]}), .out(imm[i]));
 		mux2x1 ALUSrcSel 	(.selector(ALUsrc), .in({imm[i], Db[i]}), .out(ALUinRF[i]));
 		//Forwarding MUX
-		mux4x1 DaRF_MUX (.selector(DaSEL), .in({1'b0, DaRF[i], DwMEM[i], ALUoutEX[i]}), .out(Da[i]));
-		mux4x1 DbRF_MUX (.selector(DbSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin[i]));
+		mux4x1 DaRF_MUX (.selector(DaSEL), .in({MOVoutEX[i], DaRF[i], DwMEM[i], ALUoutEX[i]}), .out(Da[i]));
+		mux4x1 ALU_MUX (.selector(ALUSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin[i]));
+		mux4x1 DbRF_MUX (.selector(DbSEL), .in({DbEX[i], DbReg[i], DwMEM[i], ALUoutEX[i]}), .out(Db[i]));
 		end
 	endgenerate
 	
-	forwardingUnit forward (.AaRF(Rn), .AbRF(Ab), .AwEX(AwEX), .AwMEM(AwMEM),
-									.DaSEL, .DbSEL);
+	forwardingUnit forward (.MOVsel, .load, .memWrite, .memWriteEX,
+									.AaRF(Rn), .AbRF(Ab), .AwEX(AwEX), .AwMEM(AwMEM),
+									.DaSEL, .DbSEL, .ALUSEL);
 	regfile registers (.clk(notClk), .ReadRegister1(Rn), .ReadRegister2(Ab), 
-		.WriteRegister(AwWB), .WriteData(Dw), .ReadData1(DaRF), .ReadData2(Db), .RegWrite);
+		.WriteRegister(AwWB), .WriteData(Dw), .ReadData1(DaRF), .ReadData2(DbReg), .RegWrite);
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Wed Dec 02 21:11:54 2020
+Thu Dec 03 20:34:06 2020
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec 02 21:11:54 2020       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 03 20:34:06 2020       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; mux4x1                                      ;
@@ -250,7 +250,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -260,7 +260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Dec 02 21:11:33 2020
+    Info: Processing started: Thu Dec 03 20:33:49 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -336,7 +336,7 @@ Info (12021): Found 2 design units, including 2 entities, in source file dff_rea
     Info (12023): Found entity 2: dff_real_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/dff_real.sv Line: 18
 Info (12021): Found 2 design units, including 2 entities, in source file cameroncpu.sv
     Info (12023): Found entity 1: CameronCPU File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 22
-    Info (12023): Found entity 2: CameronCPU_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 352
+    Info (12023): Found entity 2: CameronCPU_testbench File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/CameronCPU.sv Line: 345
 Info (12021): Found 1 design units, including 1 entities, in source file pipeline_registers.sv
     Info (12023): Found entity 1: pipeline_registers File: C:/Users/wutzk/Desktop/EE469_Labs/Lab4/pipeline_registers.sv Line: 2
 Info (12021): Found 2 design units, including 2 entities, in source file /users/wutzk/desktop/ee469_labs/lab1/regfile.sv
@@ -368,10 +368,10 @@ Info (21057): Implemented 8 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Wed Dec 02 21:11:54 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Thu Dec 03 20:34:06 2020
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+

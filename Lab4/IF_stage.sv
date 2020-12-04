@@ -8,7 +8,7 @@ module IF_stage  (input logic clk, reset,
 						input logic [25:0]	BrAddr26RF,
 						output logic UncondBr,
 						output logic [1:0] BrSel, //control signals to PCIncrementor
-						output logic Reg2Loc, RegWrite, MemWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
+						output logic Reg2Loc, RegWrite, memWrite, wrByte, MemToReg, immSel, ALUsrc, KZsel, MOVsel, setFlag, load,//control signals to datapath
 						output logic [4:0] 	Rn, Rm, Rd, //register
 						output logic [2:0] 	ALUop,
 						output logic [11:0] 	imm12,
@@ -35,7 +35,7 @@ module IF_stage  (input logic clk, reset,
 	instrDecoder instrDec (.Instruction,
 						.negativeFlag, .cbzFlag,
 						.UncondBr, .BrSel, //control signals to PCIncrementor
-						.Reg2Loc, .RegWrite, .MemWrite, .wrByte, .MemToReg, .immSel, .ALUsrc, .KZsel, .MOVsel, .setFlag, .load,//control signals to datapath
+						.Reg2Loc, .RegWrite, .MemWrite(memWrite), .wrByte, .MemToReg, .immSel, .ALUsrc, .KZsel, .MOVsel, .setFlag, .load,//control signals to datapath
 						.Rn, .Rm, .Rd, //register
 						.ALUop,
 						.imm12,
