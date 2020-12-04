@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 RF_Stage.sv
+
+// Input with a clock, control signals, and data from IF stage,
+// Outputs the newest data from the register file and from the forwarding unit.
+
 `timescale 1ns/10ps
 module RF_stage  (input logic clk, //invert this later
 						input logic Reg2Loc, immSel, ALUsrc, setFlag, MOVsel, load, memWrite,//control signals to datapath
@@ -16,7 +24,7 @@ module RF_stage  (input logic clk, //invert this later
 	logic notClk;
 	not #0.05 (notClk, clk);	
 	logic [4:0] Ab;
-	logic [63:0] DAddr9_SE, imm12_pad, imm, DaRF, ALUinRF, DbReg;
+	logic [63:0] DAddr9_SE, imm12_pad, imm, DaRF, ALUinRF, DbReg, outEX;
 	
 	//Forwarding unit
 	logic [1:0] DaSEL, DbSEL, ALUSEL;
@@ -33,9 +41,11 @@ module RF_stage  (input logic clk, //invert this later
 		mux2x1 immSelector (.selector(immSel), .in({imm12_pad[i], DAddr9_SE[i]}), .out(imm[i]));
 		mux2x1 ALUSrcSel 	(.selector(ALUsrc), .in({imm[i], Db[i]}), .out(ALUinRF[i]));
 		//Forwarding MUX
-		mux4x1 DaRF_MUX (.selector(DaSEL), .in({MOVoutEX[i], DaRF[i], DwMEM[i], ALUoutEX[i]}), .out(Da[i]));
-		mux4x1 ALU_MUX (.selector(ALUSEL), .in({1'b0, ALUinRF[i], DwMEM[i], ALUoutEX[i]}), .out(ALUin[i]));
-		mux4x1 DbRF_MUX (.selector(DbSEL), .in({DbEX[i], DbReg[i], DwMEM[i], ALUoutEX[i]}), .out(Db[i]));
+		mux4x1 DaRF_MUX (.selector(DaSEL), .in({MOVoutEX[i], 	DaRF[i], 		DwMEM[i], 	ALUoutEX[i]}), .out(Da[i]));
+		mux4x1 ALU_MUX (.selector(ALUSEL), .in({MOVoutEX[i], 	ALUinRF[i], 	DwMEM[i], 	ALUoutEX[i]}), .out(ALUin[i]));
+		mux2x1 selOut_MUX (.selector(MOVsel), .in({MOVoutEX[i], ALUoutEX[i]}), .out(outEX[i]));
+		mux4x1 DbRF_MUX (.selector(DbSEL), .in({DbEX[i], 		DbReg[i], 		DwMEM[i], 	outEX[i]}), .out(Db[i]));
+
 		end
 	endgenerate
 	

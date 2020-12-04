@@ -47,7 +47,7 @@ vsim -voptargs="+acc" -t 1ps -lib work CameronCPU_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do wave_test7.do
+do wave_test12.do
 
 # Set the window types
 view wave

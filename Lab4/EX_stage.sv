@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 EX_Stage.sv
+
+// Input with a clock, control signals, and data from RF stage,
+// Outputs the computed values from MOVZ/MOVK or ALU based on the control logics and the flags.
+
 `timescale 1ns/10ps
 module EX_stage  (input logic clk,
 						input logic [63:0] 	Da, Db, ALUin,

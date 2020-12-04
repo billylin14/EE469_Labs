@@ -5,17 +5,7 @@
 
 // Input with a clock and a reset signal,
 // Performs the specified instruction set from the instruction memory (instrmem) and
-// Acts as a single cycle CPU that performs one instruction in a cycle
-
-
-//PLAN:
-//1. make pipeline working without adding any extra hardware
-// **check if structural hazard (padding stages) exists in our implementation**
-//2. invert the clock signal for regfile
-//3. add accelerate branches
-//4. add forwarding unit
-//5. **not sure about the delay slots (do NOOP? switch order of instruction??)
-//**in the pipeline_registers, we might not need to store every logic
+// Acts as a pipelined cycle CPU that breaks instruction executions into 5 stages.
 
 
 `timescale 1ns/10ps
@@ -359,7 +349,7 @@ module CameronCPU_testbench();
 	
 	initial begin
 		reset <= 1; @(posedge clk);
-		reset <= 0; repeat (300) @(posedge clk);
+		reset <= 0; repeat (2000) @(posedge clk);
 		$stop;
 	end
 endmodule 

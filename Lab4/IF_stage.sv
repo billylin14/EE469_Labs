@@ -1,3 +1,11 @@
+// Authors: Billy Lin, Cameron Wutzke
+// EE 469 Prof. Scott Hauck
+// 
+// Lab 4 IF_Stage.sv
+
+// Input with a clock, flags, and immediate values from RF stage,
+// Outputs the control logics, register addresses, and immediate values for the next instruction to RF stage.
+
 `timescale 1ns/10ps
 module IF_stage  (input logic clk, reset,
 						input logic negativeFlag, cbzFlag, //maybe we need an overflow flag for BLT: overflow^negative?
