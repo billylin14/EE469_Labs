@@ -349,7 +349,7 @@ module CameronCPU_testbench();
 	
 	initial begin
 		reset <= 1; @(posedge clk);
-		reset <= 0; repeat (2000) @(posedge clk);
+		reset <= 0; repeat (4000) @(posedge clk);
 		$stop;
 	end
 endmodule 
