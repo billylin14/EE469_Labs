@@ -244,28 +244,31 @@ module lab5_testbench ();
 		dummy_data <= '0;
 		resetMem();				// Initialize the memory.
 		 //Check L1 assoc with Don
-		//for(i=0; i < 8; i++)begin
+		 
+		//for(i=0; i < 8; i++)begin 16 bytes per block, 32 blocks
 		
-		readMem(64*32*8, dummy_data, delay);
+		readMem(0*16, dummy_data, delay); //fill the first spot
 		$display("%t Read took %d cycles", $time, delay);
+		
+		readMem(16*16, dummy_data, delay); //fill the second spot
+		$display("%t Read took %d cycles", $time, delay);
+			
 		
 		//end
-		readMem(0, dummy_data, delay);
+		readMem(0*16, dummy_data, delay); //should be 5 if not replaced
 		$display("%t Read took %d cycles", $time, delay);
-		
 		/*
-		
 		// Do 20 random reads.
-		for (i=0; i<=80; i++) begin
-			addr = i*32; // *8 to doubleword-align the access. A word is 4 bytes, a double word is 8 bytes
+		for (i=0; i<=32; i++) begin
+			addr = i*16; // *8 to doubleword-align the access. A word is 4 bytes, a double word is 8 bytes
 			readMem(addr, dummy_data, delay);
 			//$display("Read at address %d", addr);
 			$display("%t Read took %d cycles", $time, delay);
 		end
 		$display("**********************SECOND READ***********************");
-		for (i=80; i>0; i--) begin
+		for (i=32; i>0; i--) begin
 
-			addr = i*32; // *8 to doubleword-align the access. A word is 4 bytes, a double word is 8 bytes
+			addr = i*16; // *8 to doubleword-align the access. A word is 4 bytes, a double word is 8 bytes
 			readMem(addr, dummy_data, delay);
 			//$display("Read at address %d", addr);
 			$display("%t Read took %d cycles, iteration = %d", $time, delay, i);
