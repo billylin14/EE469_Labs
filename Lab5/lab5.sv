@@ -292,38 +292,46 @@ module lab5_testbench ();
 			readMem(addr, dummy_data, delay);
 			$display("Read at address %d", addr);
 			$display("%t Read took %d cycles", $time, delay);
-		end 
-//		readMem(0*32, dummy_data, delay);
-//		$display("%t Read took %d cycles", $time, delay);*/
-		// Do 5 random double-word writes of random data.
-		readMem(0, dummy_data, delay);
-		$display("%t Write took %d cycles", $time, delay);
-		writeMem(0, dummy_data, 8'hFF, delay);
-		$display("%t Write took %d cycles", $time, delay);
-		readMem(0, dummy_data, delay);
-		$display("%t Write took %d cycles", $time, delay);
-	/*	for (i=0; i<5; i++) begin
-			addr = i*8; // *8 to doubleword-align the access.
-			dummy_data = $random();
+		end */
+		
+		//L3 hit, but L2 mis:
+		readMem(64*32, dummy_data, delay); //preloaded 64 to L3
+		$display("Read at address %d", addr); 
+		$display("%t Read took %d cycles", $time, delay);
+		for (i=0; i<=63; i++) begin //fill up L2 with 0~63 so 64 is a miss
+			addr = i*32;
 			readMem(addr, dummy_data, delay);
 			$display("Read at address %d", addr);
 			$display("%t Read took %d cycles", $time, delay);
 		end
 		// Do 5 random double-word writes of random data.
-		for (i=0; i<5; i++) begin
-			addr = i*8; // *8 to doubleword-align the access.
-			dummy_data = $random();
-			writeMem(addr, dummy_data, 8'hFF, delay);
-			$display("Write at address %d", addr);
-			$display("%t Write took %d cycles", $time, delay);
-		end
-		for (i=0; i<5; i++) begin
-			addr = $random()*8; // *8 to doubleword-align the access.
-			dummy_data = $random();
-			writeMem(addr, dummy_data, 8'hFF, delay);
-			$display("Write at address %d", addr);
-			$display("%t Write took %d cycles", $time, delay);
-		end*/
+		writeMem(64*32, dummy_data, 32'hFFFFFFFF, delay); //cause an eviction at cache index 0, and cause L1 to write to L2
+		$display("%t Write took %d cycles", $time, delay);
+		readMem(65*32, dummy_data, delay);
+		$display("%t Write took %d cycles", $time, delay);
+		
+//		for (i=0; i<5; i++) begin
+//			addr = i*16; // *8 to doubleword-align the access.
+//			dummy_data = $random();
+//			readMem(addr, dummy_data, delay);
+//			$display("Read at address %d", addr);
+//			$display("%t Read took %d cycles", $time, delay);
+//		end
+//		// Do 5 random double-word writes of random data.
+//		for (i=0; i<5; i++) begin
+//			addr = i*16; // *8 to doubleword-align the access.
+//			dummy_data = $random();
+//			writeMem(addr, dummy_data, 8'hFF, delay);
+//			$display("Write at address %d", addr);
+//			$display("%t Write took %d cycles", $time, delay);
+//		end
+//		for (i=0; i<5; i++) begin
+//			addr = $random()*8; // *8 to doubleword-align the access.
+//			dummy_data = $random();
+//			writeMem(addr, dummy_data, 8'hFF, delay);
+//			$display("Write at address %d", addr);
+//			$display("%t Write took %d cycles", $time, delay);
+//		end
 		
 		// Reset the memory.
 		resetMem();
